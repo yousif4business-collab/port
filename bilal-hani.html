@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Bilal Hani — Solar Energy Engineer | Rawafid Agency</title>
+<meta name="description" content="Solar energy engineering services in Baghdad. Panel installation, energy audits, off-grid and grid-tied systems."/>
+<meta name="robots" content="index, follow"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('../sw.js')})}</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{--bg:#0a0e17;--card:#111827;--card2:#0f1623;--border:#1e2d40;--text:#e2e8f0;--muted:#8892a4;--radius:12px;--accent:#eab308;--accent2:#ca8a04}
+html{scroll-behavior:smooth;scroll-padding-top:80px;overflow-x:hidden;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);font-family:'Space Grotesk',sans-serif;line-height:1.7;overflow-x:hidden}
+[dir="rtl"] body,[dir="rtl"] *{font-family:'Cairo',sans-serif}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block;loading:lazy}
+
+/* PROGRESS */
+#pb{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--accent2),var(--accent));z-index:1100;pointer-events:none;transition:width .1s}
+
+/* NAV */
+nav{position:fixed;top:3px;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:68px;background:rgba(10,14,23,.93);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:800;color:var(--text)}
+.nav-logo em{color:var(--accent);font-style:normal}
+.nav-right{display:flex;align-items:center;gap:.75rem}
+.lang-btn{background:rgba(234,179,8,.08);border:1px solid rgba(234,179,8,.3);color:var(--accent);padding:.3rem .85rem;border-radius:20px;font-size:.8rem;font-weight:700;cursor:pointer;min-height:36px;font-family:inherit;transition:background .3s}
+.lang-btn:hover{background:rgba(234,179,8,.2)}
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .85rem;border-radius:20px;border:1px solid var(--border);color:var(--muted);font-size:.8rem;font-weight:600;transition:border-color .3s,color .3s;min-height:36px}
+.back-btn:hover{border-color:var(--accent);color:var(--accent)}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:6rem 5% 4rem;position:relative;overflow:hidden}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(100px);pointer-events:none}
+.orb1{width:600px;height:600px;background:radial-gradient(circle,rgba(234,179,8,.12),transparent 70%);top:-200px;left:-200px}
+.orb2{width:400px;height:400px;background:radial-gradient(circle,rgba(202,138,4,.08),transparent 70%);bottom:-100px;right:-100px}
+.hero-inner{position:relative;z-index:1;max-width:800px;margin:0 auto;text-align:center}
+.cs-badge{display:inline-flex;align-items:center;gap:.6rem;padding:.5rem 1.2rem;border-radius:50px;background:rgba(234,179,8,.1);border:1px solid rgba(234,179,8,.35);color:var(--accent);font-size:.85rem;font-weight:700;margin-bottom:2rem;animation:pulseBadge 2s infinite}
+@keyframes pulseBadge{0%,100%{box-shadow:0 0 0 0 rgba(234,179,8,.4)}50%{box-shadow:0 0 0 8px rgba(234,179,8,0)}}
+.avatar-xl{width:110px;height:110px;border-radius:50%;background:linear-gradient(135deg,var(--accent2),var(--accent));display:flex;align-items:center;justify-content:center;font-size:2.5rem;font-weight:800;color:#0a0e17;margin:0 auto 1.5rem;box-shadow:0 0 40px rgba(234,179,8,.35)}
+.hero-name{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,5vw,3rem);font-weight:800;margin-bottom:.5rem}
+[dir="rtl"] .hero-name{font-family:'Cairo',sans-serif}
+.grad{background:linear-gradient(90deg,var(--accent2),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-role{font-size:1.1rem;color:var(--accent);font-weight:600;margin-bottom:.75rem}
+.hero-loc{font-size:.9rem;color:var(--muted);margin-bottom:2rem}
+.hero-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin-bottom:2.5rem}
+.tag{padding:.3rem .85rem;border-radius:50px;font-size:.78rem;font-weight:600;background:rgba(234,179,8,.08);border:1px solid rgba(234,179,8,.25);color:var(--accent)}
+.hero-btns{display:flex;gap:.9rem;flex-wrap:wrap;justify-content:center}
+.btn-primary{background:linear-gradient(135deg,var(--accent2),var(--accent));color:#0a0e17;padding:.75rem 1.7rem;border-radius:8px;font-size:.92rem;font-weight:700;min-height:44px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:.4rem;transition:opacity .3s,transform .3s;font-family:inherit}
+.btn-primary:hover{opacity:.85;transform:translateY(-2px)}
+.btn-secondary{background:transparent;border:1px solid var(--border);color:var(--text);padding:.75rem 1.7rem;border-radius:8px;font-size:.92rem;font-weight:600;min-height:44px;display:inline-flex;align-items:center;gap:.4rem;transition:border-color .3s,color .3s,transform .3s;font-family:inherit}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+
+/* COMING SOON BANNER */
+.cs-banner{background:linear-gradient(135deg,rgba(234,179,8,.08),rgba(202,138,4,.05));border:1px solid rgba(234,179,8,.25);border-radius:16px;padding:2.5rem;text-align:center;margin:4rem auto;max-width:650px}
+.cs-icon{font-size:3.5rem;margin-bottom:1rem;display:block}
+.cs-title{font-family:'Space Grotesk',sans-serif;font-size:2.2rem;font-weight:800;color:var(--accent);margin-bottom:.5rem}
+[dir="rtl"] .cs-title{font-family:'Cairo',sans-serif}
+.cs-sub{font-family:'Cairo',sans-serif;font-size:1rem;color:var(--muted);line-height:1.75}
+
+/* SECTION */
+.section{padding:5rem 5%}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;margin-bottom:.5rem;text-align:center}
+[dir="rtl"] .section-title{font-family:'Cairo',sans-serif}
+.section-sub{text-align:center;color:var(--muted);font-size:.93rem;margin-bottom:2.5rem}
+.accent{color:var(--accent)}
+
+/* SERVICES GRID */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.2rem}
+.svc-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;transition:border-color .3s,transform .3s;position:relative;overflow:hidden}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);transform:scaleX(0);transition:transform .3s;transform-origin:left}
+.svc-card:hover{border-color:rgba(234,179,8,.35);transform:translateY(-4px)}
+.svc-card:hover::before{transform:scaleX(1)}
+.svc-icon{font-size:2rem;margin-bottom:.75rem;display:block}
+.svc-card h3{font-size:.97rem;font-weight:700;margin-bottom:.4rem}
+.svc-card p{color:var(--muted);font-size:.84rem;line-height:1.6}
+
+/* NOTIFY FORM */
+.notify-card{background:var(--card);border:1px solid rgba(234,179,8,.25);border-radius:16px;padding:2.5rem;max-width:600px;margin:0 auto;text-align:center}
+.notify-card h3{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:800;margin-bottom:.5rem}
+[dir="rtl"] .notify-card h3{font-family:'Cairo',sans-serif}
+.notify-card p{color:var(--muted);font-size:.9rem;margin-bottom:1.5rem}
+.notify-form{display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center}
+.notify-form input{flex:1;min-width:220px;background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:.7rem 1rem;color:var(--text);font-size:.9rem;font-family:inherit;outline:none;transition:border-color .3s}
+.notify-form input:focus{border-color:var(--accent)}
+.notify-form button{min-height:44px;padding:.7rem 1.5rem;border-radius:8px;background:var(--accent);color:#0a0e17;border:none;font-weight:700;font-size:.9rem;cursor:pointer;transition:opacity .3s;font-family:inherit}
+.notify-form button:hover{opacity:.85}
+
+/* TEAM PILLS */
+.team-pills{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;margin-top:1.5rem}
+.team-pill{display:inline-flex;align-items:center;gap:.4rem;padding:.4rem 1rem;border-radius:50px;background:var(--card);border:1px solid var(--border);color:var(--muted);font-size:.82rem;font-weight:600;transition:border-color .3s,color .3s;min-height:36px}
+.team-pill:hover{border-color:var(--accent);color:var(--accent)}
+
+/* CHATBOT */
+.chat-btn{position:fixed;bottom:2rem;right:2rem;width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,var(--accent2),var(--accent));display:flex;align-items:center;justify-content:center;font-size:1.4rem;cursor:pointer;box-shadow:0 4px 20px rgba(234,179,8,.45);z-index:900;border:none;transition:transform .3s}
+.chat-btn:hover{transform:scale(1.1)}
+[dir="rtl"] .chat-btn{right:auto;left:2rem}
+.chat-box{position:fixed;bottom:5.5rem;right:2rem;width:320px;background:var(--card);border:1px solid rgba(234,179,8,.25);border-radius:16px;overflow:hidden;display:none;flex-direction:column;z-index:901;box-shadow:0 8px 40px rgba(0,0,0,.5)}
+.chat-box.open{display:flex}
+[dir="rtl"] .chat-box{right:auto;left:2rem}
+.chat-head{background:linear-gradient(135deg,var(--accent2),var(--accent));padding:.85rem 1rem;display:flex;align-items:center;justify-content:space-between;color:#0a0e17;font-weight:700;font-size:.9rem}
+.chat-close{background:none;border:none;color:#0a0e17;font-size:1.2rem;cursor:pointer;line-height:1;padding:0 .3rem;font-family:inherit}
+.chat-msgs{flex:1;overflow-y:auto;padding:.9rem;max-height:260px;display:flex;flex-direction:column;gap:.6rem}
+.msg{padding:.5rem .85rem;border-radius:12px;font-size:.83rem;line-height:1.5;max-width:85%}
+.msg.bot{background:var(--card2);color:var(--text);align-self:flex-start;border-radius:12px 12px 12px 4px}
+.msg.user{background:linear-gradient(135deg,var(--accent2),var(--accent));color:#0a0e17;align-self:flex-end;border-radius:12px 12px 4px 12px;font-weight:600}
+.chat-input-row{display:flex;border-top:1px solid var(--border);padding:.6rem}
+.chat-input-row input{flex:1;background:transparent;border:none;color:var(--text);font-size:.85rem;font-family:inherit;outline:none;padding:.3rem .5rem}
+.chat-input-row button{background:var(--accent);border:none;border-radius:8px;padding:.3rem .7rem;cursor:pointer;color:#0a0e17;font-size:1rem;min-height:36px;transition:opacity .3s}
+.chat-input-row button:hover{opacity:.85}
+
+/* FOOTER */
+footer{background:var(--card2);border-top:1px solid var(--border);padding:2rem 5%;text-align:center}
+.footer-logo{font-size:1.2rem;font-weight:800;margin-bottom:.4rem}
+.footer-logo em{color:var(--accent);font-style:normal}
+.footer-sub{color:var(--muted);font-size:.82rem}
+
+/* TOAST */
+.toast{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);background:var(--card);border:1px solid rgba(234,179,8,.3);color:var(--text);padding:.7rem 1.4rem;border-radius:8px;font-size:.85rem;z-index:9999;box-shadow:0 4px 20px rgba(0,0,0,.4);transition:opacity .3s}
+
+@media(max-width:768px){
+  .hero-btns,.notify-form{flex-direction:column;align-items:stretch}
+  .services-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){
+  .services-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div id="pb"></div>
+
+<nav>
+  <a href="../index.html" class="nav-logo">Raw<em>afid</em></a>
+  <div class="nav-right">
+    <a href="../index.html" class="back-btn" data-en="← Back" data-ar="→ رجوع">← Back</a>
+    <button class="lang-btn" onclick="toggleLang()" id="langBtn">عربي</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-orb orb1"></div>
+  <div class="hero-orb orb2"></div>
+  <div class="hero-inner">
+    <div class="cs-badge">⏳ <span data-en="Coming Soon" data-ar="قريباً">Coming Soon</span></div>
+    <div class="avatar-xl">BH</div>
+    <h1 class="hero-name"><span class="grad" data-en="Bilal Hani" data-ar="بلال هاني">Bilal Hani</span></h1>
+    <div class="hero-role" data-en="Solar Energy Engineer" data-ar="مهندس طاقة شمسية">Solar Energy Engineer</div>
+    <div class="hero-loc">📍 <span data-en="Baghdad, Iraq" data-ar="بغداد، العراق">Baghdad, Iraq</span></div>
+    <div class="hero-tags">
+      <span class="tag" data-en="Solar Panels" data-ar="الألواح الشمسية">Solar Panels</span>
+      <span class="tag" data-en="Off-Grid Systems" data-ar="أنظمة مستقلة">Off-Grid Systems</span>
+      <span class="tag" data-en="Energy Audit" data-ar="تدقيق الطاقة">Energy Audit</span>
+      <span class="tag" data-en="Grid-Tied" data-ar="متصل بالشبكة">Grid-Tied</span>
+      <span class="tag" data-en="Battery Storage" data-ar="تخزين الطاقة">Battery Storage</span>
+    </div>
+    <div class="hero-btns">
+      <a href="https://wa.me/9647727080528?text=هلا%2C+أبيت+أستفسر+عن+خدمات+الطاقة+الشمسية" target="_blank" rel="noopener noreferrer" class="btn-primary" data-en="WhatsApp Us 💬" data-ar="واتساپ 💬">WhatsApp Us 💬</a>
+      <a href="#services" class="btn-secondary" data-en="View Services" data-ar="شوف الخدمات">View Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- COMING SOON BANNER -->
+<section class="section" style="padding-top:0">
+  <div class="section-inner">
+    <div class="cs-banner">
+      <span class="cs-icon">☀️</span>
+      <div class="cs-title" data-en="Coming Soon" data-ar="قريباً">Coming Soon</div>
+      <p class="cs-sub" data-en="Bilal Hani is finalizing his solar energy portfolio. Full service page launches very soon — meanwhile contact us on WhatsApp." data-ar="بلال هاني يكمل تجهيز صفحته في الطاقة الشمسية. تنطلق الصفحة الكاملة قريبًا — بس حتى ذاك تواصل معنا على واتساپ.">Bilal Hani is finalizing his solar energy portfolio. Full service page launches very soon — meanwhile contact us on WhatsApp.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES PREVIEW -->
+<section class="section" id="services" style="background:var(--card2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="section-inner">
+    <h2 class="section-title" data-en="Planned <span class='accent'>Services</span>" data-ar="الخدمات <span class='accent'>المخططة</span>">Planned <span class="accent">Services</span></h2>
+    <p class="section-sub" data-en="What Bilal will offer once live" data-ar="شنو بلال رح يوفر لمن يطلع">What Bilal will offer once live</p>
+    <div class="services-grid">
+      <div class="svc-card">
+        <span class="svc-icon">☀️</span>
+        <h3 data-en="Solar Panel Installation" data-ar="تركيب الألواح الشمسية">Solar Panel Installation</h3>
+        <p data-en="Residential and commercial solar PV systems — on-roof and ground-mounted." data-ar="أنظمة الطاقة الشمسية السكنية والتجارية — على الأسطح والأرضية.">Residential and commercial solar PV systems — on-roof and ground-mounted.</p>
+      </div>
+      <div class="svc-card">
+        <span class="svc-icon">🔋</span>
+        <h3 data-en="Battery Storage Systems" data-ar="أنظمة تخزين الطاقة">Battery Storage Systems</h3>
+        <p data-en="Lithium and lead-acid battery banks for off-grid and backup power." data-ar="بنوك بطاريات الليثيوم والرصاص الحمضي للطاقة المستقلة والاحتياطية.">Lithium and lead-acid battery banks for off-grid and backup power.</p>
+      </div>
+      <div class="svc-card">
+        <span class="svc-icon">🔌</span>
+        <h3 data-en="Grid-Tied Inverters" data-ar="إنفرترات متصلة بالشبكة">Grid-Tied Inverters</h3>
+        <p data-en="Grid-tied inverter setup with net metering and monitoring systems." data-ar="إعداد إنفرترات متصلة بالشبكة مع عداد صافي القياس وأنظمة المراقبة.">Grid-tied inverter setup with net metering and monitoring systems.</p>
+      </div>
+      <div class="svc-card">
+        <span class="svc-icon">📊</span>
+        <h3 data-en="Energy Audit" data-ar="تدقيق الطاقة">Energy Audit</h3>
+        <p data-en="Full energy consumption analysis and sizing recommendations before purchase." data-ar="تحليل كامل لاستهلاك الطاقة وتوصيات التحجيم قبل الشراء.">Full energy consumption analysis and sizing recommendations before purchase.</p>
+      </div>
+      <div class="svc-card">
+        <span class="svc-icon">🛠️</span>
+        <h3 data-en="Maintenance &amp; Monitoring" data-ar="صيانة ومراقبة">Maintenance &amp; Monitoring</h3>
+        <p data-en="Regular panel cleaning, inverter checks, and remote performance monitoring." data-ar="تنظيف الألواح بشكل منتظم وفحص الإنفرترات ومراقبة الأداء عن بُعد.">Regular panel cleaning, inverter checks, and remote performance monitoring.</p>
+      </div>
+      <div class="svc-card">
+        <span class="svc-icon">🏗️</span>
+        <h3 data-en="System Design &amp; Consultation" data-ar="تصميم النظام والاستشارة">System Design &amp; Consultation</h3>
+        <p data-en="Custom solar system design tailored to Iraq's climate and your energy needs." data-ar="تصميم نظام شمسي مخصص لمناخ العراق واحتياجاتك من الطاقة.">Custom solar system design tailored to Iraq's climate and your energy needs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOTIFY FORM -->
+<section class="section" id="notify">
+  <div class="section-inner">
+    <h2 class="section-title" data-en="Get <span class='accent'>Notified</span>" data-ar="نبلغك <span class='accent'>لمن يطلع</span>">Get <span class="accent">Notified</span></h2>
+    <p class="section-sub" data-en="Leave your WhatsApp and we'll message you when Bilal's page goes live" data-ar="خلي رقم واتساپك ونراسلك لمن الصفحة تطلع">Leave your WhatsApp and we'll message you when Bilal's page goes live</p>
+    <div class="notify-card">
+      <span style="font-size:2rem;display:block;margin-bottom:1rem">🔔</span>
+      <h3 data-en="Stay in the loop" data-ar="ابقى على اطلاع">Stay in the loop</h3>
+      <p data-en="Solar energy inquiries? We'll connect you with Bilal directly on WhatsApp." data-ar="استفسارات طاقة شمسية؟ نوصلك ببلال مباشرةً على واتساپ.">Solar energy inquiries? We'll connect you with Bilal directly on WhatsApp.</p>
+      <form class="notify-form" onsubmit="notifySubmit(event)">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off"/>
+        <input type="text" name="phone" placeholder="+964..." maxlength="20" required/>
+        <button type="submit" data-en="Notify Me" data-ar="بلغني">Notify Me</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM SECTION -->
+<section class="section" style="background:var(--card2);border-top:1px solid var(--border)">
+  <div class="section-inner" style="text-align:center">
+    <h2 class="section-title" data-en="Meanwhile, meet the <span class='accent'>team</span>" data-ar="بالوقت الحالي، تعرف على <span class='accent'>الفريق</span>">Meanwhile, meet the <span class="accent">team</span></h2>
+    <p class="section-sub" data-en="Other Rawafid specialists available now" data-ar="مختصو روافد المتاحون هسه">Other Rawafid specialists available now</p>
+    <div class="team-pills">
+      <a href="yousif.html" class="team-pill">⚡ <span data-en="Yousif — IT Engineer" data-ar="يوسف — مهندس IT">Yousif — IT Engineer</span></a>
+      <a href="mohammed-sakran.html" class="team-pill">📊 <span data-en="Mohammed — Data &amp; AI" data-ar="محمد — بيانات وذكاء اصطناعي">Mohammed — Data &amp; AI</span></a>
+      <a href="mohammed-qasim.html" class="team-pill">🎨 <span data-en="Mohammed — Designer" data-ar="محمد — مصمم">Mohammed — Designer</span></a>
+      <a href="samer-hamid.html" class="team-pill">✍️ <span data-en="Content Creator" data-ar="منشئ محتوى">Content Creator</span></a>
+      <a href="karrar-mohammed.html" class="team-pill">📱 <span data-en="Karrar — Social Media" data-ar="كرار — سوشيال ميديا">Karrar — Social Media</span></a>
+      <a href="teeba-zaid.html" class="team-pill">👥 <span data-en="Teeba — HR &amp; Admin" data-ar="طيبة — HR وإدارة">Teeba — HR &amp; Admin</span></a>
+    </div>
+    <div style="margin-top:2rem">
+      <a href="../index.html" class="btn-primary" data-en="View All Team →" data-ar="شوف كل الفريق →">View All Team →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Raw<em>afid</em></div>
+  <p class="footer-sub" data-en="Bilal Hani — Solar Energy Engineer | Rawafid Agency, Baghdad, Iraq" data-ar="بلال هاني — مهندس طاقة شمسية | وكالة روافد، بغداد، العراق">Bilal Hani — Solar Energy Engineer | Rawafid Agency, Baghdad, Iraq</p>
+</footer>
+
+<!-- CHATBOT -->
+<button class="chat-btn" onclick="toggleChat()" title="Chat">💬</button>
+<div class="chat-box" id="chatBox">
+  <div class="chat-head">
+    <span>☀️ <span data-en="Solar Assistant" data-ar="مساعد الطاقة">Solar Assistant</span></span>
+    <button class="chat-close" onclick="toggleChat()">✕</button>
+  </div>
+  <div class="chat-msgs" id="chatMsgs">
+    <div class="msg bot" data-en="هلا! أنا مساعد Bilal للطاقة الشمسية. اسألني عن الألواح الشمسية، التكاليف، أو الأنظمة المناسبة لك! ☀️" data-ar="هلا! أنا مساعد Bilal للطاقة الشمسية. اسألني عن الألواح الشمسية، التكاليف، أو الأنظمة المناسبة لك! ☀️">هلا! أنا مساعد Bilal للطاقة الشمسية. اسألني عن الألواح الشمسية، التكاليف، أو الأنظمة المناسبة لك! ☀️</div>
+  </div>
+  <div class="chat-input-row">
+    <input type="text" id="chatInput" placeholder="اكتب هنا..." onkeydown="if(event.key==='Enter')sendChat()"/>
+    <button onclick="sendChat()">➤</button>
+  </div>
+</div>
+
+<script>
+let currentLang = localStorage.getItem('rawafid-lang') || 'en';
+function toggleLang() {
+  currentLang = currentLang === 'en' ? 'ar' : 'en';
+  localStorage.setItem('rawafid-lang', currentLang);
+  applyLang();
+}
+function applyLang() {
+  const isAR = currentLang === 'ar';
+  document.documentElement.lang = isAR ? 'ar' : 'en';
+  document.documentElement.dir = isAR ? 'rtl' : 'ltr';
+  document.getElementById('langBtn').textContent = isAR ? 'English' : 'عربي';
+  document.querySelectorAll('[data-en]').forEach(function(el) {
+    const v = isAR ? (el.dataset.ar || el.dataset.en) : el.dataset.en;
+    if (v) el.innerHTML = v;
+  });
+}
+applyLang();
+
+// Progress bar
+window.addEventListener('scroll', function() {
+  const p = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+  document.getElementById('pb').style.width = Math.min(p, 100) + '%';
+});
+
+// Notify form
+let lastNotify = 0;
+function notifySubmit(e) {
+  e.preventDefault();
+  if (e.target._honey && e.target._honey.value) return;
+  const now = Date.now();
+  if (now - lastNotify < 30000) { showToast('انتظر 30 ثانية'); return; }
+  lastNotify = now;
+  const fd = new FormData(e.target);
+  fd.append('page', 'bilal-hani');
+  fetch('https://script.google.com/macros/s/AKfycbxe9weLT738oHP10plWn7whJZamnR2Yzdi8SvlPCt7SJyNgUmOdvq3Xqo5MnwVi97mhoQ/exec', {
+    method: 'POST', mode: 'no-cors', body: fd
+  }).catch(function(){});
+  showToast('✅ تم! نبلغك لمن الصفحة تطلع');
+  e.target.reset();
+}
+
+// Chatbot
+function toggleChat() {
+  document.getElementById('chatBox').classList.toggle('open');
+}
+const SOLAR_REPLIES = [
+  [/سعر|cost|price|كلفة|تكلفة/i, 'يعتمد السعر على حجم النظام واحتياجاتك. راسلنا على واتساپ للحصول على تقدير مجاني! 💰'],
+  [/شمس|solar|panel|لوح/i, 'نركب ألواح شمسية للبيوت والمشاريع التجارية. سياتيك Bilal ويطلع معك الحساب الكامل! ☀️'],
+  [/بطاري|battery|تخزين|storage/i, 'أكو بطاريات ليثيوم وأسيد. نختار الأنسب حسب احتياجاتك من الطاقة الاحتياطية. 🔋'],
+  [/صيان|maintain|clean/i, 'نوفر عقود صيانة دورية تشمل التنظيف وفحص الإنفرترات ومراقبة الأداء. 🛠️'],
+  [/متى|when|وقت|time/i, 'الصفحة قريبة جداً! اترك رقمك في فورم التنبيه ونراسلك فور الإطلاق. 📲'],
+];
+function sendChat() {
+  const inp = document.getElementById('chatInput');
+  const msg = inp.value.trim();
+  if (!msg) return;
+  addMsg(msg, 'user');
+  inp.value = '';
+  setTimeout(function() {
+    let reply = 'تواصل معنا على واتساپ وبلال يجاوبك بالتفصيل! 💬 wa.me/9647727080528';
+    for (const [re, r] of SOLAR_REPLIES) { if (re.test(msg)) { reply = r; break; } }
+    addMsg(reply, 'bot');
+  }, 700);
+}
+function addMsg(text, type) {
+  const d = document.getElementById('chatMsgs');
+  const m = document.createElement('div');
+  m.className = 'msg ' + type;
+  m.textContent = text;
+  d.appendChild(m);
+  d.scrollTop = d.scrollHeight;
+}
+
+function showToast(msg) {
+  const t = document.createElement('div');
+  t.className = 'toast';
+  t.textContent = msg;
+  document.body.appendChild(t);
+  setTimeout(function() { t.style.opacity = '0'; setTimeout(function() { t.remove(); }, 300); }, 2500);
+}
+
+window.addEventListener('error', function(e) {
+  console.warn('[Rawafid Error]', e.message, e.filename, e.lineno);
+});
+</script>
+</body>
+</html>

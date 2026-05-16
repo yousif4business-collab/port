@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohammed R. Sakran — Data Analyst &amp; AI Specialist | Rawafid</title>
+  <meta name="description" content="Data Analyst and AI Specialist from Baghdad. Python, SQL, Power BI, LLM integration and automated data pipelines." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('../sw.js')})}</script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0e17;
+      --card: #111827;
+      --card2: #0f1623;
+      --border: #1e2d40;
+      --text: #e2e8f0;
+      --muted: #8892a4;
+      --radius: 12px;
+      --accent: #7c3aed;
+      --accent2: #5b21b6;
+      --accent-light: #a78bfa;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Space Grotesk', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    [dir="rtl"] body { font-family: 'Cairo', sans-serif; }
+    [dir="rtl"] * { font-family: 'Cairo', sans-serif; }
+
+    /* Progress Bar */
+    #progress-bar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+      z-index: 9999;
+      transition: width 0.1s;
+      width: 0%;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 3px; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(10, 14, 23, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-left a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .nav-left a:hover { color: var(--accent-light); }
+
+    .nav-logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .nav-logo span { color: var(--accent-light); }
+
+    .nav-right { display: flex; align-items: center; gap: 1rem; }
+
+    #langBtn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.35rem 0.9rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    #langBtn:hover { border-color: var(--accent-light); color: var(--accent-light); }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      padding: 100px 6% 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px; right: -200px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(124,58,237,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(124,58,237,0.1);
+      border: 1px solid rgba(124,58,237,0.35);
+      border-radius: 50px;
+      padding: 0.4rem 1rem;
+      font-size: 0.85rem;
+      color: var(--accent-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .pulse-dot {
+      width: 8px; height: 8px;
+      background: #22c55e;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.4); box-shadow: 0 0 8px #22c55e; }
+    }
+
+    .hero-headline {
+      font-size: clamp(2rem, 4vw, 3.6rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-headline .accent-line {
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-about {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 520px;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+
+    .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff;
+      padding: 0.75rem 1.75rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: all 0.3s;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: inherit;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(124,58,237,0.4); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      padding: 0.75rem 1.75rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1px solid var(--border);
+      transition: all 0.3s;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .btn-secondary:hover { border-color: var(--accent-light); color: var(--accent-light); transform: translateY(-2px); }
+
+    /* Profile Card */
+    .hero-right { position: relative; }
+
+    .profile-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 0 60px rgba(124,58,237,0.12);
+      animation: floatCard 6s ease-in-out infinite;
+    }
+
+    @keyframes floatCard {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .profile-avatar {
+      width: 90px; height: 90px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem; font-weight: 800; color: #fff;
+      margin: 0 auto 1.25rem;
+    }
+
+    .profile-card h3 { text-align: center; font-size: 1.25rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .profile-title { text-align: center; color: var(--accent-light); font-size: 0.88rem; margin-bottom: 0.6rem; }
+    .profile-location { text-align: center; color: var(--muted); font-size: 0.85rem; margin-bottom: 1.25rem; }
+
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; justify-content: center; }
+
+    .skill-tag {
+      background: rgba(124,58,237,0.1);
+      border: 1px solid rgba(124,58,237,0.3);
+      color: var(--accent-light);
+      padding: 0.28rem 0.7rem;
+      border-radius: 50px;
+      font-size: 0.76rem; font-weight: 500;
+    }
+
+    .float-badge {
+      position: absolute;
+      background: var(--card2);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      padding: 0.4rem 0.9rem;
+      font-size: 0.76rem; font-weight: 600;
+      color: var(--accent-light);
+      white-space: nowrap;
+    }
+
+    .float-badge:nth-child(1) { top: -18px; right: -20px; animation: floatB1 4s ease-in-out infinite; }
+    .float-badge:nth-child(2) { top: 90px; left: -30px; animation: floatB2 5s ease-in-out infinite; }
+    .float-badge:nth-child(3) { bottom: 50px; right: -15px; animation: floatB3 4.5s ease-in-out infinite; }
+
+    @keyframes floatB1 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+    @keyframes floatB2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(10px)} }
+    @keyframes floatB3 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+
+    /* Stats Row */
+    .stats-row {
+      padding: 4rem 6%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      background: var(--card2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stat-item { text-align: center; }
+
+    .stat-number {
+      font-size: 2.8rem; font-weight: 800;
+      color: var(--accent-light);
+      line-height: 1; margin-bottom: 0.4rem;
+    }
+
+    .stat-label { color: var(--muted); font-size: 0.88rem; }
+
+    /* Sections */
+    section { padding: 5rem 6%; }
+    .section-header { text-align: center; margin-bottom: 3rem; }
+    .section-header h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 700; margin-bottom: 0.75rem; }
+    .section-subtitle { color: var(--muted); max-width: 560px; margin: 0 auto; font-size: 0.95rem; }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .service-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem 1.5rem;
+      transition: all 0.3s;
+      position: relative; overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px; height: 0;
+      background: var(--accent);
+      transition: height 0.35s;
+    }
+
+    .service-card:hover { border-color: rgba(124,58,237,0.4); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(124,58,237,0.1); }
+    .service-card:hover::before { height: 100%; }
+
+    .service-icon { font-size: 2rem; margin-bottom: 0.85rem; display: block; }
+    .service-card h3 { font-size: 0.98rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .service-card p { color: var(--muted); font-size: 0.83rem; line-height: 1.55; }
+
+    /* Tools */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .tool-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1rem;
+      display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
+      transition: all 0.3s;
+    }
+
+    .tool-card:hover { border-color: rgba(124,58,237,0.4); transform: translateY(-3px); }
+
+    .tool-card img {
+      height: 36px; width: auto;
+      filter: brightness(0) invert(1) opacity(0.6);
+      transition: filter 0.3s;
+      object-fit: contain;
+    }
+
+    .tool-card:hover img { filter: brightness(1) saturate(1); opacity: 1; }
+    .tool-card span { font-size: 0.78rem; color: var(--muted); text-align: center; }
+
+    .tool-pill {
+      background: rgba(124,58,237,0.1);
+      border: 1px solid rgba(124,58,237,0.3);
+      color: var(--accent-light);
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-size: 0.82rem; font-weight: 600;
+      text-align: center;
+    }
+
+    .tool-card.pill-only {
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    /* Timeline */
+    .timeline { position: relative; max-width: 800px; margin: 0 auto; }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, #22c55e, var(--accent), var(--accent-light));
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      display: flex; gap: 2rem;
+      margin-bottom: 2.5rem; align-items: flex-start;
+      position: relative;
+    }
+
+    .timeline-item:nth-child(odd) { padding-right: calc(50% + 2.5rem); }
+    .timeline-item:nth-child(even) { padding-left: calc(50% + 2.5rem); flex-direction: row-reverse; }
+
+    .timeline-dot {
+      position: absolute;
+      left: 50%; top: 0.35rem;
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--accent);
+      transform: translateX(-50%);
+      border: 3px solid var(--bg); z-index: 2;
+    }
+
+    .timeline-content {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.2rem 1.5rem; flex: 1;
+    }
+
+    .timeline-phase {
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 0.3rem;
+    }
+
+    .phase-green { color: #22c55e; }
+    .phase-purple { color: var(--accent-light); }
+    .phase-deep { color: #c4b5fd; }
+
+    .timeline-content h3 { font-size: 0.93rem; font-weight: 600; margin-bottom: 0.28rem; }
+    .timeline-content p { color: var(--muted); font-size: 0.82rem; line-height: 1.55; }
+
+    /* FAQ */
+    .faq-list { max-width: 780px; margin: 0 auto; }
+
+    .faq-item {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); margin-bottom: 0.75rem; overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%; background: none; border: none;
+      color: var(--text); padding: 1.1rem 1.5rem;
+      text-align: left; font-size: 0.93rem; font-weight: 600;
+      cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+      transition: color 0.2s; font-family: inherit;
+    }
+
+    [dir="rtl"] .faq-question { text-align: right; }
+    .faq-question:hover { color: var(--accent-light); }
+
+    .faq-icon { font-size: 1.2rem; transition: transform 0.3s; color: var(--accent-light); flex-shrink: 0; margin-left: 1rem; }
+    [dir="rtl"] .faq-icon { margin-left: 0; margin-right: 1rem; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .faq-item.open .faq-answer { max-height: 250px; }
+    .faq-answer p { color: var(--muted); font-size: 0.88rem; padding: 0 1.5rem 1.1rem; line-height: 1.65; }
+
+    /* Reviews */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem; margin-bottom: 3rem;
+    }
+
+    .review-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.5rem;
+    }
+
+    .review-stars { color: #f59e0b; font-size: 1.05rem; margin-bottom: 0.75rem; }
+    .review-text { color: var(--muted); font-size: 0.88rem; line-height: 1.65; margin-bottom: 1rem; }
+    .review-author { font-size: 0.84rem; font-weight: 600; color: var(--accent-light); }
+
+    .review-form-wrapper {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 2rem;
+      max-width: 600px; margin: 0 auto;
+    }
+
+    .review-form-wrapper h3 { margin-bottom: 1.25rem; font-size: 1.1rem; }
+
+    .star-rating { display: flex; gap: 0.4rem; margin-bottom: 1rem; }
+
+    .star-btn {
+      background: none; border: none;
+      font-size: 1.5rem; cursor: pointer;
+      color: var(--border); transition: color 0.2s; padding: 0;
+    }
+    .star-btn.active { color: #f59e0b; }
+
+    /* Forms */
+    .form-group { margin-bottom: 1.1rem; }
+    .form-group label { display: block; color: var(--muted); font-size: 0.83rem; margin-bottom: 0.4rem; }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      background: var(--card2); border: 1px solid var(--border);
+      border-radius: 8px; color: var(--text);
+      padding: 0.7rem 1rem; font-size: 0.88rem; font-family: inherit;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus { outline: none; border-color: var(--accent); }
+
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-group select option { background: var(--card2); }
+
+    .btn-submit {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff; padding: 0.75rem 2rem;
+      border: none; border-radius: 10px;
+      font-size: 0.93rem; font-weight: 700;
+      cursor: pointer; transition: all 0.3s; font-family: inherit;
+    }
+    .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(124,58,237,0.4); }
+
+    /* Contact */
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 2.5rem; max-width: 1000px; margin: 0 auto;
+    }
+
+    .contact-form-card, .contact-info-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 2rem;
+    }
+
+    .contact-form-card h3, .contact-info-card h3 {
+      font-size: 1.1rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--accent-light);
+    }
+
+    .contact-link {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 0.85rem 1rem;
+      background: var(--card2); border: 1px solid var(--border);
+      border-radius: 10px; text-decoration: none; color: var(--text);
+      transition: all 0.3s; margin-bottom: 0.75rem;
+    }
+    .contact-link:hover { border-color: var(--accent-light); color: var(--accent-light); transform: translateX(4px); }
+    [dir="rtl"] .contact-link:hover { transform: translateX(-4px); }
+
+    .contact-link-icon { font-size: 1.3rem; flex-shrink: 0; }
+    .contact-link-info h4 { font-size: 0.9rem; font-weight: 600; }
+    .contact-link-info p { font-size: 0.78rem; color: var(--muted); }
+
+    /* Chatbot */
+    #chatbot-btn {
+      position: fixed;
+      bottom: 150px; right: 24px;
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border: none; border-radius: 50%;
+      color: #fff; font-size: 1.3rem;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 18px rgba(124,58,237,0.45);
+      z-index: 900; transition: transform 0.2s;
+    }
+    #chatbot-btn:hover { transform: scale(1.1); }
+
+    #chatbot-window {
+      position: fixed;
+      bottom: 215px; right: 24px;
+      width: 340px; max-height: 480px;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px;
+      display: none; flex-direction: column;
+      overflow: hidden; z-index: 900;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+    }
+    #chatbot-window.open { display: flex; }
+
+    .chatbot-header {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      padding: 1rem 1.25rem;
+      display: flex; align-items: center; justify-content: space-between;
+      color: #fff;
+    }
+    .chatbot-header h4 { font-size: 0.88rem; font-weight: 700; }
+
+    .chatbot-close {
+      background: none; border: none; color: #fff;
+      font-size: 1.3rem; cursor: pointer; line-height: 1;
+    }
+
+    .chatbot-messages {
+      flex: 1; overflow-y: auto; padding: 1rem;
+      display: flex; flex-direction: column; gap: 0.75rem;
+    }
+
+    .chat-msg {
+      max-width: 85%; padding: 0.6rem 0.9rem;
+      border-radius: 12px; font-size: 0.83rem; line-height: 1.55;
+    }
+
+    .chat-msg.bot {
+      background: var(--card2); border: 1px solid var(--border);
+      align-self: flex-start; border-bottom-left-radius: 4px;
+    }
+
+    .chat-msg.user {
+      background: rgba(124,58,237,0.12); border: 1px solid rgba(124,58,237,0.3);
+      align-self: flex-end; border-bottom-right-radius: 4px;
+    }
+
+    .chatbot-input-row {
+      display: flex; padding: 0.75rem; gap: 0.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .chatbot-input-row input {
+      flex: 1; background: var(--card2); border: 1px solid var(--border);
+      border-radius: 8px; color: var(--text);
+      padding: 0.5rem 0.75rem; font-size: 0.83rem; font-family: inherit;
+    }
+    .chatbot-input-row input:focus { outline: none; border-color: var(--accent); }
+
+    .chatbot-send {
+      background: var(--accent); border: none; border-radius: 8px;
+      color: #fff; padding: 0.5rem 0.9rem;
+      cursor: pointer; font-weight: 700; font-size: 0.88rem; font-family: inherit;
+    }
+
+    /* Floating */
+    #whatsapp-btn {
+      position: fixed; bottom: 24px; right: 24px;
+      width: 56px; height: 56px; background: #25d366;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      text-decoration: none; font-size: 1.6rem; z-index: 900;
+      box-shadow: 0 4px 18px rgba(37,211,102,0.45); transition: transform 0.2s;
+    }
+    #whatsapp-btn:hover { transform: scale(1.1); }
+
+    #scroll-top {
+      position: fixed; bottom: 90px; right: 24px;
+      width: 44px; height: 44px;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 50%;
+      display: none; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 1.1rem; color: var(--accent-light);
+      z-index: 900; transition: all 0.2s;
+    }
+    #scroll-top:hover { background: var(--accent); color: #fff; }
+    #scroll-top.visible { display: flex; }
+
+    #book-call-pill {
+      position: fixed; right: -84px; top: 50%;
+      transform: translateY(-50%) rotate(-90deg);
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff; padding: 0.5rem 1.25rem;
+      border-radius: 50px 50px 0 0;
+      font-size: 0.8rem; font-weight: 700;
+      text-decoration: none; z-index: 800;
+      transition: right 0.3s; white-space: nowrap;
+    }
+    #book-call-pill:hover { right: -70px; }
+
+    /* Toast */
+    #toast {
+      position: fixed; bottom: 110px; left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--card); border: 1px solid var(--accent-light);
+      color: var(--text); padding: 0.75rem 1.5rem;
+      border-radius: 50px; font-size: 0.88rem;
+      opacity: 0; transition: all 0.4s; z-index: 9999; pointer-events: none;
+    }
+    #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* Footer */
+    footer { background: var(--card2); border-top: 1px solid var(--border); padding: 3rem 6%; }
+    .footer-inner { text-align: center; }
+    .footer-brand { font-size: 1.4rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
+    .footer-brand span { color: var(--accent-light); }
+    .footer-copy { color: var(--muted); font-size: 0.83rem; margin-bottom: 1.25rem; }
+    .footer-social { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .footer-social a {
+      color: var(--muted); text-decoration: none; font-size: 0.83rem;
+      padding: 0.4rem 0.9rem; border: 1px solid var(--border); border-radius: 8px;
+      transition: all 0.2s;
+    }
+    .footer-social a:hover { color: var(--accent-light); border-color: var(--accent-light); }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; padding-top: 90px; text-align: center; }
+      .hero-about { margin: 0 auto 2rem; text-align: center; }
+      .hero-buttons { justify-content: center; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .timeline::before { left: 20px; }
+      .timeline-item:nth-child(odd),
+      .timeline-item:nth-child(even) { flex-direction: row !important; padding: 0 0 0 50px !important; }
+      .timeline-dot { left: 20px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .float-badge:nth-child(1) { top: -14px; right: 0; }
+      .float-badge:nth-child(2) { left: 0; top: 60px; }
+      .float-badge:nth-child(3) { bottom: 30px; right: 0; }
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 1rem; }
+      .stats-row { padding: 2.5rem 1.5rem; }
+      section { padding: 3.5rem 5%; }
+      .hero { padding: 90px 5% 3rem; }
+      #chatbot-window { width: calc(100vw - 48px); }
+    }
+
+    [dir="rtl"] .hero { text-align: right; }
+    [dir="rtl"] .hero-about { text-align: right; margin: 0 0 2rem; }
+    [dir="rtl"] .hero-buttons { justify-content: flex-start; }
+  </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<!-- Navbar -->
+<nav>
+  <div class="nav-left">
+    <a href="../index.html">
+      <span>&#8592;</span>
+      <span data-en="Back to Rawafid" data-ar="العودة لروافد"></span>
+    </a>
+  </div>
+  <a href="../index.html" class="nav-logo">Raw<span>afid</span> | روافد</a>
+  <div class="nav-right">
+    <button id="langBtn" onclick="toggleLang()">AR</button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-badge">
+      <div class="pulse-dot"></div>
+      <span data-en="Data Analyst &amp; AI Specialist" data-ar="محلل بيانات ومتخصص ذكاء اصطناعي"></span>
+    </div>
+    <h1 class="hero-headline">
+      <span data-en="Turning Raw Data Into /" data-ar="أحول البيانات إلى /"></span><br>
+      <span class="accent-line" data-en="Strategic Decisions" data-ar="قرارات استراتيجية"></span>
+    </h1>
+    <p class="hero-about" data-en="Data Analyst specialized in automated pipelines, dashboards and AI integration. Proficient in Python, SQL, Power BI and LLMs. I turn raw data into clear, actionable business decisions." data-ar="محلل بيانات متخصص في بناء حلول بيانات آلية ولوحات تحليلية ودمج الذكاء الاصطناعي. أحول البيانات الخام إلى قرارات تجارية واضحة وقابلة للتنفيذ."></p>
+    <div class="hero-buttons">
+      <a href="https://calendly.com/yousifabdulkareem4business" target="_blank" rel="noopener noreferrer" class="btn-primary">
+        <span>&#128197;</span>
+        <span data-en="Book Free Call" data-ar="احجز مكالمة مجانية"></span>
+      </a>
+      <a href="https://wa.me/9647727080528" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+        <span>&#128172;</span>
+        <span data-en="WhatsApp" data-ar="واتساب"></span>
+      </a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="profile-card">
+      <div class="profile-avatar">MS</div>
+      <h3>Mohammed R. Sakran</h3>
+      <p class="profile-title" data-en="Data Analyst &amp; AI Specialist" data-ar="محلل بيانات ومتخصص ذكاء اصطناعي"></p>
+      <p class="profile-location">&#128205; Baghdad, Iraq</p>
+      <div class="skill-tags">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">Power BI</span>
+        <span class="skill-tag">AI Automation</span>
+        <span class="skill-tag">LLMs</span>
+        <span class="skill-tag">Data Engineering</span>
+      </div>
+    </div>
+    <div class="float-badge" data-en="20+ Dashboards Built" data-ar="20+ لوحة تحليل">20+ Dashboards Built</div>
+    <div class="float-badge" data-en="5+ Pipelines" data-ar="5+ خطوط بيانات">5+ Pipelines</div>
+    <div class="float-badge" data-en="100% Accuracy" data-ar="100% دقة">100% Accuracy</div>
+  </div>
+</section>
+
+<!-- Stats Row -->
+<div class="stats-row">
+  <div class="stat-item">
+    <div class="stat-number" data-target="20" data-suffix="+">20+</div>
+    <div class="stat-label" data-en="Dashboards Built" data-ar="لوحات تحليل منجزة"></div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number" data-target="5" data-suffix="+">5+</div>
+    <div class="stat-label" data-en="Automation Pipelines" data-ar="خطوط أتمتة"></div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number" data-target="3" data-suffix="+">3+</div>
+    <div class="stat-label" data-en="Years Experience" data-ar="سنوات خبرة"></div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number" data-target="100" data-suffix="%">100%</div>
+    <div class="stat-label" data-en="Data Accuracy" data-ar="دقة البيانات"></div>
+  </div>
+</div>
+
+<!-- Services -->
+<section id="services">
+  <div class="section-header">
+    <h2><span data-en="What I" data-ar="شنو"></span> <span style="color:var(--accent-light)" data-en="Do" data-ar="أسوي"></span></h2>
+    <p class="section-subtitle" data-en="Data analysis, automation and AI integration for modern businesses." data-ar="تحليل البيانات والأتمتة ودمج الذكاء الاصطناعي للأعمال الحديثة."></p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <span class="service-icon">&#128202;</span>
+      <h3 data-en="Data Analysis &amp; Reporting" data-ar="تحليل البيانات"></h3>
+      <p data-en="In-depth data analysis and automated reports that reveal business insights." data-ar="تحليل معمق للبيانات وتقارير آلية تكشف عن رؤى تجارية قيمة."></p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">&#128200;</span>
+      <h3 data-en="Dashboard &amp; Visualization" data-ar="لوحات التحليل"></h3>
+      <p data-en="Interactive Power BI and custom dashboards that make data clear and actionable." data-ar="لوحات Power BI تفاعلية ومخصصة تجعل البيانات واضحة وقابلة للتنفيذ."></p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">&#129302;</span>
+      <h3 data-en="Process Automation" data-ar="أتمتة العمليات"></h3>
+      <p data-en="Automate repetitive data workflows saving hours of manual work daily." data-ar="أتمتة سير عمل البيانات المتكررة لتوفير ساعات من العمل اليدوي يومياً."></p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">&#128269;</span>
+      <h3 data-en="Data Extraction &amp; Scraping" data-ar="استخراج البيانات"></h3>
+      <p data-en="Web scraping, API integration and ETL pipelines to collect any data you need." data-ar="استخراج بيانات الويب ودمج APIs وبناء pipelines ETL لجمع أي بيانات تحتاجها."></p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">&#128013;</span>
+      <h3 data-en="Python Development" data-ar="تطوير Python"></h3>
+      <p data-en="Custom Python scripts and applications for data processing and automation." data-ar="سكريبتات وتطبيقات Python مخصصة لمعالجة البيانات والأتمتة."></p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">&#128450;</span>
+      <h3 data-en="Database &amp; SQL" data-ar="قواعد البيانات"></h3>
+      <p data-en="Database design, complex SQL queries, optimization and data warehousing." data-ar="تصميم قواعد البيانات واستعلامات SQL المعقدة والتحسين وتخزين البيانات."></p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">&#128202;</span>
+      <h3 data-en="Excel &amp; Google Sheets" data-ar="إكسل وشيتس"></h3>
+      <p data-en="Advanced Excel models, macros and Google Sheets automations for business teams." data-ar="نماذج Excel متقدمة وماكروز وأتمتة Google Sheets لفرق الأعمال."></p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">&#129504;</span>
+      <h3 data-en="AI &amp; LLM Integration" data-ar="دمج الذكاء الاصطناعي"></h3>
+      <p data-en="Integrate GPT, Claude and LangChain into your existing systems and workflows." data-ar="دمج GPT وClaude وLangChain في أنظمتكم وسير عملكم الموجودة."></p>
+    </div>
+  </div>
+</section>
+
+<!-- Tools -->
+<section id="tools" style="background:var(--card2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="section-header">
+    <h2 data-en="Tools &amp; Technologies" data-ar="الأدوات والتقنيات"></h2>
+    <p class="section-subtitle" data-en="The stack I use to deliver world-class data solutions." data-ar="الأدوات التي أستخدمها لتقديم حلول بيانات عالمية."></p>
+  </div>
+  <div class="tools-grid">
+    <div class="tool-card">
+      <img src="https://logo.clearbit.com/python.org" alt="Python" onerror="this.style.display='none'" />
+      <span>Python</span>
+    </div>
+    <div class="tool-card">
+      <img src="https://logo.clearbit.com/postgresql.org" alt="PostgreSQL" onerror="this.style.display='none'" />
+      <span>PostgreSQL</span>
+    </div>
+    <div class="tool-card">
+      <img src="https://logo.clearbit.com/microsoft.com" alt="Power BI" onerror="this.style.display='none'" />
+      <span>Power BI</span>
+    </div>
+    <div class="tool-card">
+      <img src="https://logo.clearbit.com/aws.amazon.com" alt="AWS" onerror="this.style.display='none'" />
+      <span>AWS</span>
+    </div>
+    <div class="tool-card">
+      <img src="https://logo.clearbit.com/streamlit.io" alt="Streamlit" onerror="this.style.display='none'" />
+      <span>Streamlit</span>
+    </div>
+    <div class="tool-card">
+      <img src="https://logo.clearbit.com/openai.com" alt="OpenAI" onerror="this.style.display='none'" />
+      <span>OpenAI</span>
+    </div>
+    <div class="tool-card pill-only">
+      <div class="tool-pill">LangChain</div>
+    </div>
+    <div class="tool-card pill-only">
+      <div class="tool-pill">Pandas</div>
+    </div>
+    <div class="tool-card pill-only">
+      <div class="tool-pill">NumPy</div>
+    </div>
+    <div class="tool-card pill-only">
+      <div class="tool-pill">Scikit-learn</div>
+    </div>
+    <div class="tool-card pill-only">
+      <div class="tool-pill">FastAPI</div>
+    </div>
+    <div class="tool-card pill-only">
+      <div class="tool-pill">Google Sheets API</div>
+    </div>
+  </div>
+</section>
+
+<!-- Work Process -->
+<section id="process">
+  <div class="section-header">
+    <h2><span data-en="Work" data-ar="طريقة"></span> <span style="color:var(--accent-light)" data-en="Process" data-ar="العمل"></span></h2>
+    <p class="section-subtitle" data-en="How I approach every data project from discovery to delivery." data-ar="كيف أتعامل مع كل مشروع بيانات من الاكتشاف حتى التسليم."></p>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot" style="background:#22c55e;"></div>
+      <div class="timeline-content">
+        <div class="timeline-phase phase-green">DISCOVERY</div>
+        <h3 data-en="&#128269; Problem Definition" data-ar="&#128269; تعريف المشكلة"></h3>
+        <p data-en="Understanding your business question, data sources and success metrics." data-ar="فهم سؤالك التجاري ومصادر البيانات ومعايير النجاح."></p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot" style="background:#22c55e;"></div>
+      <div class="timeline-content">
+        <div class="timeline-phase phase-green">DISCOVERY</div>
+        <h3 data-en="&#128203; Data Audit" data-ar="&#128203; مراجعة البيانات"></h3>
+        <p data-en="Assessing data quality, availability, structure and identifying gaps." data-ar="تقييم جودة البيانات ومدى توفرها وهيكلها وتحديد الفجوات."></p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot" style="background:var(--accent);"></div>
+      <div class="timeline-content">
+        <div class="timeline-phase phase-purple">PLANNING</div>
+        <h3 data-en="&#128221; Solution Design" data-ar="&#128221; تصميم الحل"></h3>
+        <p data-en="Designing the data pipeline, analysis approach and dashboard structure." data-ar="تصميم خط البيانات ونهج التحليل وهيكل لوحة التحليل."></p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot" style="background:var(--accent);"></div>
+      <div class="timeline-content">
+        <div class="timeline-phase phase-purple">PLANNING</div>
+        <h3 data-en="&#128176; Proposal &amp; Timeline" data-ar="&#128176; العرض والجدول الزمني"></h3>
+        <p data-en="Detailed project proposal with milestones, deliverables and pricing." data-ar="عرض مشروع مفصل مع المراحل والمخرجات والتسعير."></p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot" style="background:var(--accent-light);"></div>
+      <div class="timeline-content">
+        <div class="timeline-phase phase-deep">DELIVERY</div>
+        <h3 data-en="&#9881; Data Engineering" data-ar="&#9881; هندسة البيانات"></h3>
+        <p data-en="Building ETL pipelines, cleaning data and preparing for analysis." data-ar="بناء خطوط ETL وتنظيف البيانات والتهيئة للتحليل."></p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot" style="background:var(--accent-light);"></div>
+      <div class="timeline-content">
+        <div class="timeline-phase phase-deep">DELIVERY</div>
+        <h3 data-en="&#128200; Analysis &amp; Modeling" data-ar="&#128200; التحليل والنمذجة"></h3>
+        <p data-en="Statistical analysis, modeling and extracting actionable business insights." data-ar="تحليل إحصائي ونمذجة واستخراج رؤى تجارية قابلة للتنفيذ."></p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot" style="background:var(--accent-light);"></div>
+      <div class="timeline-content">
+        <div class="timeline-phase phase-deep">DELIVERY</div>
+        <h3 data-en="&#128202; Dashboard Delivery" data-ar="&#128202; تسليم اللوحة"></h3>
+        <p data-en="Delivering interactive dashboards and walkthrough for the team." data-ar="تسليم لوحات تفاعلية وشرح كامل للفريق."></p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot" style="background:var(--accent-light);"></div>
+      <div class="timeline-content">
+        <div class="timeline-phase phase-deep">DELIVERY</div>
+        <h3 data-en="&#128737; Ongoing Support" data-ar="&#128737; الدعم المستمر"></h3>
+        <p data-en="Post-delivery support, updates and optional retainer for continuous improvements." data-ar="دعم بعد التسليم وتحديثات وعقد مستمر للتحسينات المستمرة."></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background:var(--card2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="section-header">
+    <h2>FAQ <span style="color:var(--accent-light)" data-en="— Common Questions" data-ar="— أسئلة شائعة"></span></h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span data-en="What types of data do you work with?" data-ar="ما هي أنواع البيانات اللي تتعامل معها؟"></span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p data-en="I work with all types — Excel and CSV files, SQL databases, REST APIs, web scraping data, and streaming data. If you have data somewhere, I can analyze it." data-ar="أتعامل مع كل الأنواع — ملفات Excel وCSV وقواعد بيانات SQL وAPIs وبيانات web scraping. إذا عندك بيانات في أي مكان، أقدر أحللها."></p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span data-en="How can I benefit from Power BI?" data-ar="شلون أستفيد من Power BI؟"></span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p data-en="I build interactive Power BI dashboards that connect directly to your data sources — giving you real-time insights and helping you make faster, data-driven decisions." data-ar="أبني لوحات Power BI تفاعلية تتصل مباشرة بمصادر بياناتك — تعطيك رؤى لحظية وتساعدك تاخذ قرارات أسرع قائمة على البيانات."></p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span data-en="Can you integrate AI into my existing system?" data-ar="تقدر تربط AI بنظامي؟"></span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p data-en="Yes. I can integrate LLMs (GPT, Claude) and automation tools with your existing systems — from simple chatbots to fully automated data pipelines with AI decision-making." data-ar="أي، أقدر أدمج LLMs (GPT، Claude) وأدوات الأتمتة مع أنظمتكم الموجودة — من chatbots بسيطة إلى خطوط بيانات آلية بالكامل بقرارات AI."></p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span data-en="How long does a project take?" data-ar="چم يأخذ المشروع؟"></span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p data-en="It depends on scope. A simple dashboard takes 3-7 days. A full data pipeline with automation and AI integration typically takes 2-6 weeks." data-ar="يعتمد على الحجم. لوحة بسيطة تأخذ 3-7 أيام. خط بيانات كامل مع أتمتة ودمج AI يأخذ عادة 2-6 أسابيع."></p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span data-en="Is the service available remotely?" data-ar="الخدمة متاحة عن بعد؟"></span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p data-en="Yes, fully remote. I work online with clients across Iraq and the region. All deliveries, meetings and support are handled digitally." data-ar="أي، بالكامل عن بعد. أشتغل أونلاين مع عملاء من جميع أنحاء العراق والمنطقة. كل التسليمات والاجتماعات والدعم تتم رقمياً."></p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span data-en="How do I get a quote?" data-ar="شلون أحصل على عرض سعر؟"></span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p data-en="Send a WhatsApp message or fill the contact form. I'll respond within 48 hours with a tailored proposal based on your data needs." data-ar="راسلنا على واتساب أو اكمل الفورم. نرد خلال 48 ساعة بعرض مخصص بناءً على احتياجات بياناتك."></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews">
+  <div class="section-header">
+    <h2><span data-en="What Clients" data-ar="شنو يقولون"></span> <span style="color:var(--accent-light)" data-en="Say" data-ar="العملاء"></span></h2>
+  </div>
+  <div class="reviews-grid" id="reviewsGrid">
+    <div class="review-card">
+      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-text">ربط البيانات مع Power BI غير طريقة عملنا كلياً. شكراً محمد!</p>
+      <div class="review-author">— مدير مشروع</div>
+    </div>
+  </div>
+  <div class="review-form-wrapper">
+    <h3 data-en="Leave a Review" data-ar="اترك تقييماً"></h3>
+    <div class="star-rating" id="starRating">
+      <button class="star-btn active" data-val="1" onclick="setRating(1)">&#9733;</button>
+      <button class="star-btn active" data-val="2" onclick="setRating(2)">&#9733;</button>
+      <button class="star-btn active" data-val="3" onclick="setRating(3)">&#9733;</button>
+      <button class="star-btn active" data-val="4" onclick="setRating(4)">&#9733;</button>
+      <button class="star-btn active" data-val="5" onclick="setRating(5)">&#9733;</button>
+    </div>
+    <form id="reviewForm" onsubmit="submitReview(event)">
+      <div class="form-group">
+        <label data-en="Your Name" data-ar="اسمك"></label>
+        <input type="text" id="reviewName" required />
+      </div>
+      <div class="form-group">
+        <label data-en="Your Review" data-ar="تقييمك"></label>
+        <textarea id="reviewText" required></textarea>
+      </div>
+      <button type="submit" class="btn-submit" data-en="Submit Review" data-ar="إرسال التقييم">Submit Review</button>
+    </form>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" style="background:var(--card2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="section-header">
+    <h2><span data-en="Get in" data-ar="تواصل"></span> <span style="color:var(--accent-light)" data-en="Touch" data-ar="معي"></span></h2>
+    <p class="section-subtitle" data-en="Have a data challenge? Let's solve it together." data-ar="عندك تحدي بيانات؟ نحله سوياً."></p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-form-card">
+      <h3 data-en="Send a Message" data-ar="أرسل رسالة"></h3>
+      <form onsubmit="submitForm(event)">
+        <div class="form-group">
+          <label data-en="Full Name" data-ar="الاسم الكامل"></label>
+          <input type="text" name="name" required />
+        </div>
+        <div class="form-group">
+          <label data-en="Company / Organization" data-ar="الشركة / المنظمة"></label>
+          <input type="text" name="company" />
+        </div>
+        <div class="form-group">
+          <label data-en="Project Type" data-ar="نوع المشروع"></label>
+          <select name="project_type">
+            <option>Data Analysis</option>
+            <option>Power BI Dashboard</option>
+            <option>Process Automation</option>
+            <option>AI / LLM Integration</option>
+            <option>Data Engineering</option>
+            <option>Python Development</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label data-en="Message" data-ar="الرسالة"></label>
+          <textarea name="message" placeholder="Describe your data challenge..."></textarea>
+        </div>
+        <input type="hidden" name="page" value="mohammed-sakran-profile" />
+        <button type="submit" class="btn-submit" data-en="Send Message" data-ar="إرسال الرسالة">Send Message</button>
+      </form>
+    </div>
+    <div class="contact-info-card">
+      <h3 data-en="Contact Info" data-ar="معلومات التواصل"></h3>
+      <a href="https://wa.me/9647727080528" target="_blank" rel="noopener noreferrer" class="contact-link">
+        <span class="contact-link-icon">&#128172;</span>
+        <div class="contact-link-info">
+          <h4>WhatsApp</h4>
+          <p>+964 772 708 0528</p>
+        </div>
+      </a>
+      <a href="mailto:yousifabdulkareem4business@gmail.com" class="contact-link">
+        <span class="contact-link-icon">&#128231;</span>
+        <div class="contact-link-info">
+          <h4>Email</h4>
+          <p>yousifabdulkareem4business@gmail.com</p>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/in/yousif-abdulkareem-al-sara-4220b1189" target="_blank" rel="noopener noreferrer" class="contact-link">
+        <span class="contact-link-icon">&#128279;</span>
+        <div class="contact-link-info">
+          <h4>LinkedIn</h4>
+          <p>Rawafid Agency</p>
+        </div>
+      </a>
+      <a href="https://calendly.com/yousifabdulkareem4business" target="_blank" rel="noopener noreferrer" class="contact-link">
+        <span class="contact-link-icon">&#128197;</span>
+        <div class="contact-link-info">
+          <h4 data-en="Book a Call" data-ar="احجز مكالمة"></h4>
+          <p data-en="Free 30-min data consultation" data-ar="استشارة بيانات مجانية 30 دقيقة"></p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <p class="footer-brand">Raw<span>afid</span> | روافد</p>
+    <p class="footer-copy">&#169; 2026 وكالة روافد — بغداد، العراق. جميع الحقوق محفوظة.</p>
+    <div class="footer-social">
+      <a href="https://wa.me/9647727080528" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a href="https://www.linkedin.com/in/yousif-abdulkareem-al-sara-4220b1189" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="mailto:yousifabdulkareem4business@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating -->
+<a href="https://wa.me/9647727080528" id="whatsapp-btn" target="_blank" rel="noopener noreferrer" title="WhatsApp">&#128172;</a>
+<button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">&#8679;</button>
+<a href="https://calendly.com/yousifabdulkareem4business" id="book-call-pill" target="_blank" rel="noopener noreferrer">&#128197; Book a Call</a>
+
+<!-- Chatbot -->
+<button id="chatbot-btn" onclick="toggleChatbot()" title="Chat">&#129302;</button>
+<div id="chatbot-window">
+  <div class="chatbot-header">
+    <h4>Data Assistant &#129302;</h4>
+    <button class="chatbot-close" onclick="toggleChatbot()">&#215;</button>
+  </div>
+  <div class="chatbot-messages" id="chatMessages">
+    <div class="chat-msg bot">هلا! &#128075; أنا مساعد محمد لتحليل البيانات والذكاء الاصطناعي. شنو تحتاج؟</div>
+  </div>
+  <div class="chatbot-input-row">
+    <input type="text" id="chatInput" placeholder="اكتب سؤالك..." onkeypress="if(event.key==='Enter')sendChat()" />
+    <button class="chatbot-send" onclick="sendChat()">&#128172;</button>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+  // Language
+  let currentLang = localStorage.getItem('rawafid-lang') || 'en';
+
+  function toggleLang() {
+    currentLang = currentLang === 'en' ? 'ar' : 'en';
+    localStorage.setItem('rawafid-lang', currentLang);
+    applyLang();
+  }
+
+  function applyLang() {
+    const isAR = currentLang === 'ar';
+    document.documentElement.lang = isAR ? 'ar' : 'en';
+    document.documentElement.dir = isAR ? 'rtl' : 'ltr';
+    document.getElementById('langBtn').textContent = isAR ? 'EN' : 'AR';
+    document.querySelectorAll('[data-en]').forEach(el => {
+      el.textContent = isAR ? (el.dataset.ar || el.dataset.en) : el.dataset.en;
+    });
+  }
+
+  applyLang();
+
+  // Progress Bar + Scroll Top
+  window.addEventListener('scroll', () => {
+    const total = document.body.scrollHeight - window.innerHeight;
+    const pct = total > 0 ? (window.scrollY / total) * 100 : 0;
+    document.getElementById('progress-bar').style.width = pct + '%';
+    const st = document.getElementById('scroll-top');
+    if (window.scrollY > 300) st.classList.add('visible');
+    else st.classList.remove('visible');
+  });
+
+  // Count Up
+  const counters = document.querySelectorAll('.stat-number[data-target]');
+  let counted = false;
+  const statsEl = document.querySelector('.stats-row');
+  if (statsEl) {
+    const obs = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting && !counted) {
+        counted = true;
+        counters.forEach(counter => {
+          const target = parseInt(counter.dataset.target);
+          const suffix = counter.dataset.suffix || '';
+          let cur = 0;
+          const inc = Math.max(1, Math.ceil(target / 60));
+          const timer = setInterval(() => {
+            cur += inc;
+            if (cur >= target) { cur = target; clearInterval(timer); }
+            counter.textContent = cur + suffix;
+          }, 25);
+        });
+      }
+    });
+    obs.observe(statsEl);
+  }
+
+  // Card animations
+  const cardObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.service-card, .review-card, .tool-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    cardObs.observe(el);
+  });
+
+  // FAQ
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  }
+
+  // Star rating
+  let selectedRating = 5;
+
+  function setRating(val) {
+    selectedRating = val;
+    document.querySelectorAll('#starRating .star-btn').forEach((btn, i) => {
+      btn.classList.toggle('active', i < val);
+    });
+  }
+
+  // Load stored reviews
+  function loadStoredReviews() {
+    try {
+      const stored = JSON.parse(localStorage.getItem('sakran_reviews') || '[]');
+      const grid = document.getElementById('reviewsGrid');
+      stored.forEach(r => {
+        const card = document.createElement('div');
+        card.className = 'review-card';
+        card.innerHTML = '<div class="review-stars">' + '&#9733;'.repeat(r.rating) + '&#9734;'.repeat(5 - r.rating) + '</div>' +
+          '<p class="review-text">' + r.text.replace(/</g,'&lt;') + '</p>' +
+          '<div class="review-author">— ' + r.name.replace(/</g,'&lt;') + '</div>';
+        grid.appendChild(card);
+      });
+    } catch(e) {}
+  }
+
+  loadStoredReviews();
+
+  function submitReview(e) {
+    e.preventDefault();
+    const name = document.getElementById('reviewName').value.trim();
+    const text = document.getElementById('reviewText').value.trim();
+    if (!name || !text) return;
+    const review = { name, text, rating: selectedRating };
+    try {
+      const stored = JSON.parse(localStorage.getItem('sakran_reviews') || '[]');
+      stored.push(review);
+      localStorage.setItem('sakran_reviews', JSON.stringify(stored));
+    } catch(e) {}
+    const card = document.createElement('div');
+    card.className = 'review-card';
+    card.innerHTML = '<div class="review-stars">' + '&#9733;'.repeat(selectedRating) + '&#9734;'.repeat(5 - selectedRating) + '</div>' +
+      '<p class="review-text">' + text.replace(/</g,'&lt;') + '</p>' +
+      '<div class="review-author">— ' + name.replace(/</g,'&lt;') + '</div>';
+    document.getElementById('reviewsGrid').appendChild(card);
+    e.target.reset();
+    setRating(5);
+    showToast('تم إضافة تقييمك! شكراً ✅');
+  }
+
+  // Contact form
+  async function submitForm(e) {
+    e.preventDefault();
+    const form = e.target;
+    const data = new FormData(form);
+    try {
+      await fetch('https://script.google.com/macros/s/AKfycbxe9weLT738oHP10plWn7whJZamnR2Yzdi8SvlPCt7SJyNgUmOdvq3Xqo5MnwVi97mhoQ/exec', {
+        method: 'POST', mode: 'no-cors', body: data
+      });
+      showToast('تم الإرسال بنجاح! ✅');
+      form.reset();
+    } catch(err) {
+      showToast('حدث خطأ، حاول مرة أخرى');
+    }
+  }
+
+  // Toast
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3500);
+  }
+
+  // Chatbot
+  const responses = {
+    'بيانات|data|تحليل': 'أحلل أي نوع بيانات — Excel، SQL، APIs. نبني لوحات تحليل تساعدك تاخذ قرارات أسرع 📊',
+    'ai|ذكاء|اصطناعي|أتمتة': 'أدمج الذكاء الاصطناعي وLLMs مع أنظمتكم. نقدر نأتمت عمليات تاخذ ساعات حتى تصير بثواني 🤖',
+    'power bi|dashboard|لوحة': 'أبني لوحات Power BI تفاعلية تخليك تشوف بياناتك بوضوح كامل 📈',
+    'python|sql|كود': 'أكتب Python وSQL لاستخراج البيانات وتنظيفها وتحليلها 🐍',
+    'سعر|تكلفة': 'الأسعار تعتمد على المشروع. راسلنا على واتساب وأعطيك عرض مجاني 💬',
+    'default': 'مو واضح سؤالك 😅 — اكتب بشكل مختلف أو راسلنا مباشرة!'
+  };
+
+  function getBotReply(msg) {
+    const lower = msg.toLowerCase();
+    for (const [keys, reply] of Object.entries(responses)) {
+      if (keys === 'default') continue;
+      if (keys.split('|').some(k => lower.includes(k))) return reply;
+    }
+    return responses['default'];
+  }
+
+  function sendChat() {
+    const input = document.getElementById('chatInput');
+    const msg = input.value.trim();
+    if (!msg) return;
+    const msgs = document.getElementById('chatMessages');
+    msgs.innerHTML += '<div class="chat-msg user">' + msg.replace(/</g,'&lt;') + '</div>';
+    input.value = '';
+    msgs.scrollTop = msgs.scrollHeight;
+    setTimeout(() => {
+      msgs.innerHTML += '<div class="chat-msg bot">' + getBotReply(msg) + '</div>';
+      msgs.scrollTop = msgs.scrollHeight;
+    }, 650);
+  }
+
+  let chatOpen = false;
+  function toggleChatbot() {
+    chatOpen = !chatOpen;
+    document.getElementById('chatbot-window').classList.toggle('open', chatOpen);
+  }
+</script>
+</body>
+</html>

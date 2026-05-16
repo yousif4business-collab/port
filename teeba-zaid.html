@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Teeba Zaid — HR &amp; Admin Specialist | Rawafid</title>
+<meta name="description" content="HR and Admin Specialist at Rawafid Agency Baghdad. Recruitment, payroll, employee training and HR consulting."/>
+<meta name="robots" content="index, follow"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('../sw.js')})}</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{--bg:#0a0e17;--bg-card:#111827;--bg-card2:#0f1623;--border:#1e2d40;--accent:#0d9488;--blue:#0066ff;--text:#e2e8f0;--text-muted:#8892a4;--radius:12px;--trans:.3s ease}
+html{scroll-behavior:smooth;overflow-x:hidden;-webkit-text-size-adjust:100%;scrollbar-color:var(--accent) var(--bg);scrollbar-width:thin}
+html::-webkit-scrollbar{width:6px}html::-webkit-scrollbar-track{background:var(--bg)}html::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
+body{font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+[dir="rtl"] body{font-family:'Cairo',sans-serif}
+a{color:inherit;text-decoration:none}
+#progressBar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--blue),var(--accent));z-index:1100;pointer-events:none;transition:width .1s}
+nav{position:fixed;top:3px;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:64px;background:rgba(10,14,23,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-back{display:flex;align-items:center;gap:.4rem;color:var(--accent);font-size:.85rem;font-weight:600;transition:opacity var(--trans)}
+.nav-back:hover{opacity:.7}
+.nav-logo{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:800}
+.nav-logo em{color:var(--accent);font-style:normal}
+.nav-logo small{font-family:'Cairo',sans-serif;color:var(--accent);font-size:.7rem;display:block;text-align:right}
+.nav-right{display:flex;align-items:center;gap:.75rem}
+.lang-btn{background:rgba(13,148,136,.08);border:1px solid rgba(13,148,136,.3);color:var(--accent);padding:.3rem .85rem;border-radius:20px;font-size:.8rem;font-weight:700;cursor:pointer;min-height:36px;font-family:inherit;transition:background var(--trans)}
+.lang-btn:hover{background:rgba(13,148,136,.2)}
+.hamburger{display:none;background:none;border:1px solid var(--border);color:var(--text);padding:.3rem .7rem;border-radius:6px;font-size:1.1rem;cursor:pointer;min-height:36px;min-width:36px}
+.mobile-menu{display:none;position:fixed;top:67px;left:0;right:0;background:var(--bg-card);border-bottom:1px solid var(--border);z-index:999;padding:1rem 5%;flex-direction:column;gap:.5rem}
+.mobile-menu.open{display:flex}
+.mobile-menu a{color:var(--text-muted);padding:.6rem 0;font-size:.95rem;border-bottom:1px solid var(--border)}
+#hero{min-height:100vh;display:flex;align-items:center;padding:5rem 5% 4rem;position:relative;overflow:hidden}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none}
+.hero-orb-1{width:600px;height:600px;background:radial-gradient(circle,rgba(13,148,136,.12),transparent 70%);top:-100px;left:-100px}
+.hero-orb-2{width:400px;height:400px;background:radial-gradient(circle,rgba(0,102,255,.08),transparent 70%);bottom:-80px;right:-80px}
+.hero-grid{position:relative;z-index:1;width:100%;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.38rem .9rem;border-radius:50px;background:rgba(13,148,136,.1);border:1px solid rgba(13,148,136,.3);color:var(--accent);font-size:.8rem;font-weight:600;margin-bottom:1.5rem}
+.badge-dot{width:7px;height:7px;border-radius:50%;background:#10b981;animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.5)}}
+.hero-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;line-height:1.15;margin-bottom:1.2rem}
+[dir="rtl"] .hero-title{font-family:'Cairo',sans-serif}
+.hero-title .grad{background:linear-gradient(90deg,#0d9488,#14b8a6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:.97rem;color:var(--text-muted);max-width:520px;margin-bottom:2rem;line-height:1.75}
+.hero-btns{display:flex;gap:.9rem;flex-wrap:wrap}
+.btn-primary{background:linear-gradient(135deg,#0d9488,#14b8a6);color:#fff;padding:.75rem 1.6rem;border-radius:8px;font-size:.9rem;font-weight:700;min-height:44px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:.4rem;transition:opacity var(--trans),transform var(--trans);font-family:inherit}
+.btn-primary:hover{opacity:.85;transform:translateY(-2px)}
+.btn-secondary{background:transparent;border:1px solid var(--border);color:var(--text);padding:.75rem 1.6rem;border-radius:8px;font-size:.9rem;font-weight:600;min-height:44px;display:inline-flex;align-items:center;gap:.4rem;transition:border-color var(--trans),color var(--trans),transform var(--trans);font-family:inherit}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.hero-right{display:flex;justify-content:center;align-items:center;position:relative}
+.profile-card{background:var(--bg-card);border:1px solid rgba(13,148,136,.3);border-radius:20px;padding:2rem;box-shadow:0 0 50px rgba(13,148,136,.12);width:300px;max-width:100%;text-align:center;position:relative;z-index:1}
+.pc-avatar{width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,#0d9488,#14b8a6);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:1.8rem;font-weight:800;color:#fff;margin:0 auto 1rem;box-shadow:0 0 30px rgba(13,148,136,.35)}
+.pc-name{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:800;margin-bottom:.1rem}
+.pc-name-ar{font-family:'Cairo',sans-serif;font-size:.82rem;color:var(--accent);margin-bottom:.3rem}
+.pc-title{font-size:.82rem;color:var(--accent);margin-bottom:.5rem}
+.pc-loc{font-size:.78rem;color:var(--text-muted);margin-bottom:1.2rem}
+.pc-tags{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center}
+.pc-tag{padding:.25rem .65rem;border-radius:20px;font-size:.73rem;font-weight:500;background:rgba(13,148,136,.08);border:1px solid rgba(13,148,136,.22);color:var(--accent)}
+.float-badge{position:absolute;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:.5rem .9rem;font-size:.78rem;font-weight:600;white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.fb1{top:-10px;right:-30px;animation:float 3.5s ease-in-out infinite}
+.fb2{bottom:-10px;left:-30px;animation:float 3.5s ease-in-out infinite 1.5s}
+[dir="rtl"] .fb1{right:auto;left:-30px}
+[dir="rtl"] .fb2{left:auto;right:-30px}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+#stats{background:var(--bg-card2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:2rem 5%}
+.stats-row{display:flex;justify-content:space-around;flex-wrap:wrap;gap:1rem;max-width:1200px;margin:0 auto;text-align:center}
+.stat-num{font-family:'Space Grotesk',sans-serif;font-size:2.2rem;font-weight:800;color:var(--accent);display:block;line-height:1}
+.stat-label{font-size:.78rem;color:var(--text-muted);display:block;margin-top:.3rem}
+.section{padding:5rem 5%}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;margin-bottom:.4rem}
+[dir="rtl"] .section-title{font-family:'Cairo',sans-serif}
+.section-sub{color:var(--text-muted);font-size:.9rem;margin-bottom:2.5rem}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.2rem}
+.svc-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.4rem;transition:border-color var(--trans),transform var(--trans)}
+.svc-card:hover{border-color:var(--accent);transform:translateY(-4px)}
+.svc-icon{font-size:1.8rem;margin-bottom:.8rem;display:block}
+.svc-title{font-weight:700;font-size:.95rem;margin-bottom:.3rem}
+[dir="rtl"] .svc-title{font-family:'Cairo',sans-serif}
+.svc-title-ar{font-family:'Cairo',sans-serif;font-size:.8rem;color:var(--accent);margin-bottom:.4rem}
+.svc-desc{font-size:.83rem;color:var(--text-muted)}
+.tools-grid{display:flex;flex-wrap:wrap;gap:.8rem}
+.tool-badge{display:inline-flex;align-items:center;gap:.4rem;padding:.45rem 1rem;border-radius:8px;background:var(--bg-card);border:1px solid var(--border);font-size:.83rem;font-weight:600;transition:border-color var(--trans)}
+.tool-badge:hover{border-color:var(--accent);color:var(--accent)}
+.process-wrap{max-width:700px;margin:0 auto}
+.phase-label{display:inline-block;padding:.3rem .85rem;border-radius:20px;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:1.5rem;margin-left:2.5rem}
+[dir="rtl"] .phase-label{margin-left:0;margin-right:2.5rem}
+.phase-green{background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.3);color:#10b981}
+.phase-cyan{background:rgba(13,148,136,.12);border:1px solid rgba(13,148,136,.3);color:var(--accent)}
+.phase-purple{background:rgba(124,58,237,.12);border:1px solid rgba(124,58,237,.3);color:#7c3aed}
+.process-step{display:flex;gap:1.2rem;margin-bottom:1.8rem;align-items:flex-start;position:relative}
+[dir="rtl"] .process-step{flex-direction:row-reverse}
+.step-node{width:42px;height:42px;border-radius:50%;background:var(--bg-card);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;z-index:1}
+.step-connector{position:absolute;left:21px;top:42px;bottom:-1.8rem;width:2px;background:var(--border)}
+[dir="rtl"] .step-connector{left:auto;right:21px}
+.process-step:last-child .step-connector{display:none}
+.step-body{padding-top:.3rem}
+.step-tag{font-size:.7rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.5px;margin-bottom:.15rem}
+.step-title{font-family:'Space Grotesk',sans-serif;font-size:.93rem;font-weight:700;margin-bottom:.2rem}
+[dir="rtl"] .step-title{font-family:'Cairo',sans-serif}
+.step-desc{font-family:'Cairo',sans-serif;font-size:.85rem;color:var(--text-muted)}
+.faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:.5rem}
+.faq-item{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:border-color var(--trans)}
+.faq-item.open{border-color:rgba(13,148,136,.35)}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.2rem;cursor:pointer;gap:.8rem;font-family:'Cairo',sans-serif;font-size:.92rem;font-weight:600;user-select:none}
+.faq-q:hover{color:var(--accent)}
+.faq-icon{flex-shrink:0;color:var(--accent);font-size:1.1rem;transition:transform .3s}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-a{font-family:'Cairo',sans-serif;font-size:.86rem;color:var(--text-muted);line-height:1.8;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s}
+.faq-item.open .faq-a{max-height:200px;padding:0 1.2rem 1rem}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin-bottom:2rem}
+.review-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.4rem}
+.review-stars{color:#f59e0b;font-size:1rem;margin-bottom:.5rem}
+.review-text{font-family:'Cairo',sans-serif;font-size:.87rem;color:var(--text-muted);margin-bottom:.7rem;line-height:1.7;font-style:italic}
+.review-author{font-size:.8rem;font-weight:700;color:var(--accent)}
+.review-form{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;max-width:500px}
+.form-group{margin-bottom:1rem}
+.form-group label{display:block;font-size:.78rem;font-weight:600;color:var(--text-muted);margin-bottom:.35rem;text-transform:uppercase;letter-spacing:.4px}
+.form-group input,.form-group textarea{width:100%;background:var(--bg-card2);border:1px solid var(--border);border-radius:8px;padding:.65rem .9rem;color:var(--text);font-size:.88rem;font-family:inherit;outline:none;transition:border-color var(--trans)}
+.form-group input:focus,.form-group textarea:focus{border-color:var(--accent)}
+.form-group textarea{resize:vertical;min-height:80px}
+.star-select{display:flex;gap:.3rem;margin-bottom:1rem}
+.star-select span{font-size:1.4rem;cursor:pointer;opacity:.4;transition:opacity var(--trans)}
+.star-select span.active{opacity:1}
+.contact-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:2rem;align-items:start}
+.contact-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.3rem;display:flex;align-items:flex-start;gap:.8rem;margin-bottom:.7rem;transition:border-color var(--trans)}
+.contact-card:hover{border-color:rgba(13,148,136,.3)}
+.cc-icon{font-size:1.2rem}
+.cc-label{font-size:.73rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.4px;margin-bottom:.15rem}
+.cc-val{font-size:.88rem;font-weight:600}
+footer{background:#07090f;border-top:1px solid var(--border);padding:2rem 5%;text-align:center}
+.footer-brand{font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:800;margin-bottom:.4rem}
+.footer-brand span,.footer-brand-ar{color:var(--accent)}
+.footer-brand-ar{font-family:'Cairo',sans-serif;font-size:.88rem}
+.footer-copy{color:var(--text-muted);font-size:.82rem;margin-bottom:1rem;font-family:'Cairo',sans-serif}
+.footer-social{display:flex;justify-content:center;gap:.8rem;flex-wrap:wrap}
+.fsoc{color:var(--text-muted);font-size:.82rem;padding:.4rem .7rem;border:1px solid var(--border);border-radius:6px;transition:all var(--trans)}
+.fsoc:hover{color:var(--accent);border-color:var(--accent)}
+.wa-float{position:fixed;bottom:24px;right:24px;width:56px;height:56px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;z-index:900;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform var(--trans)}
+.wa-float:hover{transform:scale(1.1)}
+[dir="rtl"] .wa-float{right:auto;left:24px}
+#scrollTop{position:fixed;bottom:90px;right:24px;width:44px;height:44px;background:var(--bg-card);border:1px solid rgba(13,148,136,.4);border-radius:50%;display:none;align-items:center;justify-content:center;color:var(--accent);font-size:1rem;cursor:pointer;z-index:900}
+[dir="rtl"] #scrollTop{right:auto;left:24px}
+.book-pill{position:fixed;right:-52px;top:50%;transform:translateY(-50%) rotate(-90deg);background:linear-gradient(90deg,#0d9488,#14b8a6);color:#fff;padding:.5rem 1rem;border-radius:0 0 8px 8px;font-size:.76rem;font-weight:700;z-index:900;transition:right var(--trans)}
+.book-pill:hover{right:-42px}
+[dir="rtl"] .book-pill{right:auto;left:-52px;transform:translateY(-50%) rotate(90deg)}
+.toast{position:fixed;bottom:160px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;padding:.55rem 1.3rem;border-radius:8px;font-weight:700;z-index:9999;font-size:.86rem;pointer-events:none;transition:opacity .3s}
+.chatbot-wrap{position:fixed;bottom:24px;left:24px;z-index:900}
+.chat-toggle{width:50px;height:50px;border-radius:50%;background:var(--bg-card);border:2px solid rgba(13,148,136,.4);display:flex;align-items:center;justify-content:center;font-size:1.3rem;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.4)}
+.chat-window{position:absolute;bottom:60px;left:0;width:300px;background:var(--bg-card);border:1px solid var(--border);border-radius:14px;box-shadow:0 12px 40px rgba(0,0,0,.5);display:none;flex-direction:column;overflow:hidden;max-height:400px}
+.chat-window.open{display:flex}
+.chat-header{background:linear-gradient(135deg,#0d9488,#14b8a6);padding:.8rem 1rem;display:flex;justify-content:space-between;align-items:center}
+.chat-header-title{font-family:'Cairo',sans-serif;font-size:.88rem;font-weight:700;color:#fff}
+.chat-close{background:none;border:none;color:#fff;font-size:1.2rem;cursor:pointer}
+.chat-messages{flex:1;overflow-y:auto;padding:.7rem;display:flex;flex-direction:column;gap:.4rem;min-height:160px;max-height:240px}
+.chat-msg{max-width:83%;padding:.5rem .8rem;border-radius:10px;font-family:'Cairo',sans-serif;font-size:.82rem;line-height:1.6;word-wrap:break-word}
+.chat-msg.bot{background:rgba(13,148,136,.08);border:1px solid rgba(13,148,136,.15);color:var(--text);align-self:flex-start;border-radius:2px 10px 10px 10px}
+.chat-msg.user{background:linear-gradient(135deg,#0d9488,#14b8a6);color:#fff;align-self:flex-end;border-radius:10px 10px 2px 10px}
+.chat-typing{display:flex;gap:4px;padding:.5rem .8rem;background:rgba(13,148,136,.08);border:1px solid rgba(13,148,136,.15);border-radius:2px 10px 10px 10px;width:fit-content}
+.chat-typing span{width:5px;height:5px;border-radius:50%;background:var(--accent);animation:typing .8s infinite}
+.chat-typing span:nth-child(2){animation-delay:.15s}
+.chat-typing span:nth-child(3){animation-delay:.3s}
+@keyframes typing{0%,80%,100%{transform:scale(1);opacity:.5}40%{transform:scale(1.3);opacity:1}}
+.chat-input-row{display:flex;gap:.4rem;padding:.6rem;border-top:1px solid var(--border)}
+.chat-input{flex:1;background:var(--bg-card2);border:1px solid var(--border);border-radius:7px;padding:.45rem .75rem;color:var(--text);font-family:'Cairo',sans-serif;font-size:.82rem;outline:none}
+.chat-input:focus{border-color:rgba(13,148,136,.4)}
+.chat-send{background:linear-gradient(135deg,#0d9488,#14b8a6);border:none;border-radius:7px;width:32px;height:32px;color:#fff;cursor:pointer;font-size:.88rem;display:flex;align-items:center;justify-content:center}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;text-align:center}.hero-right{display:none}.hero-badge{margin:0 auto 1.5rem}.hero-sub{margin:0 auto 2rem}.hero-btns{justify-content:center}.contact-grid{grid-template-columns:1fr}.nav-links{display:none}.hamburger{display:flex;align-items:center;justify-content:center}}
+@media(max-width:600px){.section{padding:3.5rem 5%}.book-pill{display:none}}
+</style>
+</head>
+<body>
+<div id="progressBar"></div>
+<nav>
+  <a href="../index.html" class="nav-back">← <span data-en="Back to Rawafid" data-ar="العودة لروافد">Back to Rawafid</span></a>
+  <a href="../index.html" class="nav-logo"><span>Raw<em>afid</em></span><small>روافد</small></a>
+  <div class="nav-right">
+    <button class="lang-btn" id="langBtn" onclick="toggleLang()">AR</button>
+    <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">☰</button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html#services" data-en="Services" data-ar="الخدمات">Services</a>
+  <a href="../index.html#team" data-en="Team" data-ar="الفريق">Team</a>
+  <a href="../index.html#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a>
+</div>
+
+<section id="hero">
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-grid">
+    <div>
+      <div class="hero-badge"><span class="badge-dot"></span><span data-en="● HR &amp; Admin Specialist" data-ar="● متخصصة موارد بشرية وإدارة">● HR &amp; Admin Specialist</span></div>
+      <h1 class="hero-title" data-en="Building Teams That Achieve Success" data-ar="نبني فرق تحقق النجاح">Building Teams <span class="grad">That Achieve Success</span></h1>
+      <p class="hero-sub" data-en="HR &amp; Admin Specialist from Baghdad. Expert in talent acquisition, employee development, payroll management and organizational effectiveness. Building the human foundation for business success." data-ar="متخصصة موارد بشرية وإدارة من بغداد. خبيرة في استقطاب المواهب، تطوير الموظفين، إدارة الرواتب والفعالية التنظيمية. أبني الأساس البشري لنجاح الأعمال.">HR &amp; Admin Specialist from Baghdad. Expert in talent acquisition, employee development, payroll management and organizational effectiveness. Building the human foundation for business success.</p>
+      <div class="hero-btns">
+        <a href="https://calendly.com/yousifabdulkareem4business" target="_blank" rel="noopener noreferrer" class="btn-primary">📅 <span data-en="Book Free Call" data-ar="احجز مكالمة مجانية">Book Free Call</span></a>
+        <a href="https://wa.me/9647727080528" target="_blank" rel="noopener noreferrer" class="btn-secondary">💬 <span data-en="WhatsApp Me" data-ar="راسلني واتساب">WhatsApp Me</span></a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="float-badge fb1">👥 50+ Hires Made</div>
+      <div class="float-badge fb2">🏢 20+ Companies</div>
+      <div class="profile-card">
+        <div class="pc-avatar">TZ</div>
+        <div class="pc-name">Teeba Zaid</div>
+        <div class="pc-name-ar">طيبة زيد</div>
+        <div class="pc-title" data-en="HR &amp; Admin Specialist" data-ar="متخصصة موارد بشرية وإدارة">HR &amp; Admin Specialist</div>
+        <div class="pc-loc">📍 Baghdad, Iraq | Rawafid Agency</div>
+        <div class="pc-tags">
+          <span class="pc-tag">Recruitment</span><span class="pc-tag">Payroll</span><span class="pc-tag">Training</span><span class="pc-tag">HR Consulting</span><span class="pc-tag">Performance</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="stats">
+  <div class="stats-row">
+    <div><span class="stat-num" data-count="50" data-suffix="+">0+</span><span class="stat-label" data-en="Hires Made" data-ar="توظيف منجز">Hires Made</span></div>
+    <div><span class="stat-num" data-count="20" data-suffix="+">0+</span><span class="stat-label" data-en="Companies Served" data-ar="شركة خدمتها">Companies Served</span></div>
+    <div><span class="stat-num" data-count="4" data-suffix="+">0+</span><span class="stat-label" data-en="Years Experience" data-ar="سنة خبرة">Years Experience</span></div>
+    <div><span class="stat-num" data-count="95" data-suffix="%">0%</span><span class="stat-label" data-en="Retention Rate" data-ar="معدل الاحتفاظ">Retention Rate</span></div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+    <h2 class="section-title" data-en="What I Do" data-ar="شنو أسوي">What I Do</h2>
+    <p class="section-sub" data-en="Complete HR and admin solutions for growing businesses" data-ar="حلول موارد بشرية وإدارة كاملة للأعمال المتنامية">Complete HR and admin solutions</p>
+    <div class="services-grid">
+      <div class="svc-card"><span class="svc-icon">👥</span><div class="svc-title" data-en="Recruitment &amp; Hiring" data-ar="التوظيف والاستقطاب">Recruitment &amp; Hiring</div><div class="svc-title-ar">التوظيف والاستقطاب</div><p class="svc-desc" data-en="End-to-end talent acquisition from job posting to onboarding." data-ar="استقطاب المواهب من إعلان الوظيفة حتى التوجيه.">End-to-end talent acquisition from posting to onboarding.</p></div>
+      <div class="svc-card"><span class="svc-icon">💼</span><div class="svc-title" data-en="Payroll Management" data-ar="إدارة الرواتب">Payroll Management</div><div class="svc-title-ar">إدارة الرواتب</div><p class="svc-desc" data-en="Accurate payroll processing including benefits and deductions." data-ar="كشوف رواتب دقيقة مع المزايا والاستقطاعات وكل التفاصيل.">Accurate payroll with benefits and deductions management.</p></div>
+      <div class="svc-card"><span class="svc-icon">🎓</span><div class="svc-title" data-en="Employee Training" data-ar="تدريب الموظفين">Employee Training</div><div class="svc-title-ar">تدريب الموظفين</div><p class="svc-desc" data-en="Customized training programs tailored to your team's needs." data-ar="برامج تدريبية مخصصة حسب احتياجات فريقك.">Customized training programs for your team's real needs.</p></div>
+      <div class="svc-card"><span class="svc-icon">📋</span><div class="svc-title" data-en="HR Consulting" data-ar="استشارات الموارد البشرية">HR Consulting</div><div class="svc-title-ar">استشارات الموارد البشرية</div><p class="svc-desc" data-en="Building HR systems and policies from scratch or optimizing existing ones." data-ar="بناء أنظمة وسياسات HR من الصفر أو تطوير الموجود.">Building or optimizing HR systems and policies.</p></div>
+      <div class="svc-card"><span class="svc-icon">📈</span><div class="svc-title" data-en="Performance Management" data-ar="إدارة الأداء">Performance Management</div><div class="svc-title-ar">إدارة الأداء</div><p class="svc-desc" data-en="KPI frameworks, performance reviews and improvement plans." data-ar="أطر KPI ومراجعات الأداء وخطط التحسين.">KPI frameworks, reviews and improvement plans.</p></div>
+      <div class="svc-card"><span class="svc-icon">🗂️</span><div class="svc-title" data-en="Admin Services" data-ar="الخدمات الإدارية">Admin Services</div><div class="svc-title-ar">الخدمات الإدارية</div><p class="svc-desc" data-en="Document management, scheduling, compliance and office administration." data-ar="إدارة الوثائق والجدولة والامتثال وإدارة المكتب.">Document management, scheduling, compliance.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--bg-card2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="section-inner">
+    <h2 class="section-title" data-en="Tools I Use" data-ar="الأدوات التي أستخدمها">Tools I Use</h2>
+    <p class="section-sub" data-en="Professional HR and admin tools" data-ar="أدوات موارد بشرية وإدارة احترافية">Professional HR management tools</p>
+    <div class="tools-grid">
+      <div class="tool-badge">🏢 SAP HR</div>
+      <div class="tool-badge">👥 Zoho People</div>
+      <div class="tool-badge">📊 Google Workspace</div>
+      <div class="tool-badge">📈 Excel / Sheets</div>
+      <div class="tool-badge">🔗 LinkedIn Recruiter</div>
+      <div class="tool-badge">💬 Slack</div>
+      <div class="tool-badge">📅 Notion</div>
+      <div class="tool-badge">📋 Trello</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <h2 class="section-title" data-en="How We Work Together" data-ar="كيف نشتغل سوا">How We Work Together</h2>
+    <p class="section-sub" data-en="Structured HR process from needs assessment to results" data-ar="عملية موارد بشرية منظمة من تقييم الاحتياجات للنتائج">Structured process from assessment to results</p>
+    <div class="process-wrap">
+      <div class="phase-label phase-green" data-en="PHASE 1 — DISCOVERY" data-ar="المرحلة 1 — الاستكشاف">PHASE 1 — DISCOVERY</div>
+      <div class="process-step"><div style="display:flex;flex-direction:column;align-items:center"><div class="step-node">📞</div><div class="step-connector"></div></div><div class="step-body"><div class="step-tag" data-en="Free" data-ar="مجاني">Free</div><div class="step-title" data-en="First Contact" data-ar="التواصل الأول">First Contact</div><p class="step-desc">تتواصل معنا عبر واتساب أو الفورم. نرد خلال 24 ساعة.</p></div></div>
+      <div class="process-step"><div style="display:flex;flex-direction:column;align-items:center"><div class="step-node">🤝</div><div class="step-connector"></div></div><div class="step-body"><div class="step-tag" data-en="Free" data-ar="مجاني">Free</div><div class="step-title" data-en="HR Needs Assessment" data-ar="تقييم احتياجات الموارد البشرية">HR Needs Assessment</div><p class="step-desc">نلتقي ونحچي شنو تحتاج بالضبط لفريقك وشركتك.</p></div></div>
+      <div class="process-step"><div style="display:flex;flex-direction:column;align-items:center"><div class="step-node">🔍</div><div class="step-connector"></div></div><div class="step-body"><div class="step-tag" data-en="Free" data-ar="مجاني">Free</div><div class="step-title" data-en="Current State Review" data-ar="مراجعة الوضع الحالي">Current State Review</div><p class="step-desc">نراجع الأنظمة الموجودة ونحدد فرص التطوير.</p></div></div>
+      <div class="phase-label phase-cyan" data-en="PHASE 2 — PLANNING" data-ar="المرحلة 2 — التخطيط">PHASE 2 — PLANNING</div>
+      <div class="process-step"><div style="display:flex;flex-direction:column;align-items:center"><div class="step-node">📋</div><div class="step-connector"></div></div><div class="step-body"><div class="step-tag" data-en="Client Approval" data-ar="موافقة العميل">Client Approval</div><div class="step-title" data-en="HR Strategy Design" data-ar="تصميم إستراتيجية الموارد البشرية">HR Strategy Design</div><p class="step-desc">سوا نبني إستراتيجية موارد بشرية مخصصة لشركتك.</p></div></div>
+      <div class="process-step"><div style="display:flex;flex-direction:column;align-items:center"><div class="step-node">💰</div><div class="step-connector"></div></div><div class="step-body"><div class="step-tag" data-en="Transparent" data-ar="شفاف">Transparent</div><div class="step-title" data-en="Pricing" data-ar="التسعير">Pricing</div><p class="step-desc">عرض سعر مفصل. ماكو تكاليف مخفية أبداً.</p></div></div>
+      <div class="process-step"><div style="display:flex;flex-direction:column;align-items:center"><div class="step-node">📅</div><div class="step-connector"></div></div><div class="step-body"><div class="step-tag" data-en="Documented" data-ar="موثق">Documented</div><div class="step-title" data-en="Implementation Timeline" data-ar="الجدول الزمني للتنفيذ">Implementation Timeline</div><p class="step-desc">جدول زمني واضح لتنفيذ كل الأنظمة والعمليات.</p></div></div>
+      <div class="phase-label phase-purple" data-en="PHASE 3 — DELIVERY" data-ar="المرحلة 3 — التسليم">PHASE 3 — DELIVERY</div>
+      <div class="process-step"><div style="display:flex;flex-direction:column;align-items:center"><div class="step-node">🔧</div><div class="step-connector"></div></div><div class="step-body"><div class="step-tag" data-en="Professional" data-ar="احترافي">Professional</div><div class="step-title" data-en="Implementation" data-ar="التنفيذ">Implementation</div><p class="step-desc">تنفيذ الأنظمة والعمليات باحترافية مع تحديثات منتظمة.</p></div></div>
+      <div class="process-step"><div style="display:flex;flex-direction:column;align-items:center"><div class="step-node">✅</div></div><div class="step-body"><div class="step-tag" data-en="Guaranteed" data-ar="مضمون">Guaranteed</div><div class="step-title" data-en="Handover &amp; Support" data-ar="التسليم والدعم">Handover &amp; Support</div><p class="step-desc">توثيق كامل وتدريب الفريق على الأنظمة الجديدة.</p></div></div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem">
+      <a href="https://wa.me/9647727080528" target="_blank" rel="noopener noreferrer" class="btn-primary" data-en="📞 Book Free Consultation →" data-ar="📞 احجز استشارة مجانية ←">📞 Book Free Consultation →</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--bg-card2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="section-inner">
+    <h2 class="section-title" data-en="FAQ" data-ar="أسئلة شائعة">FAQ</h2>
+    <p class="section-sub" data-en="Common HR questions answered" data-ar="أسئلة شائعة عن خدمات الموارد البشرية">Common HR questions</p>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-en="What recruitment services do you provide?" data-ar="شنو خدمات التوظيف اللي تقدمينها؟">شنو خدمات التوظيف اللي تقدمينها؟</span><span class="faq-icon">+</span></div><div class="faq-a">من البحث عن المرشحين للمقابلات والاختيار والتوجيه — كل مرحلة توظيف كاملة.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-en="Can you help build HR policies?" data-ar="تقدرين تساعدين في بناء سياسات HR؟">تقدرين تساعدين في بناء سياسات HR؟</span><span class="faq-icon">+</span></div><div class="faq-a">أي، أبني أنظمة HR من الصفر أو أطور الموجود حسب حجم شركتك واحتياجاتها.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-en="How do you manage payroll?" data-ar="كيف تدرين الرواتب؟">كيف تدرين الرواتب؟</span><span class="faq-icon">+</span></div><div class="faq-a">إدارة كشوف رواتب دقيقة مع المزايا والاستقطاعات والامتثال القانوني.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-en="Do you offer employee training?" data-ar="تقدمين تدريب للموظفين؟">تقدمين تدريب للموظفين؟</span><span class="faq-icon">+</span></div><div class="faq-a">أي، برامج تدريبية مخصصة حسب احتياجات الشركة والأدوار الوظيفية.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-en="Do you work with small companies?" data-ar="تشتغلين مع الشركات الصغيرة؟">تشتغلين مع الشركات الصغيرة؟</span><span class="faq-icon">+</span></div><div class="faq-a">أي، أخدم الشركات من 5 إلى 500+ موظف — صغيرة أو كبيرة.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-en="Is the service available remotely?" data-ar="الخدمة متاحة عن بعد؟">الخدمة متاحة عن بعد؟</span><span class="faq-icon">+</span></div><div class="faq-a">أي بالكامل — أقدر أخدمك من أي مكان بالعراق أونلاين.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <h2 class="section-title" data-en="What Clients Say" data-ar="شنو يقولون العملاء">What Clients Say</h2>
+    <p class="section-sub" data-en="Real feedback from real clients" data-ar="آراء حقيقية من عملاء حقيقيين">Real feedback from real clients</p>
+    <div class="reviews-grid" id="reviewsGrid">
+      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"طيبة بنت لنا نظام HR من الصفر. الآن عندنا عمليات واضحة وفريق منظم."</p><div class="review-author">مدير عام، شركة بغداد</div></div>
+      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Professional, detail-oriented and understands the Iraqi business environment. Highly recommended."</p><div class="review-author">Operations Manager, Baghdad</div></div>
+    </div>
+    <div class="review-form">
+      <h3 style="font-size:1rem;font-weight:700;margin-bottom:1rem" data-en="Leave a Review" data-ar="اترك تقييم">Leave a Review</h3>
+      <div class="star-select" id="starSelect"><span onclick="setRating(1)">★</span><span onclick="setRating(2)">★</span><span onclick="setRating(3)">★</span><span onclick="setRating(4)">★</span><span onclick="setRating(5)">★</span></div>
+      <div class="form-group"><label data-en="Name" data-ar="الاسم">Name</label><input type="text" id="rName" placeholder="Your name"/></div>
+      <div class="form-group"><label data-en="Review" data-ar="التقييم">Review</label><textarea id="rText" placeholder="Your experience..."></textarea></div>
+      <button class="btn-primary" onclick="submitReview()" style="width:100%;justify-content:center" data-en="Submit Review" data-ar="إرسال التقييم">Submit Review</button>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--bg-card2);border-top:1px solid var(--border)">
+  <div class="section-inner">
+    <h2 class="section-title" data-en="Get in Touch" data-ar="تواصل معي">Get in Touch</h2>
+    <p class="section-sub" data-en="Let's build the team your business deserves" data-ar="نبني الفريق اللي تستحقه شركتك">Let's build your ideal team</p>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-card"><span class="cc-icon">📍</span><div><div class="cc-label" data-en="Location" data-ar="الموقع">Location</div><div class="cc-val" data-en="Baghdad, Iraq" data-ar="بغداد، العراق">Baghdad, Iraq</div></div></div>
+        <div class="contact-card"><span class="cc-icon">💬</span><div><div class="cc-label">WhatsApp</div><div class="cc-val">+964 772 708 0528</div></div></div>
+        <div class="contact-card"><span class="cc-icon">📧</span><div><div class="cc-label">Email</div><div class="cc-val" style="font-size:.82rem;word-break:break-all">yousifabdulkareem4business@gmail.com</div></div></div>
+      </div>
+      <div class="review-form" style="max-width:100%">
+        <form id="contactForm" onsubmit="submitContact(event)">
+          <div class="form-group"><label data-en="Name" data-ar="الاسم">Name</label><input type="text" name="name" placeholder="Your name" required/></div>
+          <div class="form-group"><label data-en="Company" data-ar="الشركة">Company</label><input type="text" name="company" placeholder="Your company name"/></div>
+          <div class="form-group"><label data-en="Message" data-ar="الرسالة">Message</label><textarea name="message" placeholder="Tell me about your HR needs..."></textarea></div>
+          <button type="submit" class="btn-primary" style="width:100%;justify-content:center" data-en="Send Message →" data-ar="إرسال الرسالة →">Send Message →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">Raw<span>afid</span> <span class="footer-brand-ar">| روافد</span></div>
+  <p class="footer-copy">© 2026 وكالة روافد — بغداد، العراق. جميع الحقوق محفوظة.</p>
+  <div class="footer-social">
+    <a href="https://wa.me/9647727080528" target="_blank" rel="noopener noreferrer" class="fsoc">💬 WhatsApp</a>
+    <a href="https://www.linkedin.com/in/yousif-abdulkareem-al-sara-4220b1189" target="_blank" rel="noopener noreferrer" class="fsoc">in LinkedIn</a>
+    <a href="../index.html" class="fsoc">🏠 Home</a>
+  </div>
+</footer>
+
+<a href="https://wa.me/9647727080528" target="_blank" rel="noopener noreferrer" class="wa-float">💬</a>
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="display:none">↑</button>
+<a href="https://calendly.com/yousifabdulkareem4business" target="_blank" rel="noopener noreferrer" class="book-pill">📅 Book a Call</a>
+
+<div class="chatbot-wrap">
+  <div class="chat-toggle" onclick="toggleChat()">👥</div>
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header"><span class="chat-header-title">HR Assistant 👥</span><button class="chat-close" onclick="toggleChat()">×</button></div>
+    <div class="chat-messages" id="chatMessages"></div>
+    <div class="chat-input-row"><input class="chat-input" id="chatInput" type="text" placeholder="اكتب سؤالك..." onkeydown="if(event.key==='Enter')sendMessage()"/><button class="chat-send" onclick="sendMessage()">➤</button></div>
+  </div>
+</div>
+
+<script>
+let currentLang=localStorage.getItem('rawafid-lang')||'en';
+function toggleLang(){currentLang=currentLang==='en'?'ar':'en';localStorage.setItem('rawafid-lang',currentLang);applyLang()}
+function applyLang(){const isAR=currentLang==='ar';document.documentElement.lang=isAR?'ar':'en';document.documentElement.dir=isAR?'rtl':'ltr';const btn=document.getElementById('langBtn');if(btn)btn.textContent=isAR?'EN':'AR';document.querySelectorAll('[data-en]').forEach(el=>{el.textContent=isAR?(el.dataset.ar||el.dataset.en):el.dataset.en})}
+applyLang();
+window.addEventListener('scroll',function(){const p=(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100;const b=document.getElementById('progressBar');if(b)b.style.width=p+'%';const s=document.getElementById('scrollTop');if(s)s.style.display=window.scrollY>300?'flex':'none'});
+function countUp(el,target,suffix){let n=0;const step=target/60;const t=setInterval(()=>{n=Math.min(n+step,target);el.textContent=Math.floor(n)+suffix;if(n>=target)clearInterval(t)},16)}
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('[data-count]').forEach(el=>countUp(el,+el.dataset.count,el.dataset.suffix||''));obs.unobserve(e.target)}})},{threshold:.3});
+const s=document.getElementById('stats');if(s)obs.observe(s);
+function toggleFaq(btn){const item=btn.parentElement;const open=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));if(!open)item.classList.add('open')}
+async function submitContact(e){e.preventDefault();const btn=e.target.querySelector('[type="submit"]');const orig=btn.textContent;btn.textContent='⏳...';btn.disabled=true;try{await fetch('https://script.google.com/macros/s/AKfycbxe9weLT738oHP10plWn7whJZamnR2Yzdi8SvlPCt7SJyNgUmOdvq3Xqo5MnwVi97mhoQ/exec',{method:'POST',mode:'no-cors',body:new FormData(e.target)});showToast('تم الإرسال بنجاح! ✅');e.target.reset()}catch(err){showToast('حدث خطأ، حاول مرة أخرى')}btn.textContent=orig;btn.disabled=false}
+function showToast(msg){const t=document.createElement('div');t.className='toast';t.textContent=msg;document.body.appendChild(t);setTimeout(()=>{t.style.opacity='0';setTimeout(()=>t.remove(),300)},2500)}
+let rating=0;
+function setRating(n){rating=n;document.querySelectorAll('.star-select span').forEach((s,i)=>s.classList.toggle('active',i<n))}
+function submitReview(){const name=document.getElementById('rName').value.trim();const text=document.getElementById('rText').value.trim();if(!name||!text){showToast('الرجاء ملء الاسم والتقييم');return}const reviews=JSON.parse(localStorage.getItem('teeba_reviews')||'[]');reviews.push({name,text,rating:rating||5});localStorage.setItem('teeba_reviews',JSON.stringify(reviews));loadReviews();document.getElementById('rName').value='';document.getElementById('rText').value='';rating=0;document.querySelectorAll('.star-select span').forEach(s=>s.classList.remove('active'));showToast('تم إرسال التقييم! شكراً ✅')}
+function loadReviews(){const reviews=JSON.parse(localStorage.getItem('teeba_reviews')||'[]');const grid=document.getElementById('reviewsGrid');reviews.forEach(r=>{const card=document.createElement('div');card.className='review-card';card.innerHTML=`<div class="review-stars">${'★'.repeat(r.rating)}</div><p class="review-text">"${r.text}"</p><div class="review-author">${r.name}</div>`;grid.appendChild(card)})}
+loadReviews();
+const chatR={'توظيف|موظف|hire':'أساعدك تلاقي الموظفين الصح من خلال عملية توظيف فعالة ومنظمة 👥','راتب|payroll|رواتب':'أدير كشوف الرواتب بدقة مع المزايا والاستقطاعات وكل التفاصيل 💼','تدريب|تطوير|training':'أصمم برامج تدريبية مخصصة لفريقك تناسب احتياجاتكم الحقيقية 🎓','سياسة|نظام|hr':'أبني أنظمة وسياسات HR من الصفر أو أطور الموجود 📋','سعر|تكلفة':'الأسعار تعتمد على حجم الشركة والخدمات المطلوبة. راسلنا واتساب 💬','default':'مو واضح سؤالك 😅 — اكتب بشكل مختلف أو تواصلي معي مباشرة!'};
+let chatOpen=false,chatStarted=false;
+function toggleChat(){chatOpen=!chatOpen;const w=document.getElementById('chatWindow');w.classList.toggle('open',chatOpen);if(chatOpen&&!chatStarted){chatStarted=true;addBotMsg('هلا! 👋 أنا مساعدة طيبة للموارد البشرية. شنو تحتاج في فريقك؟')}}
+function addBotMsg(txt){const msgs=document.getElementById('chatMessages');const t=document.createElement('div');t.className='chat-typing';t.innerHTML='<span></span><span></span><span></span>';msgs.appendChild(t);msgs.scrollTop=msgs.scrollHeight;setTimeout(()=>{t.remove();const m=document.createElement('div');m.className='chat-msg bot';m.textContent=txt;msgs.appendChild(m);msgs.scrollTop=msgs.scrollHeight},800)}
+function addUserMsg(txt){const msgs=document.getElementById('chatMessages');const m=document.createElement('div');m.className='chat-msg user';m.textContent=txt;msgs.appendChild(m);msgs.scrollTop=msgs.scrollHeight}
+function sendMessage(){const input=document.getElementById('chatInput');const txt=input.value.trim();if(!txt)return;addUserMsg(txt);input.value='';const lower=txt.toLowerCase();let reply=chatR['default'];for(const key in chatR){if(key==='default')continue;if(key.split('|').some(w=>lower.includes(w))){reply=chatR[key];break}}addBotMsg(reply)}
+</script>
+</body>
+</html>

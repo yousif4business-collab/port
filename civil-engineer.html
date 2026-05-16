@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Civil Engineer — Coming Soon | Rawafid</title>
+<meta name="description" content="Civil and Structural Engineer joining Rawafid Agency Baghdad soon. Structural design, AutoCAD drawings and site supervision."/>
+<meta name="robots" content="index, follow"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('../sw.js')})}</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{--bg:#0a0e17;--bg-card:#111827;--bg-card2:#0f1623;--border:#1e2d40;--accent:#f59e0b;--text:#e2e8f0;--text-muted:#8892a4;--radius:12px;--trans:.3s ease}
+html{scroll-behavior:smooth;overflow-x:hidden;scrollbar-color:var(--accent) var(--bg);scrollbar-width:thin}
+html::-webkit-scrollbar{width:6px}html::-webkit-scrollbar-track{background:var(--bg)}html::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
+body{font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+[dir="rtl"] body{font-family:'Cairo',sans-serif}
+a{color:inherit;text-decoration:none}
+#progressBar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,#d97706,var(--accent));z-index:1100;pointer-events:none;transition:width .1s}
+nav{position:fixed;top:3px;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:64px;background:rgba(10,14,23,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-back{display:flex;align-items:center;gap:.4rem;color:var(--accent);font-size:.85rem;font-weight:600;transition:opacity var(--trans)}
+.nav-back:hover{opacity:.7}
+.nav-logo{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:800}
+.nav-logo em{color:var(--accent);font-style:normal}
+.nav-logo small{font-family:'Cairo',sans-serif;color:var(--accent);font-size:.7rem;display:block;text-align:right}
+.nav-right{display:flex;align-items:center;gap:.75rem}
+.lang-btn{background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.3);color:var(--accent);padding:.3rem .85rem;border-radius:20px;font-size:.8rem;font-weight:700;cursor:pointer;min-height:36px;font-family:inherit;transition:background var(--trans)}
+.lang-btn:hover{background:rgba(245,158,11,.2)}
+.hamburger{display:none;background:none;border:1px solid var(--border);color:var(--text);padding:.3rem .7rem;border-radius:6px;font-size:1.1rem;cursor:pointer}
+.mobile-menu{display:none;position:fixed;top:67px;left:0;right:0;background:var(--bg-card);border-bottom:1px solid var(--border);z-index:999;padding:1rem 5%;flex-direction:column;gap:.5rem}
+.mobile-menu.open{display:flex}
+.mobile-menu a{color:var(--text-muted);padding:.6rem 0;font-size:.95rem;border-bottom:1px solid var(--border)}
+.cs-hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:5rem 5% 4rem;position:relative;overflow:hidden}
+.cs-orb-1{position:absolute;width:600px;height:600px;border-radius:50%;filter:blur(100px);background:radial-gradient(circle,rgba(245,158,11,.1),transparent 70%);top:-150px;left:50%;transform:translateX(-50%);pointer-events:none}
+.cs-content{position:relative;z-index:1;max-width:700px}
+.cs-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.35rem .9rem;border-radius:50px;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.3);color:var(--accent);font-size:.8rem;font-weight:600;margin-bottom:1.5rem}
+.coming-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1.2rem;border-radius:50px;background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.35);color:var(--accent);font-size:.9rem;font-weight:700;margin-bottom:2rem}
+.coming-pulse{width:9px;height:9px;border-radius:50%;background:var(--accent);animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.5)}}
+.cs-avatar{width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,#d97706,var(--accent));display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:800;color:#fff;margin:0 auto 1.5rem;box-shadow:0 0 40px rgba(245,158,11,.3)}
+.cs-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:800;color:var(--accent);margin-bottom:.5rem}
+[dir="rtl"] .cs-title{font-family:'Cairo',sans-serif}
+.cs-subtitle{font-size:1rem;color:var(--text-muted);margin-bottom:.8rem}
+.cs-teaser{font-family:'Cairo',sans-serif;font-size:.95rem;color:var(--text-muted);max-width:520px;margin:0 auto 2.5rem;line-height:1.8}
+.hero-btns{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:linear-gradient(135deg,#d97706,var(--accent));color:#fff;padding:.75rem 1.6rem;border-radius:8px;font-size:.9rem;font-weight:700;min-height:44px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:.4rem;transition:opacity var(--trans),transform var(--trans);font-family:inherit}
+.btn-primary:hover{opacity:.85;transform:translateY(-2px)}
+.btn-secondary{background:transparent;border:1px solid var(--border);color:var(--text);padding:.75rem 1.6rem;border-radius:8px;font-size:.9rem;font-weight:600;min-height:44px;display:inline-flex;align-items:center;gap:.4rem;transition:border-color var(--trans),color var(--trans),transform var(--trans);font-family:inherit}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.section{padding:5rem 5%}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:800;margin-bottom:.4rem;text-align:center}
+[dir="rtl"] .section-title{font-family:'Cairo',sans-serif}
+.section-sub{text-align:center;color:var(--text-muted);font-size:.9rem;margin-bottom:2.5rem}
+.services-preview-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.2rem}
+.svc-prev{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.4rem;opacity:.75;position:relative;overflow:hidden}
+.svc-prev::after{content:'Coming Soon';position:absolute;top:12px;right:12px;font-size:.65rem;font-weight:700;color:var(--accent);background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.3);padding:.15rem .5rem;border-radius:10px;text-transform:uppercase}
+[dir="rtl"] .svc-prev::after{right:auto;left:12px}
+.svc-icon{font-size:1.8rem;margin-bottom:.7rem;display:block}
+.svc-name{font-weight:700;font-size:.93rem;margin-bottom:.2rem}
+[dir="rtl"] .svc-name{font-family:'Cairo',sans-serif}
+.svc-name-ar{font-family:'Cairo',sans-serif;font-size:.78rem;color:var(--accent)}
+.notify-section{background:var(--bg-card2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:4rem 5%;text-align:center}
+.notify-inner{max-width:500px;margin:0 auto}
+.notify-title{font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:.4rem}
+[dir="rtl"] .notify-title{font-family:'Cairo',sans-serif}
+.notify-sub{color:var(--text-muted);font-size:.9rem;margin-bottom:2rem;font-family:'Cairo',sans-serif}
+.notify-form{display:flex;gap:.7rem;flex-wrap:wrap;justify-content:center}
+.notify-form input{flex:1;min-width:190px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:.65rem 1rem;color:var(--text);font-size:.88rem;font-family:inherit;outline:none;transition:border-color var(--trans)}
+.notify-form input:focus{border-color:var(--accent)}
+.rawafid-section{padding:4rem 5%;text-align:center}
+.rawafid-inner{max-width:800px;margin:0 auto}
+.rawafid-title{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:800;margin-bottom:.4rem}
+[dir="rtl"] .rawafid-title{font-family:'Cairo',sans-serif}
+.rawafid-sub{color:var(--text-muted);font-size:.9rem;margin-bottom:2rem;font-family:'Cairo',sans-serif}
+.team-pills{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-bottom:2rem}
+.team-pill{padding:.4rem .9rem;border-radius:20px;font-size:.78rem;font-weight:600;border:1px solid var(--border);color:var(--text-muted);transition:all var(--trans)}
+.team-pill:hover{border-color:var(--accent);color:var(--accent)}
+footer{background:#07090f;border-top:1px solid var(--border);padding:2rem 5%;text-align:center}
+.footer-brand{font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:800;margin-bottom:.4rem}
+.footer-brand span,.footer-brand-ar{color:var(--accent)}
+.footer-brand-ar{font-family:'Cairo',sans-serif;font-size:.88rem}
+.footer-copy{color:var(--text-muted);font-size:.82rem;margin-bottom:1rem;font-family:'Cairo',sans-serif}
+.footer-social{display:flex;justify-content:center;gap:.8rem;flex-wrap:wrap}
+.fsoc{color:var(--text-muted);font-size:.82rem;padding:.4rem .7rem;border:1px solid var(--border);border-radius:6px;transition:all var(--trans)}
+.fsoc:hover{color:var(--accent);border-color:var(--accent)}
+.wa-float{position:fixed;bottom:24px;right:24px;width:56px;height:56px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;z-index:900;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform var(--trans)}
+.wa-float:hover{transform:scale(1.1)}
+[dir="rtl"] .wa-float{right:auto;left:24px}
+#scrollTop{position:fixed;bottom:90px;right:24px;width:44px;height:44px;background:var(--bg-card);border:1px solid rgba(245,158,11,.4);border-radius:50%;display:none;align-items:center;justify-content:center;color:var(--accent);font-size:1rem;cursor:pointer;z-index:900}
+.toast{position:fixed;bottom:160px;left:50%;transform:translateX(-50%);background:var(--accent);color:var(--bg);padding:.55rem 1.3rem;border-radius:8px;font-weight:700;z-index:9999;font-size:.86rem;pointer-events:none;transition:opacity .3s}
+.chatbot-wrap{position:fixed;bottom:24px;left:24px;z-index:900}
+.chat-toggle{width:50px;height:50px;border-radius:50%;background:var(--bg-card);border:2px solid rgba(245,158,11,.4);display:flex;align-items:center;justify-content:center;font-size:1.3rem;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.4)}
+.chat-window{position:absolute;bottom:60px;left:0;width:300px;background:var(--bg-card);border:1px solid var(--border);border-radius:14px;box-shadow:0 12px 40px rgba(0,0,0,.5);display:none;flex-direction:column;overflow:hidden;max-height:400px}
+.chat-window.open{display:flex}
+.chat-header{background:linear-gradient(135deg,#d97706,var(--accent));padding:.8rem 1rem;display:flex;justify-content:space-between;align-items:center}
+.chat-header-title{font-family:'Cairo',sans-serif;font-size:.88rem;font-weight:700;color:#fff}
+.chat-close{background:none;border:none;color:#fff;font-size:1.2rem;cursor:pointer}
+.chat-messages{flex:1;overflow-y:auto;padding:.7rem;display:flex;flex-direction:column;gap:.4rem;min-height:160px;max-height:240px}
+.chat-msg{max-width:83%;padding:.5rem .8rem;border-radius:10px;font-family:'Cairo',sans-serif;font-size:.82rem;line-height:1.6;word-wrap:break-word}
+.chat-msg.bot{background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.15);color:var(--text);align-self:flex-start;border-radius:2px 10px 10px 10px}
+.chat-msg.user{background:linear-gradient(135deg,#d97706,var(--accent));color:#fff;align-self:flex-end;border-radius:10px 10px 2px 10px}
+.chat-typing{display:flex;gap:4px;padding:.5rem .8rem;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.15);border-radius:2px 10px 10px 10px;width:fit-content}
+.chat-typing span{width:5px;height:5px;border-radius:50%;background:var(--accent);animation:typing .8s infinite}
+.chat-typing span:nth-child(2){animation-delay:.15s}
+.chat-typing span:nth-child(3){animation-delay:.3s}
+@keyframes typing{0%,80%,100%{transform:scale(1);opacity:.5}40%{transform:scale(1.3);opacity:1}}
+.chat-input-row{display:flex;gap:.4rem;padding:.6rem;border-top:1px solid var(--border)}
+.chat-input{flex:1;background:var(--bg-card2);border:1px solid var(--border);border-radius:7px;padding:.45rem .75rem;color:var(--text);font-family:'Cairo',sans-serif;font-size:.82rem;outline:none}
+.chat-input:focus{border-color:rgba(245,158,11,.4)}
+.chat-send{background:linear-gradient(135deg,#d97706,var(--accent));border:none;border-radius:7px;width:32px;height:32px;color:#fff;cursor:pointer;font-size:.88rem;display:flex;align-items:center;justify-content:center}
+@media(max-width:600px){.cs-hero{padding:4rem 5% 3rem}.section{padding:3.5rem 5%}}
+</style>
+</head>
+<body>
+<div id="progressBar"></div>
+<nav>
+  <a href="../index.html" class="nav-back">← <span data-en="Back to Rawafid" data-ar="العودة لروافد">Back to Rawafid</span></a>
+  <a href="../index.html" class="nav-logo"><span>Raw<em>afid</em></span><small>روافد</small></a>
+  <div class="nav-right">
+    <button class="lang-btn" id="langBtn" onclick="toggleLang()">AR</button>
+    <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">☰</button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html#services">Services</a>
+  <a href="../index.html#team">Team</a>
+  <a href="../index.html#contact">Contact</a>
+</div>
+
+<div class="cs-hero">
+  <div class="cs-orb-1"></div>
+  <div class="cs-content">
+    <div class="cs-badge">🏗️ Civil Engineering at Rawafid</div>
+    <div class="cs-avatar">CE</div>
+    <div class="coming-badge"><span class="coming-pulse"></span><span data-en="⏳ Coming Soon | قريباً" data-ar="⏳ قريباً | Coming Soon">⏳ Coming Soon | قريباً</span></div>
+    <div class="cs-title" data-en="Civil &amp; Structural Engineer" data-ar="مهندس مدني وإنشائي">Civil &amp; Structural Engineer</div>
+    <div class="cs-subtitle" data-en="Structural &amp; Site Engineering" data-ar="هندسة إنشائية وميدانية">Structural &amp; Site Engineering</div>
+    <p class="cs-teaser" data-en="Civil and Structural Engineer joining Rawafid soon. Expert in structural design, AutoCAD drawings and site supervision across Iraq." data-ar="مهندس مدني وإنشائي ينضم لروافد قريباً. خبير في التصميم الإنشائي ورسومات AutoCAD والإشراف الميداني في جميع أنحاء العراق.">Civil and Structural Engineer joining Rawafid soon. Expert in structural design, AutoCAD drawings and site supervision across Iraq.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/9647727080528" target="_blank" rel="noopener noreferrer" class="btn-primary">💬 <span data-en="Contact Us Now" data-ar="تواصل معنا الآن">Contact Us Now</span></a>
+      <a href="../index.html#team" class="btn-secondary" data-en="← View Full Team" data-ar="← عرض الفريق الكامل">← View Full Team</a>
+    </div>
+  </div>
+</div>
+
+<section class="section" style="background:var(--bg-card2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="section-inner">
+    <h2 class="section-title" data-en="What This Specialist Will Offer" data-ar="شنو سيقدم هذا المختص">What This Specialist Will Offer</h2>
+    <p class="section-sub" data-en="Civil engineering services coming to Rawafid soon" data-ar="خدمات الهندسة المدنية قادمة لروافد قريباً">Civil engineering services coming soon</p>
+    <div class="services-preview-grid">
+      <div class="svc-prev"><span class="svc-icon">🏗️</span><div class="svc-name" data-en="Structural Design" data-ar="التصميم الإنشائي">Structural Design</div><div class="svc-name-ar">التصميم الإنشائي</div></div>
+      <div class="svc-prev"><span class="svc-icon">👷</span><div class="svc-name" data-en="Site Supervision" data-ar="الإشراف الميداني">Site Supervision</div><div class="svc-name-ar">الإشراف الميداني</div></div>
+      <div class="svc-prev"><span class="svc-icon">📐</span><div class="svc-name" data-en="AutoCAD Drawings" data-ar="رسومات AutoCAD">AutoCAD Drawings</div><div class="svc-name-ar">رسومات AutoCAD</div></div>
+      <div class="svc-prev"><span class="svc-icon">🔨</span><div class="svc-name" data-en="Renovation Projects" data-ar="مشاريع التجديد">Renovation Projects</div><div class="svc-name-ar">مشاريع التجديد</div></div>
+      <div class="svc-prev"><span class="svc-icon">🏢</span><div class="svc-name" data-en="Building Assessment" data-ar="تقييم المباني">Building Assessment</div><div class="svc-name-ar">تقييم المباني</div></div>
+      <div class="svc-prev"><span class="svc-icon">📋</span><div class="svc-name" data-en="Engineering Reports" data-ar="التقارير الهندسية">Engineering Reports</div><div class="svc-name-ar">التقارير الهندسية</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="notify-section">
+  <div class="notify-inner">
+    <h2 class="notify-title" data-en="Be First to Know" data-ar="كن أول من يعرف">Be First to Know</h2>
+    <p class="notify-sub">اكتب إيميلك ونعلمك لما هذا المختص يصبح متاح — ماكو سبام أبداً.</p>
+    <div class="notify-form">
+      <input type="text" id="notifyName" placeholder="Your name / اسمك"/>
+      <input type="email" id="notifyEmail" placeholder="your@email.com"/>
+      <button class="btn-primary" onclick="submitNotify()">🔔 <span data-en="Notify Me" data-ar="أعلمني">Notify Me</span></button>
+    </div>
+  </div>
+</div>
+
+<section class="rawafid-section">
+  <div class="rawafid-inner">
+    <h2 class="rawafid-title" data-en="While You Wait — 6 Active Specialists Ready Now" data-ar="في الانتظار — 6 مختصين متاحين هسه">While You Wait — 6 Active Specialists Ready Now</h2>
+    <p class="rawafid-sub">فريقنا الحالي يقدر يخدمك اليوم في IT والتصميم والتسويق والموارد البشرية.</p>
+    <div class="team-pills">
+      <a href="yousif.html" class="team-pill">🌐 IT Infrastructure</a>
+      <a href="mohammed-sakran.html" class="team-pill">📊 Data &amp; AI</a>
+      <a href="mohammed-qasim.html" class="team-pill">🎨 Design</a>
+      <a href="samer-hamid.html" class="team-pill">✍️ Content</a>
+      <a href="karrar-mohammed.html" class="team-pill">📱 Social Media</a>
+      <a href="teeba-zaid.html" class="team-pill">👥 HR</a>
+    </div>
+    <a href="../index.html" class="btn-primary" data-en="← Back to Rawafid" data-ar="← العودة لروافد">← Back to Rawafid</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">Raw<span>afid</span> <span class="footer-brand-ar">| روافد</span></div>
+  <p class="footer-copy">© 2026 وكالة روافد — بغداد، العراق. جميع الحقوق محفوظة.</p>
+  <div class="footer-social">
+    <a href="https://wa.me/9647727080528" target="_blank" rel="noopener noreferrer" class="fsoc">💬 WhatsApp</a>
+    <a href="https://www.linkedin.com/in/yousif-abdulkareem-al-sara-4220b1189" target="_blank" rel="noopener noreferrer" class="fsoc">in LinkedIn</a>
+    <a href="../index.html" class="fsoc">🏠 Home</a>
+  </div>
+</footer>
+
+<a href="https://wa.me/9647727080528" target="_blank" rel="noopener noreferrer" class="wa-float">💬</a>
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="display:none">↑</button>
+
+<div class="chatbot-wrap">
+  <div class="chat-toggle" onclick="toggleChat()">🏗️</div>
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header"><span class="chat-header-title">Engineering Assistant 🏗️</span><button class="chat-close" onclick="toggleChat()">×</button></div>
+    <div class="chat-messages" id="chatMessages"></div>
+    <div class="chat-input-row"><input class="chat-input" id="chatInput" type="text" placeholder="اكتب سؤالك..." onkeydown="if(event.key==='Enter')sendMessage()"/><button class="chat-send" onclick="sendMessage()">➤</button></div>
+  </div>
+</div>
+
+<script>
+let currentLang=localStorage.getItem('rawafid-lang')||'en';
+function toggleLang(){currentLang=currentLang==='en'?'ar':'en';localStorage.setItem('rawafid-lang',currentLang);applyLang()}
+function applyLang(){const isAR=currentLang==='ar';document.documentElement.lang=isAR?'ar':'en';document.documentElement.dir=isAR?'rtl':'ltr';const btn=document.getElementById('langBtn');if(btn)btn.textContent=isAR?'EN':'AR';document.querySelectorAll('[data-en]').forEach(el=>{el.textContent=isAR?(el.dataset.ar||el.dataset.en):el.dataset.en})}
+applyLang();
+window.addEventListener('scroll',function(){const p=(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100;const b=document.getElementById('progressBar');if(b)b.style.width=p+'%';const s=document.getElementById('scrollTop');if(s)s.style.display=window.scrollY>300?'flex':'none'});
+async function submitNotify(){const name=document.getElementById('notifyName').value.trim();const email=document.getElementById('notifyEmail').value.trim();if(!email){showToast('الرجاء إدخال البريد الإلكتروني');return}const data=new FormData();data.append('name',name);data.append('email',email);data.append('service','Civil Engineer Notification');try{await fetch('https://script.google.com/macros/s/AKfycbxe9weLT738oHP10plWn7whJZamnR2Yzdi8SvlPCt7SJyNgUmOdvq3Xqo5MnwVi97mhoQ/exec',{method:'POST',mode:'no-cors',body:data})}catch(e){}showToast('تم! سنعلمك قريباً ✅');document.getElementById('notifyName').value='';document.getElementById('notifyEmail').value=''}
+function showToast(msg){const t=document.createElement('div');t.className='toast';t.textContent=msg;document.body.appendChild(t);setTimeout(()=>{t.style.opacity='0';setTimeout(()=>t.remove(),300)},2500)}
+const chatR={'هندسة|مدني|إنشائي|civil':'مهندس مدني وإنشائي ينضم لروافد قريباً. خبير في التصميم الإنشائي والإشراف الميداني 🏗️','autocad|تصميم|رسومات':'يعمل رسومات AutoCAD وتصاميم إنشائية احترافية 📐','متى|وقت|soon':'قريباً — اكتب إيميلك ونعلمك لما يصبح متاح! 📧','فريق|rawafid|روافد':'روافد عدها 6 مختصين متاحين هسه — IT وتصميم وتسويق وموارد بشرية 👥','default':'مو واضح سؤالك 😅 — هذا المختص قريباً. تقدر تتواصل معنا على واتساب مباشرة!'};
+let chatOpen=false,chatStarted=false;
+function toggleChat(){chatOpen=!chatOpen;const w=document.getElementById('chatWindow');w.classList.toggle('open',chatOpen);if(chatOpen&&!chatStarted){chatStarted=true;addBotMsg('هلا! 👋 قريباً راح يكون عندنا مهندس مدني. شنو تحتاج؟')}}
+function addBotMsg(txt){const msgs=document.getElementById('chatMessages');const t=document.createElement('div');t.className='chat-typing';t.innerHTML='<span></span><span></span><span></span>';msgs.appendChild(t);msgs.scrollTop=msgs.scrollHeight;setTimeout(()=>{t.remove();const m=document.createElement('div');m.className='chat-msg bot';m.textContent=txt;msgs.appendChild(m);msgs.scrollTop=msgs.scrollHeight},800)}
+function addUserMsg(txt){const msgs=document.getElementById('chatMessages');const m=document.createElement('div');m.className='chat-msg user';m.textContent=txt;msgs.appendChild(m);msgs.scrollTop=msgs.scrollHeight}
+function sendMessage(){const input=document.getElementById('chatInput');const txt=input.value.trim();if(!txt)return;addUserMsg(txt);input.value='';const lower=txt.toLowerCase();let reply=chatR['default'];for(const key in chatR){if(key==='default')continue;if(key.split('|').some(w=>lower.includes(w))){reply=chatR[key];break}}addBotMsg(reply)}
+</script>
+</body>
+</html>
+

@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mohammed Qasim — Graphic Designer | Rawafid Agency</title>
+  <meta name="description" content="Mohammed Qasim — Graphic Designer at Rawafid Agency. Logo design, brand identity, motion graphics and UI design."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('../sw.js')})}</script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0e17;
+      --card: #111827;
+      --card2: #0f1623;
+      --border: #1e2d40;
+      --text: #e2e8f0;
+      --muted: #8892a4;
+      --accent: #ec4899;
+      --accent2: #f472b6;
+      --radius: 12px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Space Grotesk', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    html[lang="ar"] body { font-family: 'Cairo', sans-serif; }
+
+    #progressBar {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      width: 0%; z-index: 9999; transition: width 0.1s;
+    }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(10,14,23,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 1.5rem;
+      height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-left { display: flex; align-items: center; gap: 1rem; }
+    .back-btn {
+      display: flex; align-items: center; gap: .4rem;
+      color: var(--muted); text-decoration: none;
+      font-size: .9rem; font-weight: 500;
+      transition: color .2s;
+      padding: .5rem; border-radius: 8px;
+      min-height: 44px;
+    }
+    .back-btn:hover { color: var(--accent); }
+    .nav-logo {
+      font-size: 1.2rem; font-weight: 800;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      text-decoration: none;
+    }
+    .nav-right { display: flex; align-items: center; gap: .75rem; }
+    .lang-btn {
+      background: var(--card); border: 1px solid var(--border);
+      color: var(--text); padding: .4rem .9rem;
+      border-radius: 8px; cursor: pointer;
+      font-size: .85rem; font-weight: 600;
+      font-family: inherit; min-height: 44px; min-width: 44px;
+      transition: border-color .2s, background .2s;
+    }
+    .lang-btn:hover { border-color: var(--accent); background: var(--card2); }
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer;
+      padding: .5rem; min-height: 44px; min-width: 44px;
+      justify-content: center; align-items: center;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--text); border-radius: 2px;
+      transition: all .3s;
+    }
+    .mobile-menu {
+      display: none; position: fixed; top: 64px; left: 0; right: 0;
+      background: rgba(10,14,23,0.98); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 1.5rem; z-index: 99;
+      flex-direction: column; gap: .5rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a, .mobile-menu button {
+      color: var(--text); text-decoration: none;
+      padding: .75rem 1rem; border-radius: 8px;
+      font-size: .95rem; font-weight: 500;
+      transition: background .2s; background: none;
+      border: none; cursor: pointer; font-family: inherit;
+      text-align: left; min-height: 44px; display: flex; align-items: center;
+    }
+    html[lang="ar"] .mobile-menu a,
+    html[lang="ar"] .mobile-menu button { text-align: right; }
+    .mobile-menu a:hover, .mobile-menu button:hover { background: var(--card); }
+
+    .hero {
+      padding: 5rem 1.5rem 3rem;
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 3rem; align-items: center;
+    }
+    .hero-headline {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 800; line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+    .accent-gradient {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero-about {
+      color: var(--muted); font-size: 1.05rem;
+      line-height: 1.75; margin-bottom: 2rem;
+    }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff; padding: .75rem 1.5rem;
+      border-radius: var(--radius); text-decoration: none;
+      font-weight: 700; font-size: .95rem;
+      transition: opacity .2s, transform .2s; min-height: 44px;
+      border: none; cursor: pointer; font-family: inherit;
+    }
+    .btn-primary:hover { opacity: .88; transform: translateY(-2px); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: transparent; color: var(--text);
+      padding: .75rem 1.5rem; border-radius: var(--radius);
+      text-decoration: none; font-weight: 600; font-size: .95rem;
+      border: 1px solid var(--border);
+      transition: border-color .2s, background .2s; min-height: 44px;
+    }
+    .btn-secondary:hover { border-color: var(--accent); background: var(--card); }
+
+    .profile-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px; padding: 2.5rem;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(236,72,153,0.12);
+    }
+    .avatar {
+      width: 110px; height: 110px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.2rem; font-weight: 800; color: #fff;
+      margin: 0 auto 1.25rem;
+      box-shadow: 0 8px 30px rgba(236,72,153,0.35);
+    }
+    .profile-name { font-size: 1.5rem; font-weight: 800; margin-bottom: .3rem; }
+    .profile-title { color: var(--accent); font-weight: 600; font-size: 1rem; margin-bottom: 1.5rem; }
+    .profile-socials { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; }
+    .social-link {
+      display: inline-flex; align-items: center; gap: .4rem;
+      padding: .5rem 1rem; border-radius: 8px;
+      background: var(--card2); border: 1px solid var(--border);
+      color: var(--text); text-decoration: none;
+      font-size: .85rem; font-weight: 600;
+      transition: border-color .2s, background .2s; min-height: 44px;
+    }
+    .social-link:hover { border-color: var(--accent); background: var(--border); }
+    .availability-badge {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(236,72,153,0.1); border: 1px solid rgba(236,72,153,0.3);
+      color: var(--accent); padding: .4rem 1rem;
+      border-radius: 50px; font-size: .82rem; font-weight: 600;
+      margin-top: 1.25rem;
+    }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.4)} }
+
+    #stats {
+      background: var(--card2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 3rem 1.5rem;
+    }
+    .stats-inner {
+      max-width: 1000px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4,1fr);
+      gap: 2rem; text-align: center;
+    }
+    .stat-num {
+      font-size: 2.4rem; font-weight: 800;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .stat-label { color: var(--muted); font-size: .9rem; margin-top: .3rem; }
+
+    section { padding: 5rem 1.5rem; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-tag {
+      display: inline-block;
+      background: rgba(236,72,153,0.12);
+      color: var(--accent);
+      border: 1px solid rgba(236,72,153,0.3);
+      padding: .3rem .9rem; border-radius: 50px;
+      font-size: .8rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .08em;
+      margin-bottom: 1rem;
+    }
+    .section-title { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; margin-bottom: 1rem; }
+    .section-sub { color: var(--muted); max-width: 560px; line-height: 1.7; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.25rem; margin-top: 2.5rem;
+    }
+    .service-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.75rem;
+      transition: border-color .25s, transform .25s, box-shadow .25s;
+    }
+    .service-card:hover {
+      border-color: var(--accent); transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(236,72,153,0.12);
+    }
+    .service-icon { font-size: 2rem; margin-bottom: .9rem; }
+    .service-title { font-size: 1.05rem; font-weight: 700; margin-bottom: .4rem; }
+    .service-sub { font-size: .9rem; color: var(--muted); }
+
+    #tools { background: var(--card2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .tools-grid { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; align-items: center; }
+    .tool-logo {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: .6rem 1.1rem;
+      display: flex; align-items: center; gap: .6rem;
+      transition: border-color .2s;
+    }
+    .tool-logo:hover { border-color: var(--accent); }
+    .tool-logo img { width: 22px; height: 22px; object-fit: contain; border-radius: 4px; }
+    .tool-logo span { font-size: .85rem; font-weight: 600; }
+    .tool-badge {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: .6rem 1.1rem;
+      font-size: .85rem; font-weight: 600;
+      transition: border-color .2s;
+    }
+    .tool-badge:hover { border-color: var(--accent); }
+
+    .phases { display: flex; flex-direction: column; gap: 2rem; margin-top: 2.5rem; }
+    .phase-block {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 1.75rem;
+    }
+    .phase-label {
+      font-size: .75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .1em;
+      margin-bottom: 1.25rem; display: inline-block;
+      padding: .3rem .8rem; border-radius: 50px;
+    }
+    .phase-discovery { color: #22c55e; background: rgba(34,197,94,.1); border: 1px solid rgba(34,197,94,.25); }
+    .phase-planning { color: #00d4ff; background: rgba(0,212,255,.1); border: 1px solid rgba(0,212,255,.25); }
+    .phase-delivery { color: #a855f7; background: rgba(168,85,247,.1); border: 1px solid rgba(168,85,247,.25); }
+    .steps-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap: 1rem; }
+    .step-card {
+      background: var(--card2); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1rem; display: flex; gap: .75rem; align-items: flex-start;
+    }
+    .step-num {
+      width: 28px; height: 28px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .75rem; font-weight: 800; flex-shrink: 0;
+    }
+    .num-green { background: rgba(34,197,94,.15); color: #22c55e; }
+    .num-cyan { background: rgba(0,212,255,.15); color: #00d4ff; }
+    .num-purple { background: rgba(168,85,247,.15); color: #a855f7; }
+    .step-title { font-size: .9rem; font-weight: 700; margin-bottom: .2rem; }
+    .step-sub { font-size: .78rem; color: var(--muted); }
+
+    #faq { background: var(--card2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .faq-list { margin-top: 2rem; display: flex; flex-direction: column; gap: .75rem; }
+    .faq-item {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+    }
+    .faq-q {
+      width: 100%; background: none; border: none;
+      color: var(--text); font-family: inherit;
+      padding: 1.1rem 1.25rem; text-align: left;
+      font-size: .97rem; font-weight: 600;
+      cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+      gap: 1rem; min-height: 44px; transition: background .2s;
+    }
+    html[lang="ar"] .faq-q { text-align: right; }
+    .faq-q:hover { background: var(--card2); }
+    .faq-q .chevron { transition: transform .3s; font-size: .8rem; flex-shrink: 0; }
+    .faq-item.open .faq-q .chevron { transform: rotate(180deg); }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height .35s ease, padding .35s;
+      color: var(--muted); font-size: .93rem; line-height: 1.7;
+      padding: 0 1.25rem;
+    }
+    .faq-item.open .faq-a { max-height: 200px; padding: 0 1.25rem 1.1rem; }
+
+    #reviews { background: var(--bg); }
+    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr)); gap: 1.25rem; margin-top: 2rem; }
+    .review-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.5rem;
+    }
+    .review-stars { color: #fbbf24; font-size: 1rem; margin-bottom: .75rem; }
+    .review-text { color: var(--muted); font-size: .93rem; line-height: 1.75; margin-bottom: 1rem; font-style: italic; }
+    .review-author { font-weight: 700; font-size: .88rem; color: var(--accent); }
+    .review-form {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.5rem; margin-top: 1.5rem;
+    }
+    .review-form h3 { font-size: 1rem; font-weight: 700; margin-bottom: 1rem; }
+    .review-form input, .review-form textarea {
+      width: 100%; background: var(--card2); border: 1px solid var(--border);
+      color: var(--text); border-radius: 8px; padding: .7rem .9rem;
+      font-family: inherit; font-size: .9rem; margin-bottom: .75rem;
+      outline: none; transition: border-color .2s;
+    }
+    .review-form input:focus, .review-form textarea:focus { border-color: var(--accent); }
+    .review-form textarea { resize: vertical; min-height: 80px; }
+    .star-select { display: flex; gap: .3rem; margin-bottom: .75rem; }
+    .star-select span { font-size: 1.4rem; cursor: pointer; color: #4b5563; transition: color .15s; }
+    .star-select span.active { color: #fbbf24; }
+
+    #contact { background: var(--card2); border-top: 1px solid var(--border); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 2.5rem; }
+    .contact-info-item {
+      display: flex; align-items: center; gap: .9rem;
+      padding: 1rem; background: var(--card);
+      border: 1px solid var(--border); border-radius: var(--radius);
+      margin-bottom: .75rem; text-decoration: none; color: var(--text);
+      transition: border-color .2s; min-height: 44px;
+    }
+    .contact-info-item:hover { border-color: var(--accent); }
+    .contact-icon {
+      width: 42px; height: 42px;
+      background: rgba(236,72,153,0.12);
+      border-radius: 10px; display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .contact-label { font-size: .78rem; color: var(--muted); }
+    .contact-value { font-size: .92rem; font-weight: 600; }
+    form input, form textarea {
+      width: 100%; background: var(--card); border: 1px solid var(--border);
+      color: var(--text); border-radius: 8px; padding: .8rem 1rem;
+      font-family: inherit; font-size: .92rem; margin-bottom: .9rem;
+      outline: none; transition: border-color .2s;
+    }
+    form input:focus, form textarea:focus { border-color: var(--accent); }
+    form textarea { resize: vertical; min-height: 120px; }
+
+    footer {
+      background: var(--card2); border-top: 1px solid var(--border);
+      padding: 2.5rem 1.5rem; text-align: center;
+    }
+    .footer-inner { max-width: 700px; margin: 0 auto; }
+    .footer-logo {
+      font-size: 1.5rem; font-weight: 800;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      margin-bottom: .5rem;
+    }
+    .footer-tagline { color: var(--muted); font-size: .88rem; margin-bottom: 1.25rem; }
+    .footer-links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.25rem; }
+    .footer-links a { color: var(--muted); text-decoration: none; font-size: .88rem; transition: color .2s; }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-copy { color: var(--muted); font-size: .8rem; }
+
+    #whatsappFloat {
+      position: fixed; bottom: 100px; right: 24px;
+      width: 52px; height: 52px; border-radius: 50%;
+      background: #25d366; display: flex; align-items: center; justify-content: center;
+      text-decoration: none; font-size: 1.4rem; z-index: 900;
+      box-shadow: 0 4px 20px rgba(37,211,102,.45); transition: transform .2s;
+    }
+    html[dir="rtl"] #whatsappFloat { right: auto; left: 24px; }
+    #whatsappFloat:hover { transform: scale(1.1); }
+    #scrollTop {
+      position: fixed; bottom: 165px; right: 24px;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--card); border: 1px solid var(--border);
+      color: var(--text); font-size: 1.1rem;
+      display: none; align-items: center; justify-content: center;
+      cursor: pointer; z-index: 900; transition: border-color .2s, transform .2s;
+    }
+    html[dir="rtl"] #scrollTop { right: auto; left: 24px; }
+    #scrollTop:hover { border-color: var(--accent); transform: translateY(-3px); }
+    #bookCallPill {
+      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff; padding: .65rem 1.4rem; border-radius: 50px;
+      font-weight: 700; font-size: .88rem; text-decoration: none;
+      box-shadow: 0 4px 24px rgba(236,72,153,.4); z-index: 900;
+      transition: opacity .2s, transform .2s; white-space: nowrap;
+    }
+    #bookCallPill:hover { opacity: .88; transform: translateX(-50%) translateY(-3px); }
+
+    #chatbotBtn {
+      position: fixed; bottom: 100px; left: 24px;
+      width: 52px; height: 52px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; cursor: pointer; z-index: 900;
+      box-shadow: 0 4px 20px rgba(236,72,153,.4);
+      border: none; transition: transform .2s;
+    }
+    html[dir="rtl"] #chatbotBtn { left: auto; right: 80px; }
+    #chatbotBtn:hover { transform: scale(1.1); }
+    #chatbot {
+      position: fixed; bottom: 170px; left: 24px;
+      width: 320px; max-height: 420px;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; z-index: 901; display: none;
+      flex-direction: column; overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,.5);
+    }
+    html[dir="rtl"] #chatbot { left: auto; right: 80px; }
+    #chatbot.open { display: flex; }
+    .chatbot-header {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      padding: .9rem 1.1rem; font-weight: 700; font-size: .92rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .chatbot-close { background: none; border: none; color: #fff; font-size: 1.1rem; cursor: pointer; }
+    .chatbot-msgs { flex: 1; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: .6rem; }
+    .chat-msg { padding: .6rem .9rem; border-radius: 12px; font-size: .88rem; max-width: 85%; line-height: 1.5; }
+    .chat-msg.bot { background: var(--card2); border: 1px solid var(--border); align-self: flex-start; }
+    .chat-msg.user { background: var(--accent); color: #fff; align-self: flex-end; }
+    .chatbot-input { display: flex; border-top: 1px solid var(--border); }
+    .chatbot-input input {
+      flex: 1; background: transparent; border: none; color: var(--text);
+      padding: .7rem .9rem; font-family: inherit; font-size: .88rem; outline: none;
+      margin-bottom: 0;
+    }
+    .chatbot-input button {
+      background: var(--accent); border: none; color: #fff;
+      padding: .7rem 1rem; cursor: pointer; font-size: .95rem; transition: opacity .2s;
+    }
+    .chatbot-input button:hover { opacity: .85; }
+
+    @media(max-width: 768px) {
+      .hero { grid-template-columns: 1fr; padding: 3rem 1.25rem 2rem; gap: 2rem; }
+      .hero-right { order: -1; }
+      .stats-inner { grid-template-columns: repeat(2,1fr); }
+      .contact-grid { grid-template-columns: 1fr; }
+      .hamburger { display: flex; }
+      .lang-btn-desktop { display: none; }
+    }
+    @media(max-width: 480px) {
+      .steps-row { grid-template-columns: 1fr; }
+      .hero-btns { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="progressBar"></div>
+
+<nav>
+  <div class="nav-left">
+    <a href="../index.html" class="back-btn">&#8592; <span data-en="Back" data-ar="رجوع">Back</span></a>
+    <a href="../index.html" class="nav-logo">Rawafid</a>
+  </div>
+  <div class="nav-right">
+    <button class="lang-btn lang-btn-desktop" id="langBtn" onclick="toggleLang()">AR</button>
+    <button class="hamburger" id="hamburger" aria-label="Menu" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+  <a href="#services" onclick="closeMenu()" data-en="Services" data-ar="الخدمات">Services</a>
+  <a href="#process" onclick="closeMenu()" data-en="Process" data-ar="آلية العمل">Process</a>
+  <a href="#contact" onclick="closeMenu()" data-en="Contact" data-ar="تواصل معنا">Contact</a>
+  <button onclick="toggleLang();closeMenu()" data-en="Switch to Arabic" data-ar="Switch to English">Switch to Arabic</button>
+</div>
+
+<section class="hero">
+  <div class="hero-left">
+    <h1 class="hero-headline">
+      <span data-en="Designing Brands /" data-ar="أصمم علامات تجارية /">Designing Brands /</span><br>
+      <span class="accent-gradient" data-en="People Remember" data-ar="ما تنسى">People Remember</span>
+    </h1>
+    <p class="hero-about" data-en="Graphic Designer specializing in brand identity, visual communication and motion graphics. Creating designs that make brands unforgettable across all platforms." data-ar="مصمم جرافيك متخصص في هوية العلامة التجارية والتواصل البصري والموشن جرافيك. أصمم هويات تخلي العلامة التجارية ما تنسى على كل المنصات.">Graphic Designer specializing in brand identity, visual communication and motion graphics. Creating designs that make brands unforgettable across all platforms.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary" data-en="🎨 Start a Project" data-ar="🎨 ابدأ مشروعك">🎨 Start a Project</a>
+      <a href="https://wa.me/9647727080528" target="_blank" rel="noopener noreferrer" class="btn-secondary" data-en="💬 WhatsApp" data-ar="💬 واتساب">💬 WhatsApp</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="profile-card">
+      <div class="avatar">MQ</div>
+      <div class="profile-name" data-en="Mohammed Qasim" data-ar="محمد قاسم">Mohammed Qasim</div>
+      <div class="profile-title" data-en="Graphic Designer" data-ar="مصمم جرافيك">Graphic Designer</div>
+      <div class="profile-socials">
+        <a href="https://wa.me/9647727080528" target="_blank" rel="noopener noreferrer" class="social-link">💬 WhatsApp</a>
+        <a href="https://www.linkedin.com/in/yousif-abdulkareem-al-sara-4220b1189" target="_blank" rel="noopener noreferrer" class="social-link">&#128279; LinkedIn</a>
+        <a href="https://calendly.com/yousifabdulkareem4business" target="_blank" rel="noopener noreferrer" class="social-link">&#128197; Book Call</a>
+      </div>
+      <div class="availability-badge">
+        <div class="dot"></div>
+        <span data-en="Available for Projects" data-ar="متاح للمشاريع">Available for Projects</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="stats">
+  <div class="stats-inner">
+    <div>
+      <div class="stat-num" data-count="50" data-suffix="+">0+</div>
+      <div class="stat-label" data-en="Brands Designed" data-ar="علامة تجارية صممتها">Brands Designed</div>
+    </div>
+    <div>
+      <div class="stat-num" data-count="200" data-suffix="+">0+</div>
+      <div class="stat-label" data-en="Projects Completed" data-ar="مشروع منجز">Projects Completed</div>
+    </div>
+    <div>
+      <div class="stat-num" data-count="3" data-suffix="+">0+</div>
+      <div class="stat-label" data-en="Years Experience" data-ar="سنوات خبرة">Years Experience</div>
+    </div>
+    <div>
+      <div class="stat-num" data-count="100" data-suffix="%">0%</div>
+      <div class="stat-label" data-en="Client Satisfaction" data-ar="رضا العملاء">Client Satisfaction</div>
+    </div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="section-inner">
+    <div class="section-tag" data-en="SERVICES" data-ar="الخدمات">SERVICES</div>
+    <h2 class="section-title" data-en="What I Design For You" data-ar="شنو أصمم لك">What I Design For You</h2>
+    <p class="section-sub" data-en="From logo creation to full brand identity — every design crafted to make your brand stand out." data-ar="من الشعار إلى الهوية الكاملة — كل تصميم مصنوع يخلي علامتك تبرز.">From logo creation to full brand identity — every design crafted to make your brand stand out.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">&#127912;</div>
+        <div class="service-title" data-en="Logo &amp; Brand Identity" data-ar="الشعار والهوية التجارية">Logo &amp; Brand Identity</div>
+        <div class="service-sub" data-en="Complete visual identity system" data-ar="نظام هوية بصرية متكامل">Complete visual identity system</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128241;</div>
+        <div class="service-title" data-en="Social Media Design" data-ar="تصاميم سوشيال ميديا">Social Media Design</div>
+        <div class="service-sub" data-en="Templates for all platforms" data-ar="قوالب لكل المنصات">Templates for all platforms</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#127916;</div>
+        <div class="service-title" data-en="Motion Graphics" data-ar="موشن جرافيك">Motion Graphics</div>
+        <div class="service-sub" data-en="Animated content &amp; reels" data-ar="محتوى متحرك وريلز">Animated content &amp; reels</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128424;&#65039;</div>
+        <div class="service-title" data-en="Print Design" data-ar="تصاميم مطبوعات">Print Design</div>
+        <div class="service-sub" data-en="Brochures, banners &amp; more" data-ar="بروشورات، بنرات وأكثر">Brochures, banners &amp; more</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128187;</div>
+        <div class="service-title" data-en="UI Design" data-ar="تصميم واجهات">UI Design</div>
+        <div class="service-sub" data-en="App &amp; website interfaces" data-ar="واجهات تطبيقات ومواقع">App &amp; website interfaces</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128218;</div>
+        <div class="service-title" data-en="Brand Guidelines" data-ar="دليل الهوية">Brand Guidelines</div>
+        <div class="service-sub" data-en="Comprehensive brand manual" data-ar="دليل هوية شامل">Comprehensive brand manual</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="section-inner">
+    <div class="section-tag" data-en="TOOLS" data-ar="الأدوات">TOOLS</div>
+    <h2 class="section-title" data-en="Tools I Work With" data-ar="الأدوات اللي أشتغل بيها">Tools I Work With</h2>
+    <div class="tools-grid">
+      <div class="tool-logo">
+        <img src="https://logo.clearbit.com/adobe.com" alt="Adobe" onerror="this.style.display='none'"/>
+        <span>Adobe</span>
+      </div>
+      <div class="tool-logo">
+        <img src="https://logo.clearbit.com/figma.com" alt="Figma" onerror="this.style.display='none'"/>
+        <span>Figma</span>
+      </div>
+      <div class="tool-logo">
+        <img src="https://logo.clearbit.com/canva.com" alt="Canva" onerror="this.style.display='none'"/>
+        <span>Canva</span>
+      </div>
+      <div class="tool-badge">After Effects</div>
+      <div class="tool-badge">Photoshop</div>
+      <div class="tool-badge">Illustrator</div>
+      <div class="tool-badge">Premiere Pro</div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="section-inner">
+    <div class="section-tag" data-en="PROCESS" data-ar="آلية العمل">PROCESS</div>
+    <h2 class="section-title" data-en="How We Work Together" data-ar="كيف نشتغل سوا">How We Work Together</h2>
+    <p class="section-sub" data-en="A transparent 3-phase process ensuring your project is delivered on time and exceeds expectations." data-ar="عملية شفافة من 3 مراحل تضمن تسليم مشروعك بوقت وتتجاوز التوقعات.">A transparent 3-phase process ensuring your project is delivered on time and exceeds expectations.</p>
+    <div class="phases">
+      <div class="phase-block">
+        <div class="phase-label phase-discovery" data-en="PHASE 1 — DISCOVERY" data-ar="المرحلة 1 — الاستكشاف">PHASE 1 — DISCOVERY</div>
+        <div class="steps-row">
+          <div class="step-card">
+            <div class="step-num num-green">1</div>
+            <div>
+              <div class="step-title" data-en="📞 First Contact" data-ar="📞 التواصل الأول">📞 First Contact</div>
+              <div class="step-sub" data-en="Free — No commitment" data-ar="مجاني — بدون التزام">Free — No commitment</div>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num num-green">2</div>
+            <div>
+              <div class="step-title" data-en="🤝 Initial Meeting" data-ar="🤝 الاجتماع الأولي">🤝 Initial Meeting</div>
+              <div class="step-sub" data-en="Free — Understand your needs" data-ar="مجاني — نفهم احتياجاتك">Free — Understand your needs</div>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num num-green">3</div>
+            <div>
+              <div class="step-title" data-en="🏗️ Discovery Survey" data-ar="🏗️ استطلاع الاستكشاف">🏗️ Discovery Survey</div>
+              <div class="step-sub" data-en="Free — Deep dive analysis" data-ar="مجاني — تحليل عميق">Free — Deep dive analysis</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="phase-block">
+        <div class="phase-label phase-planning" data-en="PHASE 2 — PLANNING" data-ar="المرحلة 2 — التخطيط">PHASE 2 — PLANNING</div>
+        <div class="steps-row">
+          <div class="step-card">
+            <div class="step-num num-cyan">4</div>
+            <div>
+              <div class="step-title" data-en="📋 Requirements" data-ar="📋 المتطلبات">📋 Requirements</div>
+              <div class="step-sub" data-en="Client approval required" data-ar="يحتاج موافقة العميل">Client approval required</div>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num num-cyan">5</div>
+            <div>
+              <div class="step-title" data-en="💰 Pricing" data-ar="💰 التسعير">💰 Pricing</div>
+              <div class="step-sub" data-en="Transparent &amp; documented" data-ar="شفاف وموثق">Transparent &amp; documented</div>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num num-cyan">6</div>
+            <div>
+              <div class="step-title" data-en="📅 Timeline" data-ar="📅 الجدول الزمني">📅 Timeline</div>
+              <div class="step-sub" data-en="Fully documented" data-ar="موثق بالكامل">Fully documented</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="phase-block">
+        <div class="phase-label phase-delivery" data-en="PHASE 3 — DELIVERY" data-ar="المرحلة 3 — التسليم">PHASE 3 — DELIVERY</div>
+        <div class="steps-row">
+          <div class="step-card">
+            <div class="step-num num-purple">7</div>
+            <div>
+              <div class="step-title" data-en="🔧 Execution" data-ar="🔧 التنفيذ">🔧 Execution</div>
+              <div class="step-sub" data-en="Professional &amp; precise" data-ar="احترافي ودقيق">Professional &amp; precise</div>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num num-purple">8</div>
+            <div>
+              <div class="step-title" data-en="✅ Handover" data-ar="✅ التسليم النهائي">✅ Handover</div>
+              <div class="step-sub" data-en="Guaranteed satisfaction" data-ar="رضا مضمون">Guaranteed satisfaction</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="section-inner">
+    <div class="section-tag" data-en="FAQ" data-ar="أسئلة شائعة">FAQ</div>
+    <h2 class="section-title" data-en="Frequently Asked Questions" data-ar="أسئلة كلش تنسأل">Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          <span data-en="What does brand identity design include?" data-ar="شنو يشمل تصميم الهوية التجارية؟">What does brand identity design include?</span>
+          <span class="chevron">&#9660;</span>
+        </button>
+        <div class="faq-a" data-en="Logo, color palette, typography, social media templates, and business card — everything your brand needs." data-ar="شعار، ألوان، خطوط، قالب سوشيال ميديا، بطاقة عمل — كل شي تحتاجه علامتك.">Logo, color palette, typography, social media templates, and business card.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          <span data-en="How long does a logo design take?" data-ar="چم وقت يأخذ تصميم الشعار؟">How long does a logo design take?</span>
+          <span class="chevron">&#9660;</span>
+        </button>
+        <div class="faq-a" data-en="Usually 3-7 days with revision rounds included." data-ar="عادة 3-7 أيام مع جولات تعديل.">Usually 3-7 days with revision rounds included.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          <span data-en="Do I get the original source files?" data-ar="تحصل على الملفات الأصلية؟">Do I get the original source files?</span>
+          <span class="chevron">&#9660;</span>
+        </button>
+        <div class="faq-a" data-en="Yes — AI, PSD, PNG and PDF formats are all included." data-ar="أي، تحصل AI وPSD وPNG وPDF — كل الملفات الأصلية.">Yes — AI, PSD, PNG and PDF formats are all included.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          <span data-en="Do you do motion graphics for social media?" data-ar="تعمل موشن جرافيك لسوشيال ميديا؟">Do you do motion graphics for social media?</span>
+          <span class="chevron">&#9660;</span>
+        </button>
+        <div class="faq-a" data-en="Yes — animated videos, reels and stories for all platforms." data-ar="أي، فيديوهات وريلز وستوريز متحركة لكل المنصات.">Yes — animated videos, reels and stories for all platforms.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          <span data-en="Are revisions included after delivery?" data-ar="أكو تعديلات بعد التسليم؟">Are revisions included after delivery?</span>
+          <span class="chevron">&#9660;</span>
+        </button>
+        <div class="faq-a" data-en="Yes — one free revision round is included with every project." data-ar="أي، جولة تعديل مجانية مع كل مشروع.">Yes — one free revision round is included with every project.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          <span data-en="Can you work with existing brands?" data-ar="تقدر تشتغل مع العلامات التجارية الموجودة؟">Can you work with existing brands?</span>
+          <span class="chevron">&#9660;</span>
+        </button>
+        <div class="faq-a" data-en="Yes — I can develop or refresh your existing brand identity." data-ar="أي، أقدر أطور أو أحدث الهوية الموجودة.">Yes — I can develop or refresh your existing brand identity.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="section-inner">
+    <div class="section-tag" data-en="REVIEWS" data-ar="التقييمات">REVIEWS</div>
+    <h2 class="section-title" data-en="What Clients Say" data-ar="شنو يقولون العملاء">What Clients Say</h2>
+    <div class="reviews-grid" id="reviewsGrid">
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text" data-en='"Mohammed understands what I want before I even say it. The identity exceeded all my expectations!"' data-ar='"محمد فاهم شنو أريد قبل ما أقوله. الهوية طلعت أكثر من توقعاتي!"'>"محمد فاهم شنو أريد قبل ما أقوله. الهوية طلعت أكثر من توقعاتي!"</div>
+        <div class="review-author" data-en="— Business Owner" data-ar="— صاحب شركة">— صاحب شركة</div>
+      </div>
+    </div>
+    <div class="review-form">
+      <h3 data-en="Leave a Review" data-ar="اترك تقييمك">Leave a Review</h3>
+      <div class="star-select" id="starSelect">
+        <span onclick="setStars(1)">&#9733;</span>
+        <span onclick="setStars(2)">&#9733;</span>
+        <span onclick="setStars(3)">&#9733;</span>
+        <span onclick="setStars(4)">&#9733;</span>
+        <span onclick="setStars(5)">&#9733;</span>
+      </div>
+      <input type="text" id="reviewName" placeholder="Your Name / اسمك" />
+      <textarea id="reviewText" placeholder="Your Review / تقييمك"></textarea>
+      <button class="btn-primary" onclick="submitReview()" data-en="Submit Review" data-ar="أرسل التقييم">Submit Review</button>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-tag" data-en="CONTACT" data-ar="تواصل">CONTACT</div>
+    <h2 class="section-title" data-en="Let's Start Your Project" data-ar="هلا نبدأ مشروعك">Let's Start Your Project</h2>
+    <div class="contact-grid">
+      <div>
+        <a href="https://wa.me/9647727080528" target="_blank" rel="noopener noreferrer" class="contact-info-item">
+          <div class="contact-icon">💬</div>
+          <div><div class="contact-label" data-en="WhatsApp" data-ar="واتساب">WhatsApp</div><div class="contact-value">+964 772 708 0528</div></div>
+        </a>
+        <a href="https://www.linkedin.com/in/yousif-abdulkareem-al-sara-4220b1189" target="_blank" rel="noopener noreferrer" class="contact-info-item">
+          <div class="contact-icon">&#128279;</div>
+          <div><div class="contact-label">LinkedIn</div><div class="contact-value" data-en="View Profile" data-ar="عرض الملف">View Profile</div></div>
+        </a>
+        <a href="https://calendly.com/yousifabdulkareem4business" target="_blank" rel="noopener noreferrer" class="contact-info-item">
+          <div class="contact-icon">&#128197;</div>
+          <div><div class="contact-label" data-en="Book a Call" data-ar="احجز اجتماع">Book a Call</div><div class="contact-value" data-en="Calendly Schedule" data-ar="جدول Calendly">Calendly Schedule</div></div>
+        </a>
+      </div>
+      <div>
+        <form onsubmit="submitForm(event)">
+          <input type="text" name="name" required placeholder="Your Name / اسمك" />
+          <input type="email" name="email" required placeholder="Email / البريد الإلكتروني" />
+          <input type="text" name="service" placeholder="Service Needed / الخدمة المطلوبة" />
+          <textarea name="message" rows="4" placeholder="Project Details / تفاصيل المشروع"></textarea>
+          <input type="hidden" name="team_member" value="Mohammed Qasim - Graphic Designer" />
+          <button type="submit" class="btn-primary" style="width:100%" data-en="Send Message 🚀" data-ar="أرسل الرسالة 🚀">Send Message 🚀</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Rawafid Agency</div>
+    <div class="footer-tagline" data-en="Mohammed Qasim — Graphic Designer" data-ar="محمد قاسم — مصمم جرافيك">Mohammed Qasim — Graphic Designer</div>
+    <div class="footer-links">
+      <a href="#services" data-en="Services" data-ar="الخدمات">Services</a>
+      <a href="#process" data-en="Process" data-ar="آلية العمل">Process</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" data-en="Contact" data-ar="تواصل">Contact</a>
+      <a href="https://wa.me/9647727080528" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    </div>
+    <div class="footer-copy" data-en="© 2024 Rawafid Agency. All rights reserved." data-ar="© 2024 وكالة روافد. كل الحقوق محفوظة.">© 2024 Rawafid Agency. All rights reserved.</div>
+  </div>
+</footer>
+
+<a id="whatsappFloat" href="https://wa.me/9647727080528" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">💬</a>
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">&#8679;</button>
+<a id="bookCallPill" href="https://calendly.com/yousifabdulkareem4business" target="_blank" rel="noopener noreferrer">
+  &#128197; <span data-en="Book a Free Call" data-ar="احجز مكالمة مجانية">Book a Free Call</span>
+</a>
+
+<button id="chatbotBtn" onclick="toggleChatbot()" aria-label="Chat">&#127912;</button>
+<div id="chatbot">
+  <div class="chatbot-header">
+    <span>Design Assistant &#127912;</span>
+    <button class="chatbot-close" onclick="toggleChatbot()">&#10005;</button>
+  </div>
+  <div class="chatbot-msgs" id="chatMsgs">
+    <div class="chat-msg bot">هلا! 👋 أنا مساعد التصميم. شنو تريد تصمم اليوم؟</div>
+  </div>
+  <div class="chatbot-input">
+    <input type="text" id="chatInput" placeholder="اكتب رسالتك..." onkeydown="if(event.key==='Enter')sendChat()"/>
+    <button onclick="sendChat()">&#10148;</button>
+  </div>
+</div>
+
+<script>
+let currentLang = localStorage.getItem('rawafid-lang') || 'en';
+function toggleLang() {
+  currentLang = currentLang === 'en' ? 'ar' : 'en';
+  localStorage.setItem('rawafid-lang', currentLang);
+  applyLang();
+}
+function applyLang() {
+  const isAR = currentLang === 'ar';
+  document.documentElement.lang = isAR ? 'ar' : 'en';
+  document.documentElement.dir = isAR ? 'rtl' : 'ltr';
+  const btn = document.getElementById('langBtn');
+  if(btn) btn.textContent = isAR ? 'EN' : 'AR';
+  document.querySelectorAll('[data-en]').forEach(el => {
+    el.textContent = isAR ? (el.dataset.ar || el.dataset.en) : el.dataset.en;
+  });
+}
+applyLang();
+
+async function submitForm(e) {
+  e.preventDefault();
+  const data = new FormData(e.target);
+  try {
+    await fetch('https://script.google.com/macros/s/AKfycbxe9weLT738oHP10plWn7whJZamnR2Yzdi8SvlPCt7SJyNgUmOdvq3Xqo5MnwVi97mhoQ/exec', {method:'POST', mode:'no-cors', body:data});
+    showToast('تم الإرسال بنجاح! ✅'); e.target.reset();
+  } catch(err) { showToast('حدث خطأ، حاول مرة أخرى'); }
+}
+
+function showToast(msg) {
+  const t = document.createElement('div');
+  t.textContent = msg;
+  t.style.cssText = 'position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:#ec4899;color:#fff;padding:.6rem 1.4rem;border-radius:8px;font-weight:700;z-index:9999;';
+  document.body.appendChild(t);
+  setTimeout(()=>t.remove(), 3000);
+}
+
+window.addEventListener('scroll', () => {
+  const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+  const bar = document.getElementById('progressBar');
+  if(bar) bar.style.width = pct + '%';
+  const st = document.getElementById('scrollTop');
+  if(st) st.style.display = window.scrollY > 300 ? 'flex' : 'none';
+});
+
+function countUp(el, target, suffix) {
+  suffix = suffix || '';
+  let n = 0; const step = target / 60;
+  const timer = setInterval(function() {
+    n = Math.min(n + step, target);
+    el.textContent = Math.floor(n) + suffix;
+    if(n >= target) clearInterval(timer);
+  }, 16);
+}
+const obs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if(e.isIntersecting) {
+      e.target.querySelectorAll('[data-count]').forEach(function(el) {
+        countUp(el, +el.dataset.count, el.dataset.suffix || '');
+      });
+      obs.unobserve(e.target);
+    }
+  });
+}, {threshold: 0.3});
+const statsEl = document.getElementById('stats');
+if(statsEl) obs.observe(statsEl);
+
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+
+function toggleFAQ(btn) {
+  const item = btn.parentElement;
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+  if(!wasOpen) item.classList.add('open');
+  applyLang();
+}
+
+let selectedStars = 5;
+function setStars(n) {
+  selectedStars = n;
+  document.querySelectorAll('#starSelect span').forEach(function(s, i) {
+    s.classList.toggle('active', i < n);
+  });
+}
+setStars(5);
+
+function submitReview() {
+  const name = document.getElementById('reviewName').value.trim();
+  const text = document.getElementById('reviewText').value.trim();
+  if(!name || !text) { showToast('Please fill in all fields'); return; }
+  const reviews = JSON.parse(localStorage.getItem('mqReviews') || '[]');
+  reviews.push({name: name, text: text, stars: selectedStars});
+  localStorage.setItem('mqReviews', JSON.stringify(reviews));
+  document.getElementById('reviewName').value = '';
+  document.getElementById('reviewText').value = '';
+  renderReviews();
+  showToast('شكراً على تقييمك! ⭐');
+}
+
+function renderReviews() {
+  const reviews = JSON.parse(localStorage.getItem('mqReviews') || '[]');
+  const grid = document.getElementById('reviewsGrid');
+  const extras = grid.querySelectorAll('.user-review');
+  extras.forEach(function(e) { e.remove(); });
+  reviews.forEach(function(r) {
+    const card = document.createElement('div');
+    card.className = 'review-card user-review';
+    const stars = '★'.repeat(r.stars) + '☆'.repeat(5 - r.stars);
+    card.innerHTML = '<div class="review-stars">' + stars + '</div><div class="review-text">"' + r.text + '"</div><div class="review-author">— ' + r.name + '</div>';
+    grid.appendChild(card);
+  });
+}
+renderReviews();
+
+const chatResponses = {
+  'شعار|logo|هوية': 'أصمم شعارات وهويات تجارية متكاملة. الملفات تجي بكل الصيغ المطلوبة 🎨',
+  'سوشيال|تصميم|منشور': 'أعمل تصاميم لكل المنصات — انستغرام وتيك توك وفيسبوك وتويتر 📱',
+  'موشن|فيديو|متحرك': 'أعمل موشن جرافيك وريلز متحركة وإعلانات فيديو 🎬',
+  'سعر|تكلفة|كم': 'الأسعار تعتمد على المشروع. راسلنا واتساب وأعطيك عرض مجاني 💬',
+  'وقت|متى|چم': 'الشعار عادة 3-7 أيام، الهوية الكاملة 2-3 أسابيع',
+  'default': 'مو واضح سؤالك 😅 — اكتب بشكل مختلف أو راسلنا مباشرة!'
+};
+
+function toggleChatbot() {
+  document.getElementById('chatbot').classList.toggle('open');
+}
+
+function sendChat() {
+  const input = document.getElementById('chatInput');
+  const msg = input.value.trim();
+  if(!msg) return;
+  const msgs = document.getElementById('chatMsgs');
+  const userDiv = document.createElement('div');
+  userDiv.className = 'chat-msg user';
+  userDiv.textContent = msg;
+  msgs.appendChild(userDiv);
+  input.value = '';
+  let reply = chatResponses['default'];
+  for(const pattern in chatResponses) {
+    if(pattern === 'default') continue;
+    if(new RegExp(pattern, 'i').test(msg)) { reply = chatResponses[pattern]; break; }
+  }
+  setTimeout(function() {
+    const botDiv = document.createElement('div');
+    botDiv.className = 'chat-msg bot';
+    botDiv.textContent = reply;
+    msgs.appendChild(botDiv);
+    msgs.scrollTop = msgs.scrollHeight;
+  }, 500);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+</script>
+</body>
+</html>

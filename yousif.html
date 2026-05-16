@@ -1,0 +1,1665 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yousif A. Abbas — IT Infrastructure Engineer | Rawafid</title>
+  <meta name="description" content="IT Infrastructure Engineer from Baghdad. Networks, CCTV, structured cabling, access control." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('../sw.js')})}</script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0e17;
+      --card: #111827;
+      --card2: #0f1623;
+      --border: #1e2d40;
+      --text: #e2e8f0;
+      --muted: #8892a4;
+      --radius: 12px;
+      --accent: #00d4ff;
+      --accent2: #0099cc;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Space Grotesk', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    [dir="rtl"] body { font-family: 'Cairo', sans-serif; }
+    [dir="rtl"] * { font-family: 'Cairo', sans-serif; }
+
+    /* Progress Bar */
+    #progress-bar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), #0099cc);
+      z-index: 9999;
+      transition: width 0.1s;
+      width: 0%;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 3px; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(10, 14, 23, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-left a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .nav-left a:hover { color: var(--accent); }
+
+    .nav-logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .nav-logo span { color: var(--accent); }
+
+    .nav-right { display: flex; align-items: center; gap: 1rem; }
+
+    #langBtn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.35rem 0.9rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    #langBtn:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      padding: 100px 6% 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px; right: -200px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(0,212,255,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(0,212,255,0.08);
+      border: 1px solid rgba(0,212,255,0.3);
+      border-radius: 50px;
+      padding: 0.4rem 1rem;
+      font-size: 0.85rem;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .pulse-dot {
+      width: 8px; height: 8px;
+      background: #22c55e;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.4); box-shadow: 0 0 8px #22c55e; }
+    }
+
+    .hero-headline {
+      font-size: clamp(2rem, 4vw, 3.6rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-headline .accent-line {
+      background: linear-gradient(90deg, var(--accent), #0099cc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-about {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 520px;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #0a0e17;
+      padding: 0.75rem 1.75rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: inherit;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,212,255,0.35); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      padding: 0.75rem 1.75rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1px solid var(--border);
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn-secondary:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+    /* Profile Card */
+    .hero-right { position: relative; }
+
+    .profile-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 0 60px rgba(0,212,255,0.1);
+      animation: floatCard 6s ease-in-out infinite;
+    }
+
+    @keyframes floatCard {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .profile-avatar {
+      width: 90px; height: 90px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), #0099cc);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #0a0e17;
+      margin: 0 auto 1.25rem;
+    }
+
+    .profile-card h3 {
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .profile-title {
+      text-align: center;
+      color: var(--accent);
+      font-size: 0.88rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .profile-location {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      justify-content: center;
+    }
+
+    .skill-tag {
+      background: rgba(0,212,255,0.08);
+      border: 1px solid rgba(0,212,255,0.22);
+      color: var(--accent);
+      padding: 0.28rem 0.7rem;
+      border-radius: 50px;
+      font-size: 0.76rem;
+      font-weight: 500;
+    }
+
+    .float-badge {
+      position: absolute;
+      background: var(--card2);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      padding: 0.4rem 0.9rem;
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+
+    .float-badge:nth-child(1) { top: -18px; right: -20px; animation: floatB1 4s ease-in-out infinite; }
+    .float-badge:nth-child(2) { top: 90px; left: -30px; animation: floatB2 5s ease-in-out infinite; }
+    .float-badge:nth-child(3) { bottom: 50px; right: -15px; animation: floatB3 4.5s ease-in-out infinite; }
+
+    @keyframes floatB1 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+    @keyframes floatB2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(10px)} }
+    @keyframes floatB3 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+
+    /* Stats Row */
+    .stats-row {
+      padding: 4rem 6%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      background: var(--card2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stat-item { text-align: center; }
+
+    .stat-number {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .stat-label { color: var(--muted); font-size: 0.88rem; }
+
+    /* Sections */
+    section { padding: 5rem 6%; }
+
+    .section-header { text-align: center; margin-bottom: 3rem; }
+
+    .section-header h2 {
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-subtitle { color: var(--muted); max-width: 560px; margin: 0 auto; font-size: 0.95rem; }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .service-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem 1.5rem;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px; height: 0;
+      background: var(--accent);
+      transition: height 0.35s;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .service-card:hover { border-color: rgba(0,212,255,0.35); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,212,255,0.09); }
+    .service-card:hover::before { height: 100%; }
+
+    .service-icon { font-size: 2rem; margin-bottom: 0.85rem; display: block; }
+    .service-card h3 { font-size: 0.98rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .service-card p { color: var(--muted); font-size: 0.83rem; line-height: 1.55; }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: all 0.3s;
+    }
+
+    .project-card:hover { border-color: rgba(0,212,255,0.35); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,212,255,0.08); }
+
+    .project-logo-row { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+
+    .project-logo {
+      height: 40px; width: auto; max-width: 80px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+      opacity: 0.8;
+      border-radius: 6px;
+    }
+
+    .project-initials {
+      width: 44px; height: 44px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.85rem; color: #0a0e17;
+      flex-shrink: 0;
+    }
+
+    .project-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .project-card p { color: var(--muted); font-size: 0.84rem; margin-bottom: 0.85rem; line-height: 1.55; }
+
+    .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+    .project-tag {
+      background: rgba(0,212,255,0.07);
+      border: 1px solid rgba(0,212,255,0.2);
+      color: var(--accent);
+      padding: 0.18rem 0.6rem;
+      border-radius: 50px;
+      font-size: 0.74rem;
+    }
+
+    /* Tools */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .tool-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1rem;
+      display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
+      transition: all 0.3s;
+    }
+
+    .tool-card:hover { border-color: rgba(0,212,255,0.35); transform: translateY(-3px); }
+
+    .tool-card img {
+      height: 36px; width: auto;
+      filter: brightness(0) invert(1) opacity(0.6);
+      transition: filter 0.3s;
+      object-fit: contain;
+    }
+
+    .tool-card:hover img { filter: brightness(1) saturate(1); opacity: 1; }
+    .tool-card span { font-size: 0.78rem; color: var(--muted); text-align: center; }
+
+    /* Timeline */
+    .timeline { position: relative; max-width: 800px; margin: 0 auto; }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, #22c55e, var(--accent), #7c3aed);
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+      align-items: flex-start;
+      position: relative;
+    }
+
+    .timeline-item:nth-child(odd) { padding-right: calc(50% + 2.5rem); }
+    .timeline-item:nth-child(even) { padding-left: calc(50% + 2.5rem); flex-direction: row-reverse; }
+
+    .timeline-dot {
+      position: absolute;
+      left: 50%; top: 0.35rem;
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: var(--accent);
+      transform: translateX(-50%);
+      border: 3px solid var(--bg);
+      z-index: 2;
+    }
+
+    .timeline-content {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.5rem;
+      flex: 1;
+    }
+
+    .timeline-phase {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+
+    .phase-green { color: #22c55e; }
+    .phase-cyan { color: var(--accent); }
+    .phase-purple { color: #7c3aed; }
+
+    .timeline-content h3 { font-size: 0.93rem; font-weight: 600; margin-bottom: 0.28rem; }
+    .timeline-content p { color: var(--muted); font-size: 0.82rem; line-height: 1.55; }
+
+    /* FAQ */
+    .faq-list { max-width: 780px; margin: 0 auto; }
+
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none; border: none;
+      color: var(--text);
+      padding: 1.1rem 1.5rem;
+      text-align: left;
+      font-size: 0.93rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: color 0.2s;
+      font-family: inherit;
+    }
+
+    [dir="rtl"] .faq-question { text-align: right; }
+    .faq-question:hover { color: var(--accent); }
+
+    .faq-icon { font-size: 1.2rem; transition: transform 0.3s; color: var(--accent); flex-shrink: 0; margin-left: 1rem; }
+    [dir="rtl"] .faq-icon { margin-left: 0; margin-right: 1rem; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .faq-item.open .faq-answer { max-height: 250px; }
+    .faq-answer p { color: var(--muted); font-size: 0.88rem; padding: 0 1.5rem 1.1rem; line-height: 1.65; }
+
+    /* Reviews */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .review-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+
+    .review-stars { color: #f59e0b; font-size: 1.05rem; margin-bottom: 0.75rem; }
+    .review-text { color: var(--muted); font-size: 0.88rem; line-height: 1.65; margin-bottom: 1rem; }
+    .review-author { font-size: 0.84rem; font-weight: 600; color: var(--accent); }
+
+    .review-form-wrapper {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .review-form-wrapper h3 { margin-bottom: 1.25rem; font-size: 1.1rem; }
+
+    .star-rating { display: flex; gap: 0.4rem; margin-bottom: 1rem; }
+
+    .star-btn {
+      background: none; border: none;
+      font-size: 1.5rem; cursor: pointer;
+      color: var(--border); transition: color 0.2s;
+      padding: 0;
+    }
+    .star-btn.active { color: #f59e0b; }
+
+    /* Forms */
+    .form-group { margin-bottom: 1.1rem; }
+
+    .form-group label { display: block; color: var(--muted); font-size: 0.83rem; margin-bottom: 0.4rem; }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      background: var(--card2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      padding: 0.7rem 1rem;
+      font-size: 0.88rem;
+      font-family: inherit;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus { outline: none; border-color: var(--accent); }
+
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-group select option { background: var(--card2); }
+
+    .btn-submit {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #0a0e17;
+      padding: 0.75rem 2rem;
+      border: none;
+      border-radius: 10px;
+      font-size: 0.93rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-family: inherit;
+    }
+    .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,212,255,0.35); }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .contact-form-card,
+    .contact-info-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+    }
+
+    .contact-form-card h3,
+    .contact-info-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--accent); }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1rem;
+      background: var(--card2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.3s;
+      margin-bottom: 0.75rem;
+    }
+    .contact-link:hover { border-color: var(--accent); color: var(--accent); transform: translateX(4px); }
+    [dir="rtl"] .contact-link:hover { transform: translateX(-4px); }
+
+    .contact-link-icon { font-size: 1.3rem; flex-shrink: 0; }
+    .contact-link-info h4 { font-size: 0.9rem; font-weight: 600; }
+    .contact-link-info p { font-size: 0.78rem; color: var(--muted); }
+
+    /* Chatbot */
+    #chatbot-btn {
+      position: fixed;
+      bottom: 150px; right: 24px;
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border: none; border-radius: 50%;
+      color: #0a0e17; font-size: 1.3rem;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 18px rgba(0,212,255,0.4);
+      z-index: 900;
+      transition: transform 0.2s;
+    }
+    #chatbot-btn:hover { transform: scale(1.1); }
+
+    #chatbot-window {
+      position: fixed;
+      bottom: 215px; right: 24px;
+      width: 340px; max-height: 480px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      display: none; flex-direction: column;
+      overflow: hidden;
+      z-index: 900;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+    }
+    #chatbot-window.open { display: flex; }
+
+    .chatbot-header {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      padding: 1rem 1.25rem;
+      display: flex; align-items: center; justify-content: space-between;
+      color: #0a0e17;
+    }
+    .chatbot-header h4 { font-size: 0.88rem; font-weight: 700; }
+
+    .chatbot-close {
+      background: none; border: none;
+      color: #0a0e17; font-size: 1.3rem; cursor: pointer; line-height: 1;
+    }
+
+    .chatbot-messages {
+      flex: 1; overflow-y: auto;
+      padding: 1rem;
+      display: flex; flex-direction: column; gap: 0.75rem;
+    }
+
+    .chat-msg {
+      max-width: 85%;
+      padding: 0.6rem 0.9rem;
+      border-radius: 12px;
+      font-size: 0.83rem; line-height: 1.55;
+    }
+
+    .chat-msg.bot {
+      background: var(--card2);
+      border: 1px solid var(--border);
+      align-self: flex-start;
+      border-bottom-left-radius: 4px;
+    }
+
+    .chat-msg.user {
+      background: rgba(0,212,255,0.12);
+      border: 1px solid rgba(0,212,255,0.28);
+      align-self: flex-end;
+      border-bottom-right-radius: 4px;
+    }
+
+    .chatbot-input-row {
+      display: flex; padding: 0.75rem; gap: 0.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .chatbot-input-row input {
+      flex: 1;
+      background: var(--card2); border: 1px solid var(--border);
+      border-radius: 8px; color: var(--text);
+      padding: 0.5rem 0.75rem; font-size: 0.83rem; font-family: inherit;
+    }
+    .chatbot-input-row input:focus { outline: none; border-color: var(--accent); }
+
+    .chatbot-send {
+      background: var(--accent); border: none; border-radius: 8px;
+      color: #0a0e17; padding: 0.5rem 0.9rem;
+      cursor: pointer; font-weight: 700; font-size: 0.88rem; font-family: inherit;
+    }
+
+    /* Floating */
+    #whatsapp-btn {
+      position: fixed;
+      bottom: 24px; right: 24px;
+      width: 56px; height: 56px;
+      background: #25d366;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none; font-size: 1.6rem;
+      z-index: 900;
+      box-shadow: 0 4px 18px rgba(37,211,102,0.45);
+      transition: transform 0.2s;
+    }
+    #whatsapp-btn:hover { transform: scale(1.1); }
+
+    #scroll-top {
+      position: fixed;
+      bottom: 90px; right: 24px;
+      width: 44px; height: 44px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: none; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 1.1rem; color: var(--accent);
+      z-index: 900; transition: all 0.2s;
+    }
+    #scroll-top:hover { background: var(--accent); color: #0a0e17; }
+    #scroll-top.visible { display: flex; }
+
+    #book-call-pill {
+      position: fixed;
+      right: -84px; top: 50%;
+      transform: translateY(-50%) rotate(-90deg);
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #0a0e17;
+      padding: 0.5rem 1.25rem;
+      border-radius: 50px 50px 0 0;
+      font-size: 0.8rem; font-weight: 700;
+      text-decoration: none; z-index: 800;
+      transition: right 0.3s; white-space: nowrap;
+    }
+    #book-call-pill:hover { right: -70px; }
+
+    /* Toast */
+    #toast {
+      position: fixed;
+      bottom: 110px; left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--card); border: 1px solid var(--accent);
+      color: var(--text); padding: 0.75rem 1.5rem;
+      border-radius: 50px; font-size: 0.88rem;
+      opacity: 0; transition: all 0.4s; z-index: 9999; pointer-events: none;
+    }
+    #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* Footer */
+    footer {
+      background: var(--card2);
+      border-top: 1px solid var(--border);
+      padding: 3rem 6%;
+    }
+    .footer-inner { text-align: center; }
+    .footer-brand { font-size: 1.4rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
+    .footer-brand span { color: var(--accent); }
+    .footer-copy { color: var(--muted); font-size: 0.83rem; margin-bottom: 1.25rem; }
+    .footer-social { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .footer-social a {
+      color: var(--muted); text-decoration: none; font-size: 0.83rem;
+      padding: 0.4rem 0.9rem; border: 1px solid var(--border); border-radius: 8px;
+      transition: all 0.2s;
+    }
+    .footer-social a:hover { color: var(--accent); border-color: var(--accent); }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; padding-top: 90px; text-align: center; }
+      .hero-about { margin: 0 auto 2rem; text-align: center; }
+      .hero-buttons { justify-content: center; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .timeline::before { left: 20px; }
+      .timeline-item:nth-child(odd),
+      .timeline-item:nth-child(even) { flex-direction: row !important; padding: 0 0 0 50px !important; }
+      .timeline-dot { left: 20px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .float-badge:nth-child(1) { top: -14px; right: 0; }
+      .float-badge:nth-child(2) { left: 0; top: 60px; }
+      .float-badge:nth-child(3) { bottom: 30px; right: 0; }
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 1rem; }
+      .stats-row { padding: 2.5rem 1.5rem; }
+      section { padding: 3.5rem 5%; }
+      .hero { padding: 90px 5% 3rem; }
+      #chatbot-window { width: calc(100vw - 48px); }
+    }
+
+    [dir="rtl"] .hero { text-align: right; }
+    [dir="rtl"] .hero-about { text-align: right; margin: 0 0 2rem; }
+    [dir="rtl"] .hero-buttons { justify-content: flex-start; }
+  </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<!-- Navbar -->
+<nav>
+  <div class="nav-left">
+    <a href="../index.html">
+      <span>&#8592;</span>
+      <span data-en="Back to Rawafid" data-ar="العودة لروافد"></span>
+    </a>
+  </div>
+  <a href="../index.html" class="nav-logo">Raw<span>afid</span> | روافد</a>
+  <div class="nav-right">
+    <button id="langBtn" onclick="toggleLang()">AR</button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-badge">
+      <div class="pulse-dot"></div>
+      <span data-en="IT Infrastructure Engineer &amp; Team Lead" data-ar="مهندس بنية تحتية تقنية وقائد فريق"></span>
+    </div>
+    <h1 class="hero-headline">
+      <span data-en="Building IT Infrastructure /" data-ar="نبني بنية تحتية تقنية /"></span><br>
+      <span class="accent-line" data-en="That Lasts" data-ar="موثوقة وتدوم"></span>
+    </h1>
+    <p class="hero-about" data-en="IT Infrastructure Engineer and freelancer from Baghdad. I design and deploy complete IT solutions for offices and commercial buildings — structured cabling, networks, CCTV, access control, VoIP and electrical. Over 300 devices installed across 8+ real projects." data-ar="مهندس بنية تحتية تقنية ومستقل من بغداد. أصمم وأنشر حلول IT متكاملة للمكاتب والمباني التجارية — تمديدات هيكلية وشبكات وكاميرات وتحكم بالدخول وVoIP وكهربائي. أكثر من 300 جهاز مثبت في 8+ مشاريع حقيقية."></p>
+    <div class="hero-buttons">
+      <a href="https://calendly.com/yousifabdulkareem4business" target="_blank" rel="noopener noreferrer" class="btn-primary">
+        <span>&#128197;</span>
+        <span data-en="Book Free Call" data-ar="احجز مكالمة مجانية"></span>
+      </a>
+      <a href="https://wa.me/9647727080528" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+        <span>&#128172;</span>
+        <span data-en="WhatsApp Me" data-ar="راسلني واتساب"></span>
+      </a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="profile-card">
+      <div class="profile-avatar">YA</div>
+      <h3>Yousif A. Abbas</h3>
+      <p class="profile-title" data-en="IT Infrastructure Engineer &amp; Team Lead" data-ar="مهندس بنية تحتية تقنية وقائد فريق"></p>
+      <p class="profile-location">&#128205; Baghdad, Iraq</p>
+      <div class="skill-tags">
+        <span class="skill-tag">Network Setup</span>
+        <span class="skill-tag">CCTV</span>
+        <span class="skill-tag">Structured Cabling</span>
+        <span class="skill-tag">Access Control</span>
+        <span class="skill-tag">VoIP</span>
+        <span class="skill-tag">Electrical</span>
+      </div>
+    </div>
+    <div class="float-badge" data-en="300+ Devices Installed" data-ar="300+ جهاز مثبت">300+ Devices Installed</div>
+    <div class="float-badge" data-en="8+ Projects" data-ar="8+ مشاريع">8+ Projects</div>
+    <div class="float-badge" data-en="100% On Time" data-ar="100% في الوقت">100% On Time</div>
+  </div>
+</section>
+
+<!-- Stats Row -->
+<div class="stats-row">
+  <div class="stat-item">
+    <div class="stat-number" data-target="8" data-suffix="+">8+</div>
+    <div class="stat-label" data-en="Projects Completed" data-ar="مشاريع منجزة"></div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number" data-target="300" data-suffix="+">300+</div>
+    <div class="stat-label" data-en="Devices Installed" data-ar="جهاز مثبت"></div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number" data-target="100" data-suffix="%">100%</div>
+    <div class="stat-label" data-en="On Time Delivery" data-ar="تسليم في الوقت"></div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number" data-target="1" data-suffix="+">1+</div>
+    <div class="stat-label" data-en="Years Experience" data-ar="سنوات خبرة"></div>
+  </div>
+</div>
+
+<!-- Services -->
+<section id="services">
+  <div class="section-header">
+    <h2><span data-en="What I" data-ar="شنو"></span> <span style="color:var(--accent)" data-en="Do" data-ar="أسوي"></span></h2>
+    <p class="section-subtitle" data-en="Complete IT infrastructure solutions for offices and commercial buildings." data-ar="حلول بنية تحتية تقنية متكاملة للمكاتب والمباني التجارية."></p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <span class="service-icon">&#127760;</span>
+      <h3 data-en="Network Infrastructure" data-ar="بنية الشبكات"></h3>
+      <p data-en="Cisco, MikroTik, Ubiquiti enterprise networks with VLANs and VPNs." data-ar="شبكات Cisco وMikroTik وUbiquiti للمؤسسات مع VLANs وVPNs."></p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">&#128268;</span>
+      <h3 data-en="Structured Cabling" data-ar="التمديدات الهيكلية"></h3>
+      <p data-en="Cat6/Cat6A certified structured cabling for any building size." data-ar="تمديدات Cat6/Cat6A معتمدة لأي حجم مبنى."></p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">&#128249;</span>
+      <h3 data-en="CCTV &amp; Surveillance" data-ar="كاميرات المراقبة"></h3>
+      <p data-en="Hikvision and Dahua indoor/outdoor day-night surveillance systems." data-ar="كاميرات Hikvision وDahua داخلية وخارجية ليل ونهار."></p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">&#128274;</span>
+      <h3 data-en="Access Control" data-ar="التحكم بالدخول"></h3>
+      <p data-en="ZKTeco smart card and biometric access control installations." data-ar="أنظمة ZKTeco للبطاقة الذكية والبصمة."></p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">&#127970;</span>
+      <h3 data-en="Building IT Fitout" data-ar="تجهيز المباني التقنية"></h3>
+      <p data-en="Full end-to-end IT fitout for offices and commercial spaces." data-ar="تجهيز تقني متكامل للمكاتب والمساحات التجارية."></p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">&#128295;</span>
+      <h3 data-en="Maintenance &amp; Support" data-ar="الصيانة والدعم"></h3>
+      <p data-en="Monthly and yearly maintenance contracts with on-site support." data-ar="عقود صيانة شهرية وسنوية مع دعم ميداني."></p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">&#128222;</span>
+      <h3 data-en="VoIP Systems" data-ar="أنظمة الاتصال"></h3>
+      <p data-en="Enterprise VoIP phone systems and PBX installations." data-ar="أنظمة هاتف VoIP وPBX للشركات."></p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">&#9889;</span>
+      <h3 data-en="Electrical Services" data-ar="الخدمات الكهربائية"></h3>
+      <p data-en="IT-related electrical works, power distribution and panels." data-ar="أعمال كهربائية للبنية التقنية وتوزيع الطاقة."></p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">&#128293;</span>
+      <h3 data-en="Fire Alarm Systems" data-ar="أنظمة الإنذار"></h3>
+      <p data-en="Fire detection and alarm systems for buildings and offices." data-ar="أنظمة كشف الحريق والإنذار للمباني والمكاتب."></p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">&#128227;</span>
+      <h3 data-en="PA &amp; Intercom" data-ar="الإذاعة والإنترفون"></h3>
+      <p data-en="Public address systems and intercom installations." data-ar="أنظمة الإذاعة العامة والإنترفون."></p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">&#127968;</span>
+      <h3 data-en="Smart Building" data-ar="المباني الذكية"></h3>
+      <p data-en="Smart building automation, IoT integration and control systems." data-ar="أتمتة المباني الذكية ودمج IoT وأنظمة التحكم."></p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">&#128267;</span>
+      <h3 data-en="UPS &amp; Power Backup" data-ar="الطاقة الاحتياطية"></h3>
+      <p data-en="APC and Schneider UPS systems for uninterrupted power supply." data-ar="أنظمة UPS من APC وSchneider لضمان استمرارية الطاقة."></p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">&#128225;</span>
+      <h3 data-en="Hotspot Services" data-ar="خدمات الهوت سبوت"></h3>
+      <p data-en="Managed public WiFi hotspot setup with bandwidth control, voucher systems, and monitoring." data-ar="إعداد هوت سبوت واي فاي عام مع التحكم بالنطاق الترددي وأنظمة الكروت."></p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">&#127760;</span>
+      <h3 data-en="UltraNet" data-ar="ألترانت"></h3>
+      <p data-en="High-speed internet distribution solutions for residential and commercial buildings." data-ar="حلول توزيع الإنترنت عالي السرعة للمجمعات السكنية والتجارية."></p>
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects" style="background:var(--card2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="section-header">
+    <h2><span data-en="Real" data-ar="مشاريع"></span> <span style="color:var(--accent)" data-en="Projects" data-ar="حقيقية"></span></h2>
+    <p class="section-subtitle" data-en="8+ deployed projects across Baghdad with real clients." data-ar="8+ مشاريع منفذة في بغداد مع عملاء حقيقيين."></p>
+  </div>
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="project-logo-row">
+        <img src="../Freelancers/Yousif-Abbas/Client-Logos/Abwaab.jpeg" alt="Abwaab" class="project-logo" />
+      </div>
+      <h3 data-en="Abwaab Old Office" data-ar="مكتب أبواب القديم"></h3>
+      <p data-en="Complete office network setup — switches, APs, patch panels and cabling." data-ar="تجهيز شبكة مكتبية كاملة — سويتشات ونقاط وصول وبانلات وكابلات."></p>
+      <div class="project-tags">
+        <span class="project-tag">Network</span>
+        <span class="project-tag">Cabling</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-logo-row">
+        <img src="../Freelancers/Yousif-Abbas/Client-Logos/Abwaab.jpeg" alt="Abwaab" class="project-logo" />
+      </div>
+      <h3 data-en="Abwaab Cafe" data-ar="كافيه أبواب"></h3>
+      <p data-en="CCTV surveillance system plus full network infrastructure for the cafe." data-ar="نظام كاميرات مراقبة وبنية شبكية كاملة للكافيه."></p>
+      <div class="project-tags">
+        <span class="project-tag">CCTV</span>
+        <span class="project-tag">Network</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-logo-row">
+        <img src="../Freelancers/Yousif-Abbas/Client-Logos/Ameena.jpeg" alt="Ameena" class="project-logo" />
+      </div>
+      <h3 data-en="Ameena Old Office" data-ar="مكتب أمينة القديم"></h3>
+      <p data-en="Structured cabling installation with full network setup and patch organization." data-ar="تمديدات هيكلية وتجهيز شبكة كامل وتنظيم البانلات."></p>
+      <div class="project-tags">
+        <span class="project-tag">Structured Cabling</span>
+        <span class="project-tag">Network</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-logo-row">
+        <img src="../Freelancers/Yousif-Abbas/Client-Logos/Abwaab.jpeg" alt="Abwaab" class="project-logo" />
+        <img src="../Freelancers/Yousif-Abbas/Client-Logos/Ameena.jpeg" alt="Ameena" class="project-logo" />
+      </div>
+      <h3 data-en="Abwaab + Ameena HQ" data-ar="مقر أبواب وأمينة الرئيسي"></h3>
+      <p data-en="4-floor HQ: 300+ devices, full IT fitout — network, CCTV, access control, VoIP and electrical." data-ar="مقر رئيسي 4 طوابق: 300+ جهاز، تجهيز IT متكامل — شبكة وكاميرات وتحكم بالدخول وVoIP وكهرباء."></p>
+      <div class="project-tags">
+        <span class="project-tag">Network</span>
+        <span class="project-tag">CCTV</span>
+        <span class="project-tag">Access Control</span>
+        <span class="project-tag">VoIP</span>
+        <span class="project-tag">Electrical</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-logo-row">
+        <img src="../Freelancers/Yousif-Abbas/Client-Logos/Ameena.jpeg" alt="Ameena" class="project-logo" />
+      </div>
+      <h3 data-en="Ameena Warehouse" data-ar="مستودع أمينة"></h3>
+      <p data-en="Structured cabling and CCTV surveillance for the full warehouse facility." data-ar="تمديدات هيكلية وكاميرات مراقبة للمستودع بالكامل."></p>
+      <div class="project-tags">
+        <span class="project-tag">Structured Cabling</span>
+        <span class="project-tag">CCTV</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-logo-row">
+        <img src="../Freelancers/Yousif-Abbas/Client-Logos/Al-Majal.jpeg" alt="Al Majal" class="project-logo" />
+      </div>
+      <h3 data-en="Al Majal Building" data-ar="مبنى المجال"></h3>
+      <p data-en="Full IT fitout for commercial building — network, CCTV, structured cabling and access control." data-ar="تجهيز تقني متكامل للمبنى التجاري — شبكة وكاميرات وتمديدات وتحكم بالدخول."></p>
+      <div class="project-tags">
+        <span class="project-tag">Network</span>
+        <span class="project-tag">CCTV</span>
+        <span class="project-tag">Cabling</span>
+        <span class="project-tag">Access Control</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-logo-row">
+        <img src="../Freelancers/Yousif-Abbas/Client-Logos/COOLDOWN.jpeg" alt="Careem" class="project-logo" />
+      </div>
+      <h3 data-en="Careem Iraq" data-ar="كريم العراق"></h3>
+      <p data-en="Office network infrastructure and CCTV surveillance system installation." data-ar="بنية شبكية للمكتب وتركيب كاميرات مراقبة."></p>
+      <div class="project-tags">
+        <span class="project-tag">Network</span>
+        <span class="project-tag">CCTV</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-logo-row">
+        <div class="project-initials">JP</div>
+      </div>
+      <h3 data-en="JP Law Firm" data-ar="مكتب JP للمحاماة"></h3>
+      <p data-en="Professional network setup for a law firm — secure, structured and reliable." data-ar="تجهيز شبكة احترافي لمكتب محاماة — آمن وهيكلي وموثوق."></p>
+      <div class="project-tags">
+        <span class="project-tag">Network</span>
+        <span class="project-tag">Cabling</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tools -->
+<section id="tools">
+  <div class="section-header">
+    <h2 data-en="Tools &amp; Brands" data-ar="الأدوات والعلامات التجارية"></h2>
+    <p class="section-subtitle" data-en="Industry-leading brands I work with on every project." data-ar="العلامات التجارية الرائدة التي أستخدمها في كل مشروع."></p>
+  </div>
+  <div class="tools-grid">
+    <div class="tool-card">
+      <img src="https://logo.clearbit.com/cisco.com" alt="Cisco" onerror="this.style.display='none'" />
+      <span>Cisco</span>
+    </div>
+    <div class="tool-card">
+      <img src="https://logo.clearbit.com/mikrotik.com" alt="MikroTik" onerror="this.style.display='none'" />
+      <span>MikroTik</span>
+    </div>
+    <div class="tool-card">
+      <img src="https://logo.clearbit.com/ui.com" alt="Ubiquiti" onerror="this.style.display='none'" />
+      <span>Ubiquiti</span>
+    </div>
+    <div class="tool-card">
+      <img src="https://logo.clearbit.com/hikvision.com" alt="Hikvision" onerror="this.style.display='none'" />
+      <span>Hikvision</span>
+    </div>
+    <div class="tool-card">
+      <img src="https://logo.clearbit.com/dahuasecurity.com" alt="Dahua" onerror="this.style.display='none'" />
+      <span>Dahua</span>
+    </div>
+    <div class="tool-card">
+      <img src="https://logo.clearbit.com/zkteco.com" alt="ZKTeco" onerror="this.style.display='none'" />
+      <span>ZKTeco</span>
+    </div>
+    <div class="tool-card">
+      <img src="https://logo.clearbit.com/schneider-electric.com" alt="Schneider" onerror="this.style.display='none'" />
+      <span>Schneider</span>
+    </div>
+    <div class="tool-card">
+      <img src="https://logo.clearbit.com/apc.com" alt="APC" onerror="this.style.display='none'" />
+      <span>APC</span>
+    </div>
+  </div>
+</section>
+
+<!-- Work Process -->
+<section id="process" style="background:var(--card2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="section-header">
+    <h2><span data-en="Work" data-ar="طريقة"></span> <span style="color:var(--accent)" data-en="Process" data-ar="العمل"></span></h2>
+    <p class="section-subtitle" data-en="How I approach every project from discovery to delivery." data-ar="كيف أتعامل مع كل مشروع من الاكتشاف حتى التسليم."></p>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot" style="background:#22c55e;"></div>
+      <div class="timeline-content">
+        <div class="timeline-phase phase-green">DISCOVERY</div>
+        <h3 data-en="&#128269; Site Survey" data-ar="&#128269; مسح الموقع"></h3>
+        <p data-en="On-site visit to assess building layout, requirements and project scope." data-ar="زيارة ميدانية لتقييم تخطيط المبنى والمتطلبات ونطاق المشروع."></p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot" style="background:#22c55e;"></div>
+      <div class="timeline-content">
+        <div class="timeline-phase phase-green">DISCOVERY</div>
+        <h3 data-en="&#128203; Requirements Gathering" data-ar="&#128203; جمع المتطلبات"></h3>
+        <p data-en="Detailed discussion of client needs, budget and timeline expectations." data-ar="نقاش مفصل حول احتياجات العميل والميزانية والجدول الزمني."></p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot" style="background:var(--accent);"></div>
+      <div class="timeline-content">
+        <div class="timeline-phase phase-cyan">PLANNING</div>
+        <h3 data-en="&#128506; Network Design" data-ar="&#128506; تصميم الشبكة"></h3>
+        <p data-en="Creating detailed network diagrams, cabling schematics and equipment lists." data-ar="إنشاء مخططات شبكة مفصلة وتصميم التمديدات وقوائم المعدات."></p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot" style="background:var(--accent);"></div>
+      <div class="timeline-content">
+        <div class="timeline-phase phase-cyan">PLANNING</div>
+        <h3 data-en="&#128176; Proposal &amp; Quote" data-ar="&#128176; العرض والسعر"></h3>
+        <p data-en="Detailed proposal with itemized pricing and full project timeline." data-ar="عرض مفصل مع أسعار مفصلة وجدول زمني كامل للمشروع."></p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot" style="background:#7c3aed;"></div>
+      <div class="timeline-content">
+        <div class="timeline-phase phase-purple">DELIVERY</div>
+        <h3 data-en="&#128295; Installation" data-ar="&#128295; التركيب"></h3>
+        <p data-en="Professional installation of all equipment — cabling, devices and hardware." data-ar="تركيب احترافي لجميع المعدات — كابلات وأجهزة وهاردوير."></p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot" style="background:#7c3aed;"></div>
+      <div class="timeline-content">
+        <div class="timeline-phase phase-purple">DELIVERY</div>
+        <h3 data-en="&#9881; Configuration &amp; Testing" data-ar="&#9881; الإعداد والاختبار"></h3>
+        <p data-en="Full configuration of all systems and comprehensive testing before handover." data-ar="إعداد كامل لجميع الأنظمة واختبار شامل قبل التسليم."></p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot" style="background:#7c3aed;"></div>
+      <div class="timeline-content">
+        <div class="timeline-phase phase-purple">DELIVERY</div>
+        <h3 data-en="&#128218; Training &amp; Handover" data-ar="&#128218; التدريب والتسليم"></h3>
+        <p data-en="Client walkthrough, staff training and complete documentation handover." data-ar="جولة مع العميل وتدريب الموظفين وتسليم الوثائق الكاملة."></p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot" style="background:#7c3aed;"></div>
+      <div class="timeline-content">
+        <div class="timeline-phase phase-purple">DELIVERY</div>
+        <h3 data-en="&#128737; Post-Delivery Support" data-ar="&#128737; الدعم بعد التسليم"></h3>
+        <p data-en="Ongoing support period and optional maintenance contract after completion." data-ar="فترة دعم مستمرة وعقد صيانة اختياري بعد اكتمال المشروع."></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-header">
+    <h2>FAQ <span style="color:var(--accent)" data-en="— Common Questions" data-ar="— أسئلة شائعة"></span></h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span data-en="What network services do you provide?" data-ar="شنو خدمات الشبكات اللي تقدمها؟"></span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p data-en="I design and install Cisco, MikroTik, and Ubiquiti networks for offices and buildings — including structured cabling, VLANs, VPNs, wireless access points, firewalls and network management." data-ar="أصمم وأركب شبكات Cisco وMikroTik وUbiquiti للمكاتب والمباني — يشمل تمديدات هيكلية كاملة وVLANs وVPNs ونقاط وصول لاسلكية وجدران حماية وإدارة الشبكة."></p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span data-en="How long does an office network setup take?" data-ar="چم تاخذ وقت لتركيب شبكة مكتب؟"></span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p data-en="A small office (up to 20 devices) typically takes 1-3 days. A larger multi-floor building can take 1-3 weeks depending on scope and complexity." data-ar="مكتب صغير (حتى 20 جهاز) يأخذ عادة 1-3 أيام. مبنى أكبر متعدد الطوابق ممكن يأخذ 1-3 أسابيع حسب الحجم والتعقيد."></p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span data-en="Do you install CCTV cameras?" data-ar="تعمل كاميرات مراقبة؟"></span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p data-en="Yes. I install Hikvision and Dahua systems — indoor and outdoor cameras, day and night vision, NVR/DVR recording with remote viewing capability." data-ar="أي. أركب كاميرات Hikvision وDahua — داخلية وخارجية، رؤية ليلية ونهارية، تسجيل NVR/DVR مع مشاهدة عن بعد."></p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span data-en="What warranty do you offer?" data-ar="شنو ضمانك؟"></span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p data-en="All installations include a post-delivery support period. I don't leave the site until everything works perfectly. Monthly and yearly maintenance contracts are also available." data-ar="كل التركيبات تجي مع فترة دعم بعد التسليم. ما أغادر الموقع لحين ما كل شي يشتغل مثالي. عقود صيانة شهرية وسنوية متاحة أيضاً."></p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span data-en="Do you work outside Baghdad?" data-ar="تشتغل بره بغداد؟"></span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p data-en="Yes, I travel for projects across Iraq. For large-scale projects outside Baghdad, travel costs may apply depending on the project value." data-ar="أي، أسافر للمشاريع في جميع أنحاء العراق. للمشاريع الكبيرة خارج بغداد، تكاليف السفر تنطبق حسب قيمة المشروع."></p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span data-en="Can you install an access control system?" data-ar="تقدر تعمل نظام تحكم بالدخول؟"></span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p data-en="Yes. I install ZKTeco biometric and smart card systems — from single-door setups to multi-floor enterprise access control." data-ar="أي. أركب أنظمة ZKTeco للبصمة والبطاقة الذكية — من باب واحد إلى أنظمة متعددة الطوابق للمؤسسات."></p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span data-en="Are maintenance packages available?" data-ar="أكو باقات صيانة؟"></span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p data-en="Yes, monthly and yearly maintenance contracts cover periodic inspection, updates, repairs and priority support." data-ar="أي، عقود صيانة شهرية وسنوية تغطي الفحص الدوري والتحديثات والإصلاحات والاستجابة الأولوية."></p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span data-en="How do I get a quote?" data-ar="كيف أحصل على عرض سعر؟"></span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p data-en="Send a WhatsApp message or fill the contact form below. I'll respond within 48 hours with a detailed quote based on your project requirements." data-ar="راسلني على واتساب أو اكمل فورم التواصل أدناه. سأرد خلال 48 ساعة بعرض سعر مفصل."></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" style="background:var(--card2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="section-header">
+    <h2><span data-en="What Clients" data-ar="شنو يقولون"></span> <span style="color:var(--accent)" data-en="Say" data-ar="العملاء"></span></h2>
+  </div>
+  <div class="reviews-grid" id="reviewsGrid">
+    <div class="review-card">
+      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-text">شغل ممتاز وسرعة في التنفيذ. شبكة المكتب شتغلت بشكل مثالي من أول يوم.</p>
+      <div class="review-author">— عميل من أبواب</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-text">Professional and reliable. The CCTV system works perfectly, would definitely recommend.</p>
+      <div class="review-author">— Manager, Al Majal</div>
+    </div>
+  </div>
+  <div class="review-form-wrapper">
+    <h3 data-en="Leave a Review" data-ar="اترك تقييماً"></h3>
+    <div class="star-rating" id="starRating">
+      <button class="star-btn active" data-val="1" onclick="setRating(1)">&#9733;</button>
+      <button class="star-btn active" data-val="2" onclick="setRating(2)">&#9733;</button>
+      <button class="star-btn active" data-val="3" onclick="setRating(3)">&#9733;</button>
+      <button class="star-btn active" data-val="4" onclick="setRating(4)">&#9733;</button>
+      <button class="star-btn active" data-val="5" onclick="setRating(5)">&#9733;</button>
+    </div>
+    <form id="reviewForm" onsubmit="submitReview(event)">
+      <div class="form-group">
+        <label data-en="Your Name" data-ar="اسمك"></label>
+        <input type="text" id="reviewName" required />
+      </div>
+      <div class="form-group">
+        <label data-en="Your Review" data-ar="تقييمك"></label>
+        <textarea id="reviewText" required></textarea>
+      </div>
+      <button type="submit" class="btn-submit" data-en="Submit Review" data-ar="إرسال التقييم">Submit Review</button>
+    </form>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="section-header">
+    <h2><span data-en="Get in" data-ar="تواصل"></span> <span style="color:var(--accent)" data-en="Touch" data-ar="معي"></span></h2>
+    <p class="section-subtitle" data-en="Ready to start your IT project? Let's talk." data-ar="جاهز لبدء مشروع IT؟ نتكلم."></p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-form-card">
+      <h3 data-en="Send a Message" data-ar="أرسل رسالة"></h3>
+      <form onsubmit="submitForm(event)">
+        <div class="form-group">
+          <label data-en="Full Name" data-ar="الاسم الكامل"></label>
+          <input type="text" name="name" required />
+        </div>
+        <div class="form-group">
+          <label data-en="Phone Number" data-ar="رقم الهاتف"></label>
+          <input type="tel" name="phone" />
+        </div>
+        <div class="form-group">
+          <label data-en="Project Type" data-ar="نوع المشروع"></label>
+          <select name="project_type">
+            <option>Network Setup</option>
+            <option>CCTV Installation</option>
+            <option>Structured Cabling</option>
+            <option>Access Control</option>
+            <option>Full IT Fitout</option>
+            <option>Maintenance Contract</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label data-en="Message" data-ar="الرسالة"></label>
+          <textarea name="message" data-en-placeholder="Describe your project..." data-ar-placeholder="اوصف مشروعك..." placeholder="Describe your project..."></textarea>
+        </div>
+        <input type="hidden" name="page" value="yousif-profile" />
+        <button type="submit" class="btn-submit" data-en="Send Message" data-ar="إرسال الرسالة">Send Message</button>
+      </form>
+    </div>
+    <div class="contact-info-card">
+      <h3 data-en="Contact Info" data-ar="معلومات التواصل"></h3>
+      <a href="https://wa.me/9647727080528" target="_blank" rel="noopener noreferrer" class="contact-link">
+        <span class="contact-link-icon">&#128172;</span>
+        <div class="contact-link-info">
+          <h4>WhatsApp</h4>
+          <p>+964 772 708 0528</p>
+        </div>
+      </a>
+      <a href="mailto:yousifabdulkareem4business@gmail.com" class="contact-link">
+        <span class="contact-link-icon">&#128231;</span>
+        <div class="contact-link-info">
+          <h4>Email</h4>
+          <p>yousifabdulkareem4business@gmail.com</p>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/in/yousif-abdulkareem-al-sara-4220b1189" target="_blank" rel="noopener noreferrer" class="contact-link">
+        <span class="contact-link-icon">&#128279;</span>
+        <div class="contact-link-info">
+          <h4>LinkedIn</h4>
+          <p>Yousif Abdulkareem Al-Sara</p>
+        </div>
+      </a>
+      <a href="https://calendly.com/yousifabdulkareem4business" target="_blank" rel="noopener noreferrer" class="contact-link">
+        <span class="contact-link-icon">&#128197;</span>
+        <div class="contact-link-info">
+          <h4 data-en="Book a Call" data-ar="احجز مكالمة"></h4>
+          <p data-en="Free 30-min consultation" data-ar="استشارة مجانية 30 دقيقة"></p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <p class="footer-brand">Raw<span>afid</span> | روافد</p>
+    <p class="footer-copy">&#169; 2026 وكالة روافد — بغداد، العراق. جميع الحقوق محفوظة.</p>
+    <div class="footer-social">
+      <a href="https://wa.me/9647727080528" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a href="https://www.linkedin.com/in/yousif-abdulkareem-al-sara-4220b1189" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="mailto:yousifabdulkareem4business@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating -->
+<a href="https://wa.me/9647727080528" id="whatsapp-btn" target="_blank" rel="noopener noreferrer" title="WhatsApp">&#128172;</a>
+<button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">&#8679;</button>
+<a href="https://calendly.com/yousifabdulkareem4business" id="book-call-pill" target="_blank" rel="noopener noreferrer">&#128197; Book a Call</a>
+
+<!-- Chatbot -->
+<button id="chatbot-btn" onclick="toggleChatbot()" title="Chat">&#129302;</button>
+<div id="chatbot-window">
+  <div class="chatbot-header">
+    <h4>Yousif IT Assistant &#129302;</h4>
+    <button class="chatbot-close" onclick="toggleChatbot()">&#215;</button>
+  </div>
+  <div class="chatbot-messages" id="chatMessages">
+    <div class="chat-msg bot">هلا! &#128075; أنا مساعد يوسف للبنية التقنية. شنو تريد تعرف عن خدمات IT؟</div>
+  </div>
+  <div class="chatbot-input-row">
+    <input type="text" id="chatInput" placeholder="اكتب سؤالك..." onkeypress="if(event.key==='Enter')sendChat()" />
+    <button class="chatbot-send" onclick="sendChat()">&#128172;</button>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+  // Language
+  let currentLang = localStorage.getItem('rawafid-lang') || 'en';
+
+  function toggleLang() {
+    currentLang = currentLang === 'en' ? 'ar' : 'en';
+    localStorage.setItem('rawafid-lang', currentLang);
+    applyLang();
+  }
+
+  function applyLang() {
+    const isAR = currentLang === 'ar';
+    document.documentElement.lang = isAR ? 'ar' : 'en';
+    document.documentElement.dir = isAR ? 'rtl' : 'ltr';
+    document.getElementById('langBtn').textContent = isAR ? 'EN' : 'AR';
+    document.querySelectorAll('[data-en]').forEach(el => {
+      el.textContent = isAR ? (el.dataset.ar || el.dataset.en) : el.dataset.en;
+    });
+    // Placeholders
+    document.querySelectorAll('[data-en-placeholder]').forEach(el => {
+      el.placeholder = isAR ? (el.dataset.arPlaceholder || '') : (el.dataset.enPlaceholder || '');
+    });
+  }
+
+  applyLang();
+
+  // Progress Bar + Scroll Top
+  window.addEventListener('scroll', () => {
+    const total = document.body.scrollHeight - window.innerHeight;
+    const pct = total > 0 ? (window.scrollY / total) * 100 : 0;
+    document.getElementById('progress-bar').style.width = pct + '%';
+    const st = document.getElementById('scroll-top');
+    if (window.scrollY > 300) st.classList.add('visible');
+    else st.classList.remove('visible');
+  });
+
+  // Count Up on scroll
+  const counters = document.querySelectorAll('.stat-number[data-target]');
+  let counted = false;
+
+  const statsEl = document.querySelector('.stats-row');
+  if (statsEl) {
+    const obs = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting && !counted) {
+        counted = true;
+        counters.forEach(counter => {
+          const target = parseInt(counter.dataset.target);
+          const suffix = counter.dataset.suffix || '';
+          let cur = 0;
+          const inc = Math.max(1, Math.ceil(target / 60));
+          const timer = setInterval(() => {
+            cur += inc;
+            if (cur >= target) { cur = target; clearInterval(timer); }
+            counter.textContent = cur + suffix;
+          }, 25);
+        });
+      }
+    });
+    obs.observe(statsEl);
+  }
+
+  // Card animations
+  const cardObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.service-card, .project-card, .review-card, .tool-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    cardObs.observe(el);
+  });
+
+  // FAQ
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  }
+
+  // Star rating
+  let selectedRating = 5;
+
+  function setRating(val) {
+    selectedRating = val;
+    document.querySelectorAll('#starRating .star-btn').forEach((btn, i) => {
+      btn.classList.toggle('active', i < val);
+    });
+  }
+
+  // Load stored reviews
+  function loadStoredReviews() {
+    try {
+      const stored = JSON.parse(localStorage.getItem('yousif_reviews') || '[]');
+      const grid = document.getElementById('reviewsGrid');
+      stored.forEach(r => {
+        const card = document.createElement('div');
+        card.className = 'review-card';
+        card.innerHTML = '<div class="review-stars">' + '&#9733;'.repeat(r.rating) + '&#9734;'.repeat(5 - r.rating) + '</div>' +
+          '<p class="review-text">' + r.text.replace(/</g,'&lt;') + '</p>' +
+          '<div class="review-author">— ' + r.name.replace(/</g,'&lt;') + '</div>';
+        grid.appendChild(card);
+      });
+    } catch(e) {}
+  }
+
+  loadStoredReviews();
+
+  function submitReview(e) {
+    e.preventDefault();
+    const name = document.getElementById('reviewName').value.trim();
+    const text = document.getElementById('reviewText').value.trim();
+    if (!name || !text) return;
+    const review = { name, text, rating: selectedRating };
+    try {
+      const stored = JSON.parse(localStorage.getItem('yousif_reviews') || '[]');
+      stored.push(review);
+      localStorage.setItem('yousif_reviews', JSON.stringify(stored));
+    } catch(e) {}
+    const card = document.createElement('div');
+    card.className = 'review-card';
+    card.innerHTML = '<div class="review-stars">' + '&#9733;'.repeat(selectedRating) + '&#9734;'.repeat(5 - selectedRating) + '</div>' +
+      '<p class="review-text">' + text.replace(/</g,'&lt;') + '</p>' +
+      '<div class="review-author">— ' + name.replace(/</g,'&lt;') + '</div>';
+    document.getElementById('reviewsGrid').appendChild(card);
+    e.target.reset();
+    setRating(5);
+    showToast('تم إضافة تقييمك! شكراً ✅');
+  }
+
+  // Contact form
+  async function submitForm(e) {
+    e.preventDefault();
+    const form = e.target;
+    const data = new FormData(form);
+    try {
+      await fetch('https://script.google.com/macros/s/AKfycbxe9weLT738oHP10plWn7whJZamnR2Yzdi8SvlPCt7SJyNgUmOdvq3Xqo5MnwVi97mhoQ/exec', {
+        method: 'POST', mode: 'no-cors', body: data
+      });
+      showToast('تم الإرسال بنجاح! ✅');
+      form.reset();
+    } catch(err) {
+      showToast('حدث خطأ، حاول مرة أخرى');
+    }
+  }
+
+  // Toast
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3500);
+  }
+
+  // Chatbot
+  const responses = {
+    'شبكة|network|نت': 'أسوي تصميم وتركيب شبكات Cisco وMikroTik وUbiquiti للمكاتب والمباني. نتكلم عن مشروعك؟ 📞',
+    'كاميرا|cctv|مراقبة': 'أركب كاميرات Hikvision وDahua، داخلية وخارجية، ليل ونهار ✅',
+    'سعر|تكلفة|كم': 'الأسعار تعتمد على حجم المشروع. راسلني على واتساب وأعطيك عرض سعر مجاني خلال 48 ساعة 💬',
+    'مشاريع|أعمال': 'عدي 8+ مشاريع حقيقية، أكثر من 300 جهاز مثبت في مكاتب وشركات كبيرة ببغداد 🏢',
+    'ضمان|guarantee|صيانة': 'كل التركيبات تجي مع دعم ما بعد التسليم. ما أغادر الموقع لحين ما كل شي يشتغل مثالي ✅',
+    'واتساب|تواصل': 'تقدر تراسلني مباشرة على wa.me/9647727080528 — نرد بسرعة 📱',
+    'default': 'مو واضح سؤالك 😅 — اكتب بشكل مختلف أو راسلني على واتساب مباشرة!'
+  };
+
+  function getBotReply(msg) {
+    const lower = msg.toLowerCase();
+    for (const [keys, reply] of Object.entries(responses)) {
+      if (keys === 'default') continue;
+      if (keys.split('|').some(k => lower.includes(k))) return reply;
+    }
+    return responses['default'];
+  }
+
+  function sendChat() {
+    const input = document.getElementById('chatInput');
+    const msg = input.value.trim();
+    if (!msg) return;
+    const msgs = document.getElementById('chatMessages');
+    msgs.innerHTML += '<div class="chat-msg user">' + msg.replace(/</g,'&lt;') + '</div>';
+    input.value = '';
+    msgs.scrollTop = msgs.scrollHeight;
+    setTimeout(() => {
+      msgs.innerHTML += '<div class="chat-msg bot">' + getBotReply(msg) + '</div>';
+      msgs.scrollTop = msgs.scrollHeight;
+    }, 650);
+  }
+
+  let chatOpen = false;
+  function toggleChatbot() {
+    chatOpen = !chatOpen;
+    const win = document.getElementById('chatbot-window');
+    win.classList.toggle('open', chatOpen);
+  }
+</script>
+</body>
+</html>

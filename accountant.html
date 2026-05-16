@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financial Accountant & Business Advisor — Coming Soon | Rawafid Agency</title>
+  <meta name="description" content="Accountant & Financial Advisor joining Rawafid Agency soon.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('../sw.js')})}</script>
+  <style>
+    :root {
+      --bg: #0a0e17; --card: #111827; --border: #1e2d40; --text: #e2e8f0; --muted: #8892a4;
+      --accent: #059669; --accent-rgb: 5,150,105; --cyan: #00d4ff;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: 'Space Grotesk', sans-serif; line-height: 1.6; overflow-x: hidden; }
+    [dir="rtl"] body { font-family: 'Cairo', sans-serif; }
+    [dir="rtl"] h1,[dir="rtl"] h2,[dir="rtl"] h3,[dir="rtl"] p,[dir="rtl"] span,[dir="rtl"] a,[dir="rtl"] button,[dir="rtl"] label,[dir="rtl"] input { font-family: 'Cairo', sans-serif; }
+    #scrollProgress { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: var(--accent); z-index: 9999; transition: width .1s; }
+    .navbar { position: sticky; top: 0; z-index: 100; background: rgba(10,14,23,.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-back { color: var(--muted); text-decoration: none; font-size: .9rem; display: flex; align-items: center; gap: .4rem; transition: color .2s; }
+    .nav-back:hover { color: var(--cyan); }
+    .nav-logo { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.2rem; text-decoration: none; color: var(--text); }
+    .nav-logo em { font-style: normal; color: var(--cyan); }
+    .nav-logo small { font-family: 'Cairo', sans-serif; color: var(--cyan); font-size: .9rem; }
+    .nav-actions { display: flex; align-items: center; gap: .75rem; }
+    .lang-btn { background: rgba(var(--accent-rgb),.1); border: 1px solid rgba(var(--accent-rgb),.3); color: var(--accent); padding: .3rem .8rem; border-radius: 20px; cursor: pointer; font-size: .85rem; font-weight: 600; transition: all .2s; }
+    .lang-btn:hover { background: rgba(var(--accent-rgb),.2); }
+    .cs-hero { min-height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; flex-direction: column; gap: 1.5rem; position: relative; overflow: hidden; padding: 4rem 2rem; }
+    .cs-hero::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(var(--accent-rgb),.12) 0%, transparent 70%); pointer-events: none; }
+    .cs-badge { display: inline-flex; align-items: center; gap: .5rem; padding: .4rem 1.2rem; border-radius: 50px; background: rgba(var(--accent-rgb),.1); border: 1px solid rgba(var(--accent-rgb),.3); color: var(--accent); font-size: .85rem; font-weight: 600; animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(var(--accent-rgb),.4); } 50% { box-shadow: 0 0 0 8px rgba(var(--accent-rgb),0); } }
+    .avatar-circle { width: 96px; height: 96px; border-radius: 50%; background: linear-gradient(135deg, rgba(var(--accent-rgb),.3), rgba(var(--accent-rgb),.1)); border: 2px solid rgba(var(--accent-rgb),.4); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: 700; color: var(--accent); margin: 0 auto; position: relative; }
+    .avatar-circle::after { content: ''; position: absolute; inset: -6px; border-radius: 50%; border: 2px dashed rgba(var(--accent-rgb),.3); animation: spin 10s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .cs-title { font-family: 'Space Grotesk', sans-serif; font-size: clamp(2rem,5vw,3.5rem); font-weight: 800; color: var(--accent); line-height: 1.1; }
+    [dir="rtl"] .cs-title { font-family: 'Cairo', sans-serif; }
+    .cs-name { font-size: clamp(1.2rem,3vw,1.8rem); font-weight: 600; color: var(--text); }
+    .cs-teaser { max-width: 560px; color: var(--muted); font-size: 1rem; line-height: 1.7; }
+    .dots { display: flex; gap: .5rem; justify-content: center; margin-top: .5rem; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); opacity: .3; animation: dotPulse 1.4s ease-in-out infinite; }
+    .dot:nth-child(2) { animation-delay: .2s; } .dot:nth-child(3) { animation-delay: .4s; }
+    @keyframes dotPulse { 0%,100% { opacity: .3; transform: scale(1); } 50% { opacity: 1; transform: scale(1.3); } }
+    .notify-section { padding: 5rem 2rem; background: rgba(17,24,39,.5); }
+    .section-inner { max-width: 900px; margin: 0 auto; }
+    .section-title { font-size: clamp(1.5rem,3vw,2rem); font-weight: 700; margin-bottom: .5rem; }
+    .section-sub { color: var(--muted); margin-bottom: 2.5rem; }
+    .notify-form { display: flex; flex-wrap: wrap; gap: 1rem; max-width: 560px; margin: 0 auto; }
+    .notify-form input { flex: 1 1 220px; background: var(--card); border: 1px solid var(--border); color: var(--text); padding: .8rem 1rem; border-radius: 8px; font-family: inherit; font-size: .95rem; outline: none; transition: border-color .2s; }
+    .notify-form input:focus { border-color: var(--accent); }
+    .notify-form input::placeholder { color: var(--muted); }
+    .btn-accent { background: var(--accent); color: #fff; border: none; padding: .8rem 1.8rem; border-radius: 8px; cursor: pointer; font-family: inherit; font-size: .95rem; font-weight: 600; transition: opacity .2s, transform .1s; white-space: nowrap; text-decoration: none; display: inline-flex; align-items: center; gap: .5rem; }
+    .btn-accent:hover { opacity: .9; transform: translateY(-1px); }
+    .form-success { display: none; color: #4ade80; margin-top: 1rem; font-weight: 600; text-align: center; }
+    .services-section { padding: 5rem 2rem; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; margin-top: 2rem; }
+    .service-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; position: relative; opacity: .75; transition: opacity .2s; }
+    .service-card:hover { opacity: .9; }
+    .service-icon { font-size: 2rem; margin-bottom: .75rem; }
+    .service-name { font-size: 1rem; font-weight: 600; margin-bottom: .25rem; }
+    .soon-label { position: absolute; top: 1rem; right: 1rem; background: rgba(var(--accent-rgb),.1); border: 1px solid rgba(var(--accent-rgb),.3); color: var(--accent); font-size: .7rem; font-weight: 600; padding: .2rem .6rem; border-radius: 20px; }
+    [dir="rtl"] .soon-label { right: auto; left: 1rem; }
+    .contact-section { padding: 5rem 2rem; background: rgba(17,24,39,.5); text-align: center; }
+    .contact-btns { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 2rem; }
+    .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text); padding: .8rem 1.8rem; border-radius: 8px; cursor: pointer; font-family: inherit; font-size: .95rem; text-decoration: none; transition: all .2s; display: inline-flex; align-items: center; gap: .5rem; }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); background: rgba(var(--accent-rgb),.05); }
+    .btn-wa { background: #25d366; color: #fff; border: none; padding: .8rem 1.8rem; border-radius: 8px; cursor: pointer; font-family: inherit; font-size: .95rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: .5rem; transition: opacity .2s; }
+    .btn-wa:hover { opacity: .9; }
+    #chatbotToggle { position: fixed; bottom: 24px; left: 24px; width: 56px; height: 56px; border-radius: 50%; background: var(--accent); color: #fff; border: none; font-size: 1.5rem; cursor: pointer; z-index: 1000; box-shadow: 0 4px 20px rgba(var(--accent-rgb),.4); display: flex; align-items: center; justify-content: center; transition: transform .2s; }
+    #chatbotToggle:hover { transform: scale(1.1); }
+    #chatbotWindow { position: fixed; bottom: 92px; left: 24px; width: 320px; max-height: 440px; background: var(--card); border: 1px solid var(--border); border-radius: 16px; z-index: 1000; display: none; flex-direction: column; box-shadow: 0 8px 32px rgba(0,0,0,.4); overflow: hidden; }
+    #chatbotWindow.open { display: flex; }
+    .cb-header { background: var(--accent); padding: 1rem; font-weight: 700; font-size: .95rem; display: flex; align-items: center; justify-content: space-between; }
+    .cb-close { background: none; border: none; color: #fff; cursor: pointer; font-size: 1.1rem; }
+    .cb-messages { flex: 1; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: .75rem; }
+    .cb-msg { padding: .6rem .9rem; border-radius: 10px; font-size: .85rem; line-height: 1.5; max-width: 85%; }
+    .cb-msg.bot { background: rgba(var(--accent-rgb),.1); border: 1px solid rgba(var(--accent-rgb),.2); align-self: flex-start; }
+    .cb-msg.user { background: var(--accent); color: #fff; align-self: flex-end; }
+    .cb-quick { padding: .75rem 1rem; display: flex; flex-direction: column; gap: .5rem; border-top: 1px solid var(--border); }
+    .cb-q { background: var(--bg); border: 1px solid var(--border); color: var(--text); padding: .45rem .8rem; border-radius: 8px; cursor: pointer; font-size: .8rem; text-align: left; transition: border-color .2s; }
+    [dir="rtl"] .cb-q { text-align: right; }
+    .cb-q:hover { border-color: var(--accent); color: var(--accent); }
+    #scrollTop { position: fixed; bottom: 90px; right: 24px; width: 44px; height: 44px; border-radius: 50%; background: var(--cyan); color: #000; border: none; font-size: 1.1rem; cursor: pointer; z-index: 999; display: none; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,212,255,.3); }
+    #scrollTop.visible { display: flex; }
+    @media(max-width:600px) { .navbar { padding: 0 1rem; } .nav-back span { display: none; } #chatbotWindow { width: calc(100vw - 48px); } }
+  </style>
+</head>
+<body>
+  <div id="scrollProgress"></div>
+  <nav class="navbar">
+    <a href="../index.html" class="nav-back">← <span data-en="Back to Rawafid" data-ar="العودة لروافد">Back to Rawafid</span></a>
+    <a href="../index.html" class="nav-logo">Raw<em>afid</em> | <small>روافد</small></a>
+    <div class="nav-actions"><button class="lang-btn" id="langBtn" onclick="toggleLang()">AR</button></div>
+  </nav>
+
+  <section class="cs-hero">
+    <div class="cs-badge">⏳ <span data-en="Coming Soon" data-ar="قريباً">Coming Soon</span></div>
+    <div class="avatar-circle">FA</div>
+    <h1 class="cs-title" data-en="Accountant & Financial Advisor" data-ar="محاسب ومستشار مالي">Accountant & Financial Advisor</h1>
+    <p class="cs-name" data-en="Financial Accountant & Business Advisor" data-ar="محاسب مالي ومستشار أعمال">Financial Accountant & Business Advisor</p>
+    <p class="cs-teaser" data-en="Financial Accountant and Business Advisor joining Rawafid soon. Providing clear financial insights to drive business growth." data-ar="محاسب مالي ومستشار أعمال ينضم لروافد قريباً. يقدم رؤى مالية واضحة لدفع نمو الأعمال.">Financial Accountant and Business Advisor joining Rawafid soon. Providing clear financial insights to drive business growth.</p>
+    <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+    <a href="https://wa.me/9647727080528" target="_blank" rel="noopener noreferrer" class="btn-accent" style="margin-top:.5rem;">💬 <span data-en="Get Notified via WhatsApp" data-ar="أعلمني عبر واتساب">Get Notified via WhatsApp</span></a>
+  </section>
+
+  <section class="notify-section">
+    <div class="section-inner" style="text-align:center;">
+      <h2 class="section-title" data-en="Be First to Know" data-ar="كن أول من يعرف">Be First to Know</h2>
+      <p class="section-sub" data-en="Leave your details and we'll notify you when our Financial Advisor joins the team." data-ar="اترك بياناتك وراح نخبرك لما المستشار المالي ينضم للفريق.">Leave your details and we'll notify you when our Financial Advisor joins the team.</p>
+      <form class="notify-form" id="notifyForm">
+        <input type="text" id="notifyName" placeholder="Your Name / اسمك" required>
+        <input type="email" id="notifyEmail" placeholder="Email / الإيميل" required>
+        <button type="submit" class="btn-accent" data-en="Notify Me" data-ar="أعلمني">Notify Me</button>
+      </form>
+      <p class="form-success" id="formSuccess">Thanks! We'll be in touch soon.</p>
+    </div>
+  </section>
+
+  <section class="services-section">
+    <div class="section-inner">
+      <h2 class="section-title" data-en="What This Specialist Will Offer" data-ar="شنو سيقدم هذا المختص">What This Specialist Will Offer</h2>
+      <p class="section-sub" data-en="Services coming soon from our Financial Advisor" data-ar="خدمات قادمة من المستشار المالي">Services coming soon from our Financial Advisor</p>
+      <div class="services-grid">
+        <div class="service-card"><span class="soon-label" data-en="Soon" data-ar="قريباً">Soon</span><div class="service-icon">📚</div><div class="service-name" data-en="Bookkeeping" data-ar="المحاسبة اليومية">Bookkeeping</div></div>
+        <div class="service-card"><span class="soon-label" data-en="Soon" data-ar="قريباً">Soon</span><div class="service-icon">📊</div><div class="service-name" data-en="Financial Reports" data-ar="التقارير المالية">Financial Reports</div></div>
+        <div class="service-card"><span class="soon-label" data-en="Soon" data-ar="قريباً">Soon</span><div class="service-icon">🧾</div><div class="service-name" data-en="Tax Filing" data-ar="تقديم الضرائب">Tax Filing</div></div>
+        <div class="service-card"><span class="soon-label" data-en="Soon" data-ar="قريباً">Soon</span><div class="service-icon">💡</div><div class="service-name" data-en="Financial Consulting" data-ar="الاستشارات المالية">Financial Consulting</div></div>
+        <div class="service-card"><span class="soon-label" data-en="Soon" data-ar="قريباً">Soon</span><div class="service-icon">💰</div><div class="service-name" data-en="Payroll Services" data-ar="خدمات الرواتب">Payroll Services</div></div>
+        <div class="service-card"><span class="soon-label" data-en="Soon" data-ar="قريباً">Soon</span><div class="service-icon">📈</div><div class="service-name" data-en="Business Financial Planning" data-ar="التخطيط المالي للأعمال">Business Financial Planning</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="section-inner">
+      <h2 class="section-title" data-en="Interested? Reach Out Now" data-ar="مهتم؟ تواصل معنا الحين">Interested? Reach Out Now</h2>
+      <p class="section-sub" data-en="Our team is ready to help you plan ahead." data-ar="فريقنا جاهز يساعدك تخطط مسبقاً.">Our team is ready to help you plan ahead.</p>
+      <div class="contact-btns">
+        <a href="https://wa.me/9647727080528" target="_blank" rel="noopener noreferrer" class="btn-wa">💬 WhatsApp</a>
+        <a href="https://calendly.com/yousifabdulkareem4business" target="_blank" rel="noopener noreferrer" class="btn-outline">📅 <span data-en="Book Consultation" data-ar="احجز استشارة">Book Consultation</span></a>
+        <a href="https://www.linkedin.com/in/yousif-abdulkareem-al-sara-4220b1189" target="_blank" rel="noopener noreferrer" class="btn-outline">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#080c14;border-top:1px solid #1e2d40;padding:2rem;text-align:center;">
+    <p style="font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:.5rem;">Raw<span style="color:#00d4ff">afid</span> | <span style="font-family:Cairo,sans-serif;color:#00d4ff">روافد</span></p>
+    <p style="color:#8892a4;font-size:.85rem;margin-bottom:1rem;">© 2026 وكالة روافد — بغداد، العراق. جميع الحقوق محفوظة.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="https://wa.me/9647727080528" target="_blank" rel="noopener noreferrer" style="color:#00d4ff;text-decoration:none;font-size:.85rem;">WhatsApp</a>
+      <a href="https://www.linkedin.com/in/yousif-abdulkareem-al-sara-4220b1189" target="_blank" rel="noopener noreferrer" style="color:#00d4ff;text-decoration:none;font-size:.85rem;">LinkedIn</a>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/9647727080528" target="_blank" rel="noopener noreferrer" style="position:fixed;bottom:24px;right:24px;width:56px;height:56px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;z-index:1000;box-shadow:0 4px 20px rgba(37,211,102,.4);text-decoration:none;">💬</a>
+  <button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+  <button id="chatbotToggle" onclick="toggleChatbot()">💰</button>
+  <div id="chatbotWindow">
+    <div class="cb-header"><span>Finance Assistant 💰</span><button class="cb-close" onclick="toggleChatbot()">✕</button></div>
+    <div class="cb-messages" id="cbMessages"><div class="cb-msg bot">هلا! 👋 قريباً راح يكون عندنا محاسب. شنو تحتاج؟</div></div>
+    <div class="cb-quick">
+      <button class="cb-q" onclick="cbReply(this)" data-reply="روافد وكالة رقمية متخصصة بالتسويق، التطوير، والاستشارات. مقرها بغداد، العراق.">شنو هي روافد؟</button>
+      <button class="cb-q" onclick="cbReply(this)" data-reply="تقدر تتواصل معنا عبر واتساب: wa.me/9647727080528 أو تحجز موعد عبر Calendly.">كيف أتواصل معكم؟</button>
+      <button class="cb-q" onclick="cbReply(this)" data-reply="المحاسب راح يكون متاح قريباً! سجل بياناتك بالنموذج فوق ونخبرك أول ما ينضم.">متى يكون المحاسب متاح؟</button>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const el = document.getElementById('scrollProgress'); const st = document.getElementById('scrollTop');
+      const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+      el.style.width = pct + '%';
+      st && (window.scrollY > 300 ? st.classList.add('visible') : st.classList.remove('visible'));
+    });
+    let currentLang = localStorage.getItem('rawafid-lang') || 'en';
+    function toggleLang() { currentLang = currentLang === 'en' ? 'ar' : 'en'; localStorage.setItem('rawafid-lang', currentLang); applyLang(); }
+    function applyLang() {
+      const isAR = currentLang === 'ar';
+      document.documentElement.lang = isAR ? 'ar' : 'en'; document.documentElement.dir = isAR ? 'rtl' : 'ltr';
+      const btn = document.getElementById('langBtn'); if (btn) btn.textContent = isAR ? 'EN' : 'AR';
+      document.querySelectorAll('[data-en]').forEach(el => { el.textContent = isAR ? (el.dataset.ar || el.dataset.en) : el.dataset.en; });
+    }
+    applyLang();
+    document.getElementById('notifyForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      try { await fetch('https://script.google.com/macros/s/AKfycbxe9weLT738oHP10plWn7whJZamnR2Yzdi8SvlPCt7SJyNgUmOdvq3Xqo5MnwVi97mhoQ/exec', { method: 'POST', mode: 'no-cors', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({ name: document.getElementById('notifyName').value, email: document.getElementById('notifyEmail').value, page: 'accountant', type: 'notify' }) }); } catch(e) {}
+      document.getElementById('notifyForm').style.display = 'none';
+      const s = document.getElementById('formSuccess'); s.style.display = 'block';
+      s.textContent = currentLang === 'ar' ? 'شكراً! راح نتواصل معك قريباً.' : "Thanks! We'll be in touch soon.";
+    });
+    function toggleChatbot() { document.getElementById('chatbotWindow').classList.toggle('open'); }
+    function cbReply(btn) {
+      const msgs = document.getElementById('cbMessages');
+      const uMsg = document.createElement('div'); uMsg.className = 'cb-msg user'; uMsg.textContent = btn.textContent; msgs.appendChild(uMsg);
+      const bMsg = document.createElement('div'); bMsg.className = 'cb-msg bot'; bMsg.textContent = btn.dataset.reply;
+      setTimeout(() => { msgs.appendChild(bMsg); msgs.scrollTop = msgs.scrollHeight; }, 400);
+      msgs.scrollTop = msgs.scrollHeight;
+    }
+  </script>
+</body>
+</html>
+
+
