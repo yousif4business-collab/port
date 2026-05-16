@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Rawafid | روافد — Your Complete Technical &amp; Digital Team</title>
+<meta name="description" content="Rawafid Agency — Baghdad, Iraq. IT Infrastructure, Data &amp; AI, Design, Marketing, HR and Civil Engineering."/>
+<meta name="keywords" content="IT freelancer Baghdad, network setup Iraq, CCTV installation Baghdad, Rawafid, روافد, Rawafid Agency, Baghdad IT"/>
+<meta property="og:title" content="Rawafid | روافد — Your Complete Technical &amp; Digital Team"/>
+<meta property="og:description" content="Rawafid Agency — Baghdad, Iraq. Professional IT infrastructure, data, design, marketing, HR and civil engineering services."/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="robots" content="index, follow"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js')})}</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+img{max-width:100%;height:auto;display:block}
+:root{--bg:#0a0e17;--bg-card:#111827;--bg-card2:#0f1623;--border:#1e2d40;--cyan:#00d4ff;--cyan-dim:#0099bb;--blue:#0066ff;--text:#e2e8f0;--text-muted:#8892a4;--radius:12px;--trans:.3s ease}
+html{scroll-behavior:smooth;scroll-padding-top:80px;overflow-x:hidden;-webkit-text-size-adjust:100%;scrollbar-color:var(--cyan-dim) var(--bg);scrollbar-width:thin}
+html::-webkit-scrollbar{width:6px}html::-webkit-scrollbar-track{background:var(--bg)}html::-webkit-scrollbar-thumb{background:var(--cyan-dim);border-radius:3px}
+body{font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+[dir="rtl"] body,[dir="rtl"]{font-family:'Cairo',sans-serif}
+a{color:inherit;text-decoration:none}
+
+/* PROGRESS BAR */
+#progressBar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--blue),var(--cyan));z-index:1100;transition:width .1s linear;pointer-events:none}
+
+/* NAV */
+nav{position:fixed;top:3px;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:68px;background:rgba(10,14,23,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-logo{display:flex;flex-direction:column;align-items:flex-start;line-height:1.1}
+.logo-en{font-family:'Space Grotesk',sans-serif;font-size:1.25rem;font-weight:800;color:var(--text);letter-spacing:-.5px}
+.logo-en em{color:var(--cyan);font-style:normal}
+.logo-ar{font-family:'Cairo',sans-serif;font-size:.72rem;font-weight:700;color:var(--cyan);letter-spacing:.5px}
+[dir="rtl"] .nav-logo{align-items:flex-end}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+.nav-links a{color:var(--text-muted);font-size:.88rem;font-weight:500;transition:color var(--trans);position:relative;padding-bottom:4px}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--cyan);transition:width var(--trans)}
+[dir="rtl"] .nav-links a::after{left:auto;right:0}
+.nav-links a:hover{color:var(--cyan)}
+.nav-links a:hover::after{width:100%}
+.nav-right{display:flex;align-items:center;gap:.75rem}
+.lang-btn{background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.3);color:var(--cyan);padding:.3rem .85rem;border-radius:20px;font-size:.8rem;font-weight:700;cursor:pointer;min-height:36px;font-family:inherit;transition:background var(--trans)}
+.lang-btn:hover{background:rgba(0,212,255,.2)}
+.hamburger{display:none;background:none;border:1px solid var(--border);color:var(--text);padding:.3rem .7rem;border-radius:6px;font-size:1.1rem;cursor:pointer;min-height:36px;min-width:36px}
+.mobile-menu{display:none;position:fixed;top:71px;left:0;right:0;background:var(--bg-card);border-bottom:1px solid var(--border);z-index:999;padding:1rem 5%;flex-direction:column;gap:.5rem}
+.mobile-menu.open{display:flex}
+.mobile-menu a{color:var(--text-muted);padding:.6rem 0;font-size:.95rem;border-bottom:1px solid var(--border)}
+.mobile-menu a:last-child{border:none}
+
+/* GREETING */
+.greeting-bar{background:rgba(0,212,255,.04);border-left:3px solid var(--cyan);padding:.65rem 5%;margin-top:71px;font-family:'Cairo',sans-serif;font-size:.9rem;color:var(--text-muted)}
+[dir="rtl"] .greeting-bar{border-left:none;border-right:3px solid var(--cyan)}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:4rem 5%;position:relative;overflow:hidden}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none}
+.hero-orb-1{width:700px;height:700px;background:radial-gradient(circle,rgba(0,102,255,.12),transparent 70%);top:-150px;left:-150px}
+.hero-orb-2{width:500px;height:500px;background:radial-gradient(circle,rgba(0,212,255,.08),transparent 70%);bottom:-100px;right:-100px}
+.hero-grid{position:relative;z-index:1;width:100%;max-width:1200px;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.38rem .9rem;border-radius:50px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.3);color:#10b981;font-size:.8rem;font-weight:600;margin-bottom:1.5rem}
+.badge-dot{width:7px;height:7px;border-radius:50%;background:#10b981;animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.5)}}
+.hero-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.2rem,4.5vw,3.4rem);font-weight:800;line-height:1.15;margin-bottom:1.2rem;color:var(--text)}
+[dir="rtl"] .hero-title{font-family:'Cairo',sans-serif}
+.hero-title .grad{background:linear-gradient(90deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:1rem;color:var(--text-muted);max-width:520px;margin-bottom:2.2rem;line-height:1.75}
+.hero-btns{display:flex;gap:.9rem;flex-wrap:wrap}
+.btn-primary{background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff;padding:.75rem 1.7rem;border-radius:8px;font-size:.92rem;font-weight:700;min-height:44px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:.4rem;transition:opacity var(--trans),transform var(--trans);font-family:inherit}
+.btn-primary:hover{opacity:.85;transform:translateY(-2px)}
+.btn-secondary{background:transparent;border:1px solid var(--border);color:var(--text);padding:.75rem 1.7rem;border-radius:8px;font-size:.92rem;font-weight:600;min-height:44px;display:inline-flex;align-items:center;gap:.4rem;transition:border-color var(--trans),color var(--trans),transform var(--trans);font-family:inherit}
+.btn-secondary:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-2px)}
+.btn-cal{background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.3);color:var(--cyan);padding:.75rem 1.7rem;border-radius:8px;font-size:.92rem;font-weight:600;min-height:44px;display:inline-flex;align-items:center;gap:.4rem;transition:background var(--trans),transform var(--trans);font-family:inherit}
+.btn-cal:hover{background:rgba(0,212,255,.18);transform:translateY(-2px)}
+
+/* HERO RIGHT */
+.hero-right{position:relative;display:flex;justify-content:center;align-items:center}
+.hero-card{background:var(--bg-card);border:1px solid rgba(0,212,255,.25);border-radius:20px;padding:2.2rem;box-shadow:0 0 60px rgba(0,212,255,.12),0 0 0 1px rgba(0,212,255,.08);position:relative;z-index:1;width:320px;max-width:100%}
+.hc-avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--cyan));display:flex;align-items:center;justify-content:center;font-size:2rem;margin-bottom:1.2rem;box-shadow:0 0 30px rgba(0,212,255,.3)}
+.hc-name{font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:800;margin-bottom:.2rem}
+.hc-role{font-size:.82rem;color:var(--cyan);margin-bottom:.6rem}
+.hc-loc{font-size:.8rem;color:var(--text-muted);margin-bottom:1.2rem}
+.hc-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.hc-tag{padding:.25rem .65rem;border-radius:20px;font-size:.73rem;font-weight:500;background:rgba(0,212,255,.07);border:1px solid rgba(0,212,255,.2);color:var(--cyan)}
+.float-card{position:absolute;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:.55rem 1rem;font-size:.78rem;font-weight:600;white-space:nowrap;display:flex;align-items:center;gap:.5rem;box-shadow:0 8px 24px rgba(0,0,0,.4);z-index:2}
+.fc-check{color:#10b981;font-size:.85rem}
+.float-card.fc1{top:-15px;right:-40px;animation:float 3.5s ease-in-out infinite}
+.float-card.fc2{top:40%;right:-55px;animation:float 3.5s ease-in-out infinite .8s}
+.float-card.fc3{bottom:30px;right:-30px;animation:float 3.5s ease-in-out infinite 1.6s}
+.float-card.fc4{bottom:-15px;left:-30px;animation:float 3.5s ease-in-out infinite 2.4s}
+[dir="rtl"] .float-card.fc1{right:auto;left:-40px}
+[dir="rtl"] .float-card.fc2{right:auto;left:-55px}
+[dir="rtl"] .float-card.fc3{right:auto;left:-30px}
+[dir="rtl"] .float-card.fc4{left:auto;right:-30px}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeInLeft{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:translateX(0)}}
+@keyframes fadeInRight{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:translateX(0)}}
+
+/* STATS */
+#stats{background:var(--bg-card2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:2.5rem 5%}
+.stats-grid{display:flex;justify-content:space-around;flex-wrap:wrap;gap:1.5rem;max-width:1200px;margin:0 auto;text-align:center}
+.stat-num{font-family:'Space Grotesk',sans-serif;font-size:2.4rem;font-weight:800;color:var(--cyan);line-height:1;display:block}
+.stat-label{font-size:.8rem;color:var(--text-muted);margin-top:.3rem;display:block}
+.stat-label-ar{font-family:'Cairo',sans-serif;font-size:.75rem;color:var(--text-muted);display:block}
+
+/* SECTION COMMON */
+.section{padding:6rem 5%}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.7rem,3.5vw,2.5rem);font-weight:800;margin-bottom:.5rem;text-align:center}
+[dir="rtl"] .section-title{font-family:'Cairo',sans-serif}
+.section-sub{text-align:center;color:var(--text-muted);font-size:.95rem;margin-bottom:3rem}
+.cyan{color:var(--cyan)}
+
+/* BELTS */
+.belt-section{padding:2rem 0;overflow:hidden;background:var(--bg-card2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.belt-title{text-align:center;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--text-muted);margin-bottom:1.2rem;padding:0 5%}
+.belt-wrap{overflow:hidden;position:relative}
+.belt-wrap::before,.belt-wrap::after{content:'';position:absolute;top:0;bottom:0;width:100px;z-index:2;pointer-events:none}
+.belt-wrap::before{left:0;background:linear-gradient(to right,var(--bg-card2),transparent)}
+.belt-wrap::after{right:0;background:linear-gradient(to left,var(--bg-card2),transparent)}
+.belt-track{display:flex;gap:1rem;width:max-content;animation:beltScroll 35s linear infinite}
+.belt-wrap:hover .belt-track{animation-play-state:paused}
+@keyframes beltScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.belt-pill{display:inline-flex;align-items:center;gap:.4rem;padding:.45rem 1rem;border-radius:50px;background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.18);color:var(--cyan);font-size:.82rem;font-weight:500;white-space:nowrap;cursor:default}
+.belt-logo-wrap{display:flex;align-items:center;gap:2.5rem;padding:.5rem 0}
+.belt-logo-item{height:36px;width:auto;max-width:100px;object-fit:contain;filter:brightness(0) invert(1);opacity:.55;transition:filter var(--trans),opacity var(--trans)}
+.belt-logo-item:hover{filter:none;opacity:1}
+
+/* TEAM */
+.team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
+.team-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.6rem;transition:transform var(--trans),box-shadow var(--trans),border-color var(--trans);position:relative;overflow:hidden;opacity:0;transform:translateY(20px)}
+.team-card.visible{opacity:1;transform:translateY(0);transition:opacity .5s ease,transform .5s ease,box-shadow var(--trans),border-color var(--trans)}
+.team-card::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:var(--card-accent)}
+.team-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(0,0,0,.4);border-color:var(--card-accent)}
+.tc-avatar{width:72px;height:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:800;color:#fff;margin-bottom:1rem;background:var(--card-accent);box-shadow:0 0 20px rgba(0,0,0,.3)}
+.tc-name{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;margin-bottom:.2rem}
+[dir="rtl"] .tc-name{font-family:'Cairo',sans-serif}
+.tc-role{font-size:.82rem;color:var(--text-muted);margin-bottom:1rem}
+.tc-skills{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
+.tc-skill{padding:.22rem .6rem;border-radius:20px;font-size:.72rem;font-weight:500;background:rgba(var(--card-accent-rgb),.1);border:1px solid rgba(var(--card-accent-rgb),.25);color:var(--card-accent)}
+.tc-status{display:inline-flex;align-items:center;gap:.4rem;font-size:.78rem;font-weight:600;margin-bottom:1rem}
+.status-dot{width:7px;height:7px;border-radius:50%}
+.status-dot.available{background:#10b981}
+.status-dot.soon{background:#f59e0b}
+.tc-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1.1rem;border-radius:7px;font-size:.82rem;font-weight:600;border:1px solid var(--card-accent);color:var(--card-accent);transition:background var(--trans),color var(--trans);font-family:inherit;cursor:pointer;min-height:36px;background:transparent}
+.tc-btn:hover{background:var(--card-accent);color:#fff}
+.tc-btn.disabled{border-color:var(--border);color:var(--text-muted);cursor:default}
+.tc-btn.disabled:hover{background:transparent;color:var(--text-muted)}
+.team-card-soon{cursor:default}
+.team-card-soon:hover{transform:none !important;box-shadow:none !important;border-color:var(--border) !important}
+
+/* WHY */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.why-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.6rem;transition:border-color var(--trans),transform var(--trans)}
+.why-card:hover{border-color:var(--cyan);transform:translateY(-4px)}
+.why-icon{font-size:2rem;margin-bottom:.8rem;display:block}
+.why-title{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;margin-bottom:.5rem}
+[dir="rtl"] .why-title{font-family:'Cairo',sans-serif}
+.why-text{font-family:'Cairo',sans-serif;font-size:.88rem;color:var(--text-muted);line-height:1.75}
+
+/* PROCESS */
+.process-line{position:relative;max-width:700px;margin:0 auto}
+.process-phase{display:inline-block;padding:.3rem .85rem;border-radius:20px;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:1.5rem;margin-left:2.5rem}
+[dir="rtl"] .process-phase{margin-left:0;margin-right:2.5rem}
+.phase-green{background:rgba(16,185,129,.15);border:1px solid rgba(16,185,129,.3);color:#10b981}
+.phase-cyan{background:rgba(0,212,255,.15);border:1px solid rgba(0,212,255,.3);color:var(--cyan)}
+.phase-purple{background:rgba(124,58,237,.15);border:1px solid rgba(124,58,237,.3);color:#7c3aed}
+.process-step{display:flex;gap:1.5rem;margin-bottom:2rem;align-items:flex-start;position:relative}
+[dir="rtl"] .process-step{flex-direction:row-reverse}
+.step-dot{width:44px;height:44px;border-radius:50%;background:var(--bg-card);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;z-index:1;position:relative}
+.step-line{position:absolute;left:22px;top:44px;bottom:-2rem;width:2px;background:var(--border)}
+[dir="rtl"] .step-line{left:auto;right:22px}
+.process-step:last-child .step-line{display:none}
+.step-body{padding-top:.4rem}
+.step-tag{font-size:.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:.2rem}
+.step-title{font-family:'Space Grotesk',sans-serif;font-size:.98rem;font-weight:700;margin-bottom:.25rem}
+[dir="rtl"] .step-title{font-family:'Cairo',sans-serif}
+.step-desc{font-family:'Cairo',sans-serif;font-size:.87rem;color:var(--text-muted)}
+.process-cta{text-align:center;margin-top:3rem}
+
+/* FAQ */
+.faq-list{max-width:750px;margin:0 auto;display:flex;flex-direction:column;gap:.6rem}
+.faq-item{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:border-color var(--trans)}
+.faq-item.open{border-color:rgba(0,212,255,.35)}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 1.3rem;cursor:pointer;gap:1rem;font-family:'Cairo',sans-serif;font-size:.95rem;font-weight:600;list-style:none;user-select:none}
+.faq-q:hover{color:var(--cyan)}
+.faq-icon{flex-shrink:0;font-size:1.2rem;color:var(--cyan);transition:transform .3s}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-a{font-family:'Cairo',sans-serif;font-size:.88rem;color:var(--text-muted);line-height:1.8;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease}
+.faq-item.open .faq-a{max-height:200px;padding:0 1.3rem 1.1rem}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:2.5rem;align-items:start}
+.contact-info-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.4rem;display:flex;align-items:flex-start;gap:.9rem;margin-bottom:.8rem;transition:border-color var(--trans)}
+.contact-info-card:hover{border-color:rgba(0,212,255,.3)}
+.cic-icon{font-size:1.3rem;flex-shrink:0;margin-top:.1rem}
+.cic-label{font-size:.75rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:.2rem}
+.cic-value{font-size:.9rem;font-weight:600;display:flex;align-items:center;gap:.5rem}
+.copy-btn{background:none;border:none;cursor:pointer;color:var(--text-muted);font-size:.8rem;transition:color var(--trans);padding:.1rem .4rem}
+.copy-btn:hover{color:var(--cyan)}
+.social-row{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.2rem}
+.soc-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1rem;border-radius:8px;border:1px solid var(--border);color:var(--text-muted);font-size:.8rem;font-weight:600;transition:all var(--trans);min-height:36px}
+.soc-btn:hover{border-color:var(--cyan);color:var(--cyan)}
+.soc-btn.wa{border-color:rgba(37,211,102,.3);color:#25d366}
+.soc-btn.wa:hover{background:rgba(37,211,102,.1)}
+.contact-form{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:2rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.form-group{margin-bottom:1rem}
+.form-group label{display:block;font-size:.8rem;font-weight:600;color:var(--text-muted);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.5px}
+.form-group input,.form-group select,.form-group textarea{width:100%;background:var(--bg-card2);border:1px solid var(--border);border-radius:8px;padding:.7rem 1rem;color:var(--text);font-size:.9rem;font-family:inherit;transition:border-color var(--trans);outline:none}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--cyan)}
+.form-group textarea{resize:vertical;min-height:100px}
+.form-group select option{background:var(--bg-card)}
+.map-wrap{margin-top:1.5rem;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border)}
+
+/* FOOTER */
+footer{background:#07090f;border-top:1px solid var(--border);padding:2.5rem 5%;text-align:center}
+.footer-brand{font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:.5rem}
+.footer-brand span{color:var(--cyan)}
+.footer-brand-ar{font-family:'Cairo',sans-serif;color:var(--cyan);font-size:.9rem}
+.footer-copy{color:var(--text-muted);font-size:.82rem;margin-bottom:1.2rem;font-family:'Cairo',sans-serif}
+.footer-social{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+.fsoc{display:inline-flex;align-items:center;gap:.3rem;color:var(--text-muted);font-size:.82rem;padding:.4rem .7rem;border-radius:6px;border:1px solid var(--border);transition:all var(--trans)}
+.fsoc:hover{color:var(--cyan);border-color:var(--cyan)}
+
+/* FLOATING */
+.wa-float{position:fixed;bottom:24px;right:24px;width:56px;height:56px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;z-index:900;box-shadow:0 4px 20px rgba(37,211,102,.45);text-decoration:none;transition:transform var(--trans)}
+.wa-float:hover{transform:scale(1.1)}
+[dir="rtl"] .wa-float{right:auto;left:24px}
+.scroll-top{position:fixed;bottom:90px;right:24px;width:44px;height:44px;background:var(--bg-card);border:1px solid rgba(0,212,255,.4);border-radius:50%;display:none;align-items:center;justify-content:center;color:var(--cyan);font-size:1rem;cursor:pointer;z-index:900;transition:background var(--trans)}
+.scroll-top:hover{background:rgba(0,212,255,.15)}
+[dir="rtl"] .scroll-top{right:auto;left:24px}
+.book-pill{position:fixed;right:-52px;top:50%;transform:translateY(-50%) rotate(-90deg);background:linear-gradient(90deg,var(--blue),var(--cyan));color:#fff;padding:.55rem 1.1rem;border-radius:0 0 8px 8px;font-size:.78rem;font-weight:700;z-index:900;letter-spacing:.5px;transition:right var(--trans)}
+.book-pill:hover{right:-42px}
+[dir="rtl"] .book-pill{right:auto;left:-52px;transform:translateY(-50%) rotate(90deg)}
+[dir="rtl"] .book-pill:hover{left:-42px}
+
+/* TOAST */
+.toast{position:fixed;bottom:160px;left:50%;transform:translateX(-50%);background:var(--cyan);color:var(--bg);padding:.6rem 1.4rem;border-radius:8px;font-weight:700;z-index:9999;font-size:.88rem;pointer-events:none;transition:opacity .3s}
+
+/* CHATBOT */
+.chatbot-wrap{position:fixed;bottom:24px;left:24px;z-index:900}
+[dir="rtl"] .chatbot-wrap{left:auto;right:auto;left:24px}
+.chat-toggle{width:52px;height:52px;border-radius:50%;background:var(--bg-card);border:2px solid rgba(0,212,255,.35);display:flex;align-items:center;justify-content:center;font-size:1.4rem;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.4);transition:border-color var(--trans)}
+.chat-toggle:hover{border-color:var(--cyan)}
+.chat-window{position:absolute;bottom:65px;left:0;width:310px;background:var(--bg-card);border:1px solid var(--border);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.5);display:none;flex-direction:column;overflow:hidden;max-height:420px}
+.chat-window.open{display:flex}
+.chat-header{background:linear-gradient(135deg,var(--blue),var(--cyan));padding:.85rem 1rem;display:flex;justify-content:space-between;align-items:center}
+.chat-header-title{font-family:'Cairo',sans-serif;font-size:.9rem;font-weight:700;color:#fff}
+.chat-close{background:none;border:none;color:#fff;font-size:1.3rem;cursor:pointer;line-height:1}
+.chat-messages{flex:1;overflow-y:auto;padding:.8rem;display:flex;flex-direction:column;gap:.5rem;min-height:180px;max-height:260px}
+.chat-msg{max-width:82%;padding:.55rem .85rem;border-radius:10px;font-family:'Cairo',sans-serif;font-size:.84rem;line-height:1.6;word-wrap:break-word}
+.chat-msg.bot{background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.15);color:var(--text);align-self:flex-start;border-radius:2px 10px 10px 10px}
+.chat-msg.user{background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff;align-self:flex-end;border-radius:10px 10px 2px 10px}
+.chat-typing{display:flex;gap:4px;padding:.55rem .85rem;background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.15);border-radius:2px 10px 10px 10px;width:fit-content}
+.chat-typing span{width:6px;height:6px;border-radius:50%;background:var(--cyan);animation:typing .8s infinite}
+.chat-typing span:nth-child(2){animation-delay:.15s}
+.chat-typing span:nth-child(3){animation-delay:.3s}
+@keyframes typing{0%,80%,100%{transform:scale(1);opacity:.5}40%{transform:scale(1.3);opacity:1}}
+.chat-input-row{display:flex;gap:.4rem;padding:.7rem;border-top:1px solid var(--border)}
+.chat-input{flex:1;background:var(--bg-card2);border:1px solid var(--border);border-radius:8px;padding:.5rem .8rem;color:var(--text);font-family:'Cairo',sans-serif;font-size:.83rem;outline:none}
+.chat-input:focus{border-color:rgba(0,212,255,.4)}
+.chat-send{background:linear-gradient(135deg,var(--blue),var(--cyan));border:none;border-radius:8px;width:34px;height:34px;color:#fff;cursor:pointer;font-size:.9rem;display:flex;align-items:center;justify-content:center}
+
+/* HERO FADEIN */
+.hero-left .hero-badge{animation:fadeInUp .6s ease both}
+.hero-left .hero-title{animation:fadeInUp .6s ease .12s both}
+.hero-left .hero-sub{animation:fadeInUp .6s ease .24s both}
+.hero-left .hero-btns{animation:fadeInUp .6s ease .36s both}
+
+/* PROCESS STEP SCROLL ANIM */
+.process-step{opacity:0;transform:translateX(-40px);transition:opacity .55s ease,transform .55s ease}
+.process-step.from-right{transform:translateX(40px)}
+.process-step.in-view{opacity:1 !important;transform:translateX(0) !important}
+
+/* DISABLED TC-BTN */
+.tc-btn.disabled{pointer-events:none}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;text-align:center}
+  .hero-right{display:none}
+  .hero-badge{margin:0 auto 1.5rem}
+  .hero-sub{margin:0 auto 2rem}
+  .hero-btns{justify-content:center}
+  .contact-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .nav-links{display:none}
+  .hamburger{display:flex;align-items:center;justify-content:center}
+  .form-row{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .why-grid{grid-template-columns:1fr}
+  .stats-grid{gap:1rem}
+  .section{padding:4rem 5%}
+  .book-pill{display:none}
+}
+</style>
+</head>
+<body>
+
+<div id="progressBar"></div>
+
+<nav id="navbar">
+  <a href="#" class="nav-logo" aria-label="Rawafid Home">
+    <span class="logo-en">Raw<em>afid</em></span>
+    <span class="logo-ar">روافد</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#services" data-en="Services" data-ar="الخدمات">Services</a></li>
+    <li><a href="#team" data-en="Team" data-ar="الفريق">Team</a></li>
+    <li><a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="lang-btn" id="langBtn" onclick="toggleLang()">AR</button>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" onclick="closeMobile()" data-en="Services" data-ar="الخدمات">Services</a>
+  <a href="#team" onclick="closeMobile()" data-en="Team" data-ar="الفريق">Team</a>
+  <a href="#contact" onclick="closeMobile()" data-en="Contact" data-ar="تواصل معنا">Contact</a>
+</div>
+
+<div class="greeting-bar"><span id="greetingText"></span></div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="hero-badge"><span class="badge-dot"></span><span data-en="● Available for Projects — Baghdad &amp; Iraq" data-ar="● متاح للمشاريع — بغداد والعراق">● Available for Projects — Baghdad &amp; Iraq</span></div>
+      <h1 class="hero-title" data-en="Your Complete Technical &amp; Digital Team" data-ar="فريقك المتكامل للحلول التقنية والرقمية">Your Complete Technical &amp; Digital Team</h1>
+      <p class="hero-sub" data-en="One agency covering IT Infrastructure, Data &amp; AI, Design, Marketing, HR and Civil Engineering — Baghdad, Iraq" data-ar="وكالة واحدة تغطي البنية التحتية التقنية والبيانات والذكاء الاصطناعي والتصميم والتسويق والموارد البشرية والهندسة المدنية — بغداد، العراق">One agency covering IT Infrastructure, Data &amp; AI, Design, Marketing, HR and Civil Engineering — Baghdad, Iraq</p>
+      <div class="hero-btns">
+        <a href="#services" class="btn-primary" data-en="Explore Services" data-ar="اكتشف خدماتنا">Explore Services</a>
+        <a href="#team" class="btn-secondary" data-en="Meet the Team" data-ar="تعرف على الفريق">Meet the Team</a>
+        <a href="https://calendly.com/yousifabdulkareem4business" target="_blank" rel="noopener noreferrer" class="btn-cal" data-en="📅 Book Free Call" data-ar="📅 احجز مكالمة مجانية">📅 Book Free Call</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="float-card fc1"><span class="fc-check">✓</span> IT Infrastructure</div>
+      <div class="float-card fc2"><span class="fc-check">✓</span> Data &amp; AI</div>
+      <div class="float-card fc3"><span class="fc-check">✓</span> Design</div>
+      <div class="float-card fc4"><span class="fc-check">✓</span> Marketing</div>
+      <div class="hero-card">
+        <div class="hc-avatar">🏢</div>
+        <div class="hc-name">Rawafid Agency</div>
+        <div class="hc-role" data-en="Complete Technical &amp; Digital Solutions" data-ar="حلول تقنية ورقمية متكاملة">Complete Technical &amp; Digital Solutions</div>
+        <div class="hc-loc">📍 Baghdad, Iraq</div>
+        <div class="hc-tags">
+          <span class="hc-tag">IT Infrastructure</span>
+          <span class="hc-tag">Data &amp; AI</span>
+          <span class="hc-tag">Design</span>
+          <span class="hc-tag">Marketing</span>
+          <span class="hc-tag">HR</span>
+          <span class="hc-tag">Civil Eng.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div id="stats">
+  <div class="stats-grid">
+    <div><span class="stat-num" data-count="300" data-suffix="+">0+</span><span class="stat-label" data-en="Devices Installed" data-ar="جهاز مثبت">Devices Installed</span></div>
+    <div><span class="stat-num" data-count="8" data-suffix="+">0+</span><span class="stat-label" data-en="Projects Delivered" data-ar="مشروع منجز">Projects Delivered</span></div>
+    <div><span class="stat-num" data-count="15" data-suffix="">0</span><span class="stat-label" data-en="Team Specialists" data-ar="مختص في الفريق">Team Specialists</span></div>
+    <div><span class="stat-num" data-count="100" data-suffix="%">0%</span><span class="stat-label" data-en="Client Satisfaction" data-ar="رضا العملاء">Client Satisfaction</span></div>
+    <div><span class="stat-num" data-count="4" data-suffix="+">0+</span><span class="stat-label" data-en="Years Experience" data-ar="سنة خبرة">Years Experience</span></div>
+  </div>
+</div>
+
+<!-- SERVICES BELT -->
+<div class="belt-section" id="services">
+  <div class="belt-title" data-en="OUR SERVICES" data-ar="خدماتنا">OUR SERVICES</div>
+  <div class="belt-wrap">
+    <div class="belt-track" id="servicesBelt">
+      <span class="belt-pill">🌐 Network Infrastructure</span>
+      <span class="belt-pill">🔌 Structured Cabling</span>
+      <span class="belt-pill">📹 CCTV</span>
+      <span class="belt-pill">🔒 Access Control</span>
+      <span class="belt-pill">🏢 Building IT Fitout</span>
+      <span class="belt-pill">🛠️ Maintenance</span>
+      <span class="belt-pill">📞 VoIP</span>
+      <span class="belt-pill">⚡ Electrical</span>
+      <span class="belt-pill">🔥 Fire Alarms</span>
+      <span class="belt-pill">🤖 AI Automation</span>
+      <span class="belt-pill">📊 Data Analysis</span>
+      <span class="belt-pill">🎨 Graphic Design</span>
+      <span class="belt-pill">📱 Social Media</span>
+      <span class="belt-pill">👥 HR Services</span>
+      <span class="belt-pill">🏗️ Civil Engineering</span>
+      <span class="belt-pill">🎬 Video Editing</span>
+      <span class="belt-pill">🔐 Cybersecurity</span>
+      <span class="belt-pill">📡 Hotspot Services</span>
+      <span class="belt-pill">🌍 UltraNet</span>
+      <span class="belt-pill">☀️ Solar Systems</span>
+      <span class="belt-pill">🖼️ Billboard Marketing</span>
+      <span class="belt-pill">🧾 Accounting</span>
+      <span class="belt-pill">🌐 Network Infrastructure</span>
+      <span class="belt-pill">🔌 Structured Cabling</span>
+      <span class="belt-pill">📹 CCTV</span>
+      <span class="belt-pill">🔒 Access Control</span>
+      <span class="belt-pill">🏢 Building IT Fitout</span>
+      <span class="belt-pill">🛠️ Maintenance</span>
+      <span class="belt-pill">📞 VoIP</span>
+      <span class="belt-pill">⚡ Electrical</span>
+      <span class="belt-pill">🔥 Fire Alarms</span>
+      <span class="belt-pill">🤖 AI Automation</span>
+      <span class="belt-pill">📊 Data Analysis</span>
+      <span class="belt-pill">🎨 Graphic Design</span>
+      <span class="belt-pill">📱 Social Media</span>
+      <span class="belt-pill">👥 HR Services</span>
+      <span class="belt-pill">🏗️ Civil Engineering</span>
+      <span class="belt-pill">🎬 Video Editing</span>
+      <span class="belt-pill">🔐 Cybersecurity</span>
+      <span class="belt-pill">📡 Hotspot Services</span>
+      <span class="belt-pill">🌍 UltraNet</span>
+      <span class="belt-pill">☀️ Solar Systems</span>
+      <span class="belt-pill">🖼️ Billboard Marketing</span>
+      <span class="belt-pill">🧾 Accounting</span>
+    </div>
+  </div>
+</div>
+
+<!-- BRANDS BELT -->
+<div class="belt-section" style="background:var(--bg);border-top:none">
+  <div class="belt-title" data-en="TECHNOLOGIES &amp; BRANDS WE WORK WITH" data-ar="التقنيات والعلامات التجارية التي نعمل بها">TECHNOLOGIES &amp; BRANDS WE WORK WITH</div>
+  <div class="belt-wrap" style="--bg-card2:var(--bg)">
+    <div class="belt-track" style="animation-duration:40s;gap:3rem">
+      <img class="belt-logo-item" src="https://logo.clearbit.com/cisco.com" alt="Cisco" loading="lazy"/>
+      <img class="belt-logo-item" src="https://logo.clearbit.com/mikrotik.com" alt="MikroTik" loading="lazy"/>
+      <img class="belt-logo-item" src="https://logo.clearbit.com/ui.com" alt="Ubiquiti" loading="lazy"/>
+      <img class="belt-logo-item" src="https://logo.clearbit.com/hikvision.com" alt="Hikvision" loading="lazy"/>
+      <img class="belt-logo-item" src="https://logo.clearbit.com/dahuasecurity.com" alt="Dahua" loading="lazy"/>
+      <img class="belt-logo-item" src="https://logo.clearbit.com/tp-link.com" alt="TP-Link" loading="lazy"/>
+      <img class="belt-logo-item" src="https://logo.clearbit.com/hp.com" alt="HP" loading="lazy"/>
+      <img class="belt-logo-item" src="https://logo.clearbit.com/dell.com" alt="Dell" loading="lazy"/>
+      <img class="belt-logo-item" src="https://logo.clearbit.com/schneider-electric.com" alt="Schneider" loading="lazy"/>
+      <img class="belt-logo-item" src="https://logo.clearbit.com/apc.com" alt="APC" loading="lazy"/>
+      <img class="belt-logo-item" src="https://logo.clearbit.com/zkteco.com" alt="ZKTeco" loading="lazy"/>
+      <img class="belt-logo-item" src="https://logo.clearbit.com/siemens.com" alt="Siemens" loading="lazy"/>
+      <img class="belt-logo-item" src="https://logo.clearbit.com/honeywell.com" alt="Honeywell" loading="lazy"/>
+      <img class="belt-logo-item" src="https://logo.clearbit.com/cisco.com" alt="Cisco" loading="lazy"/>
+      <img class="belt-logo-item" src="https://logo.clearbit.com/mikrotik.com" alt="MikroTik" loading="lazy"/>
+      <img class="belt-logo-item" src="https://logo.clearbit.com/ui.com" alt="Ubiquiti" loading="lazy"/>
+      <img class="belt-logo-item" src="https://logo.clearbit.com/hikvision.com" alt="Hikvision" loading="lazy"/>
+      <img class="belt-logo-item" src="https://logo.clearbit.com/dahuasecurity.com" alt="Dahua" loading="lazy"/>
+      <img class="belt-logo-item" src="https://logo.clearbit.com/tp-link.com" alt="TP-Link" loading="lazy"/>
+      <img class="belt-logo-item" src="https://logo.clearbit.com/hp.com" alt="HP" loading="lazy"/>
+      <img class="belt-logo-item" src="https://logo.clearbit.com/dell.com" alt="Dell" loading="lazy"/>
+      <img class="belt-logo-item" src="https://logo.clearbit.com/schneider-electric.com" alt="Schneider" loading="lazy"/>
+      <img class="belt-logo-item" src="https://logo.clearbit.com/apc.com" alt="APC" loading="lazy"/>
+      <img class="belt-logo-item" src="https://logo.clearbit.com/zkteco.com" alt="ZKTeco" loading="lazy"/>
+      <img class="belt-logo-item" src="https://logo.clearbit.com/siemens.com" alt="Siemens" loading="lazy"/>
+      <img class="belt-logo-item" src="https://logo.clearbit.com/honeywell.com" alt="Honeywell" loading="lazy"/>
+    </div>
+  </div>
+</div>
+
+<!-- TEAM -->
+<section class="section" id="team">
+  <div class="section-inner">
+    <h2 class="section-title" data-en="Our Team" data-ar="فريقنا">Our Team</h2>
+    <p class="section-sub" data-en="15 specialists — each an expert in their field" data-ar="15 مختص — كل واحد خبير في مجاله">15 specialists — each an expert in their field</p>
+    <div class="team-grid" id="teamGrid">
+
+      <!-- 1 -->
+      <div class="team-card" style="--card-accent:#00d4ff;--card-accent-rgb:0,212,255">
+        <div class="tc-avatar">YA</div>
+        <div class="tc-name" data-en="Yousif A. Abbas" data-ar="يوسف أ. عباس">Yousif A. Abbas</div>
+        <div class="tc-role" data-en="IT Infrastructure Engineer &amp; Team Lead" data-ar="مهندس بنية تحتية تقنية وقائد الفريق">IT Infrastructure Engineer &amp; Team Lead</div>
+        <div class="tc-skills"><span class="tc-skill">Network Setup</span><span class="tc-skill">CCTV</span><span class="tc-skill">Cabling</span></div>
+        <div class="tc-status"><span class="status-dot available"></span><span data-en="Available" data-ar="متاح">Available</span></div>
+        <a href="team/yousif.html" class="tc-btn" data-en="View Profile →" data-ar="عرض الملف ←">View Profile →</a>
+      </div>
+
+      <!-- 2 -->
+      <div class="team-card" style="--card-accent:#7c3aed;--card-accent-rgb:124,58,237">
+        <div class="tc-avatar" style="background:#7c3aed">MS</div>
+        <div class="tc-name" data-en="Mohammed R. Sakran" data-ar="محمد ر. سكران">Mohammed R. Sakran</div>
+        <div class="tc-role" data-en="Data Analyst &amp; AI Specialist" data-ar="محلل بيانات ومتخصص ذكاء اصطناعي">Data Analyst &amp; AI Specialist</div>
+        <div class="tc-skills"><span class="tc-skill" style="--card-accent-rgb:124,58,237;--card-accent:#7c3aed">Python</span><span class="tc-skill" style="--card-accent-rgb:124,58,237;--card-accent:#7c3aed">Power BI</span><span class="tc-skill" style="--card-accent-rgb:124,58,237;--card-accent:#7c3aed">AI Automation</span></div>
+        <div class="tc-status"><span class="status-dot available"></span><span data-en="Available" data-ar="متاح">Available</span></div>
+        <a href="team/mohammed-sakran.html" class="tc-btn" style="border-color:#7c3aed;color:#7c3aed" data-en="View Profile →" data-ar="عرض الملف ←">View Profile →</a>
+      </div>
+
+      <!-- 3 -->
+      <div class="team-card" style="--card-accent:#ec4899;--card-accent-rgb:236,72,153">
+        <div class="tc-avatar" style="background:#ec4899">MQ</div>
+        <div class="tc-name" data-en="Mohammed Qasim" data-ar="محمد قاسم">Mohammed Qasim</div>
+        <div class="tc-role" data-en="Graphic Designer" data-ar="مصمم جرافيك">Graphic Designer</div>
+        <div class="tc-skills"><span class="tc-skill" style="--card-accent-rgb:236,72,153;--card-accent:#ec4899">Brand Identity</span><span class="tc-skill" style="--card-accent-rgb:236,72,153;--card-accent:#ec4899">Illustrator</span><span class="tc-skill" style="--card-accent-rgb:236,72,153;--card-accent:#ec4899">Motion</span></div>
+        <div class="tc-status"><span class="status-dot available"></span><span data-en="Available" data-ar="متاح">Available</span></div>
+        <a href="team/mohammed-qasim.html" class="tc-btn" style="border-color:#ec4899;color:#ec4899" data-en="View Profile →" data-ar="عرض الملف ←">View Profile →</a>
+      </div>
+
+      <!-- 4 -->
+      <div class="team-card" style="--card-accent:#10b981;--card-accent-rgb:16,185,129">
+        <div class="tc-avatar" style="background:#10b981">CC</div>
+        <div class="tc-role" data-en="Content Creator" data-ar="منشئ محتوى">Content Creator</div>
+        <div class="tc-skills"><span class="tc-skill" style="--card-accent-rgb:16,185,129;--card-accent:#10b981">Copywriting</span><span class="tc-skill" style="--card-accent-rgb:16,185,129;--card-accent:#10b981">Scripts</span><span class="tc-skill" style="--card-accent-rgb:16,185,129;--card-accent:#10b981">Strategy</span></div>
+        <div class="tc-status"><span class="status-dot available"></span><span data-en="Available" data-ar="متاح">Available</span></div>
+        <a href="team/samer-hamid.html" class="tc-btn" style="border-color:#10b981;color:#10b981" data-en="View Profile →" data-ar="عرض الملف ←">View Profile →</a>
+      </div>
+
+      <!-- 5 -->
+      <div class="team-card" style="--card-accent:#0ea5e9;--card-accent-rgb:14,165,233">
+        <div class="tc-avatar" style="background:#0ea5e9">KM</div>
+        <div class="tc-name" data-en="Karrar Mohammed" data-ar="كرار محمد">Karrar Mohammed</div>
+        <div class="tc-role" data-en="Social Media Specialist" data-ar="متخصص سوشيال ميديا">Social Media Specialist</div>
+        <div class="tc-skills"><span class="tc-skill" style="--card-accent-rgb:14,165,233;--card-accent:#0ea5e9">Meta Ads</span><span class="tc-skill" style="--card-accent-rgb:14,165,233;--card-accent:#0ea5e9">TikTok Ads</span><span class="tc-skill" style="--card-accent-rgb:14,165,233;--card-accent:#0ea5e9">Analytics</span></div>
+        <div class="tc-status"><span class="status-dot available"></span><span data-en="Available" data-ar="متاح">Available</span></div>
+        <a href="team/karrar-mohammed.html" class="tc-btn" style="border-color:#0ea5e9;color:#0ea5e9" data-en="View Profile →" data-ar="عرض الملف ←">View Profile →</a>
+      </div>
+
+      <!-- 6 -->
+      <div class="team-card" style="--card-accent:#0d9488;--card-accent-rgb:13,148,136">
+        <div class="tc-avatar" style="background:#0d9488">TZ</div>
+        <div class="tc-name" data-en="Teeba Zaid" data-ar="طيبة زيد">Teeba Zaid</div>
+        <div class="tc-role" data-en="HR &amp; Admin Specialist" data-ar="متخصصة موارد بشرية وإدارة">HR &amp; Admin Specialist</div>
+        <div class="tc-skills"><span class="tc-skill" style="--card-accent-rgb:13,148,136;--card-accent:#0d9488">Recruitment</span><span class="tc-skill" style="--card-accent-rgb:13,148,136;--card-accent:#0d9488">Payroll</span><span class="tc-skill" style="--card-accent-rgb:13,148,136;--card-accent:#0d9488">HR Consulting</span></div>
+        <div class="tc-status"><span class="status-dot available"></span><span data-en="Available" data-ar="متاح">Available</span></div>
+        <a href="team/teeba-zaid.html" class="tc-btn" style="border-color:#0d9488;color:#0d9488" data-en="View Profile →" data-ar="عرض الملف ←">View Profile →</a>
+      </div>
+
+      <!-- 7 -->
+      <div class="team-card team-card-soon" title="Coming Soon — قريباً" style="--card-accent:#e11d48;--card-accent-rgb:225,29,72">
+        <div class="tc-avatar" style="background:#e11d48">MD</div>
+        <div class="tc-name" data-en="Mohammed Diaa" data-ar="محمد ضياء">Mohammed Diaa</div>
+        <div class="tc-role" data-en="Product Manager" data-ar="مدير منتج">Product Manager</div>
+        <div class="tc-skills"><span class="tc-skill" style="--card-accent-rgb:225,29,72;--card-accent:#e11d48">Strategy</span><span class="tc-skill" style="--card-accent-rgb:225,29,72;--card-accent:#e11d48">Roadmap</span><span class="tc-skill" style="--card-accent-rgb:225,29,72;--card-accent:#e11d48">Agile</span></div>
+        <div class="tc-status"><span class="status-dot soon"></span><span data-en="Coming Soon" data-ar="قريباً">Coming Soon</span></div>
+      </div>
+
+      <!-- 8 -->
+      <div class="team-card team-card-soon" title="Coming Soon — قريباً" style="--card-accent:#4f46e5;--card-accent-rgb:79,70,229">
+        <div class="tc-avatar" style="background:#4f46e5">FS</div>
+        <div class="tc-name" data-en="Full Stack Developer" data-ar="مطور Full Stack">Full Stack Developer</div>
+        <div class="tc-role" data-en="UI/UX &amp; Web Development" data-ar="تصميم واجهات وتطوير ويب">UI/UX &amp; Web Development</div>
+        <div class="tc-skills"><span class="tc-skill" style="--card-accent-rgb:79,70,229;--card-accent:#4f46e5">React</span><span class="tc-skill" style="--card-accent-rgb:79,70,229;--card-accent:#4f46e5">Node.js</span><span class="tc-skill" style="--card-accent-rgb:79,70,229;--card-accent:#4f46e5">UI/UX</span></div>
+        <div class="tc-status"><span class="status-dot soon"></span><span data-en="Coming Soon" data-ar="قريباً">Coming Soon</span></div>
+      </div>
+
+      <!-- 9 -->
+      <div class="team-card team-card-soon" title="Coming Soon — قريباً" style="--card-accent:#f97316;--card-accent-rgb:249,115,22">
+        <div class="tc-avatar" style="background:#f97316">MA</div>
+        <div class="tc-name" data-en="Mobile App Developer" data-ar="مطور تطبيقات موبايل">Mobile App Developer</div>
+        <div class="tc-role" data-en="iOS &amp; Android Developer" data-ar="مطور iOS وأندرويد">iOS &amp; Android Developer</div>
+        <div class="tc-skills"><span class="tc-skill" style="--card-accent-rgb:249,115,22;--card-accent:#f97316">Flutter</span><span class="tc-skill" style="--card-accent-rgb:249,115,22;--card-accent:#f97316">React Native</span><span class="tc-skill" style="--card-accent-rgb:249,115,22;--card-accent:#f97316">App Store</span></div>
+        <div class="tc-status"><span class="status-dot soon"></span><span data-en="Coming Soon" data-ar="قريباً">Coming Soon</span></div>
+      </div>
+
+      <!-- 10 -->
+      <div class="team-card team-card-soon" title="Coming Soon — قريباً" style="--card-accent:#ef4444;--card-accent-rgb:239,68,68">
+        <div class="tc-avatar" style="background:#ef4444">VE</div>
+        <div class="tc-name" data-en="Video Editor" data-ar="مونتير فيديو">Video Editor</div>
+        <div class="tc-role" data-en="Motion Graphics Designer" data-ar="مصمم موشن جرافيك">Motion Graphics Designer</div>
+        <div class="tc-skills"><span class="tc-skill" style="--card-accent-rgb:239,68,68;--card-accent:#ef4444">Premiere</span><span class="tc-skill" style="--card-accent-rgb:239,68,68;--card-accent:#ef4444">After Effects</span><span class="tc-skill" style="--card-accent-rgb:239,68,68;--card-accent:#ef4444">DaVinci</span></div>
+        <div class="tc-status"><span class="status-dot soon"></span><span data-en="Coming Soon" data-ar="قريباً">Coming Soon</span></div>
+      </div>
+
+      <!-- 11 -->
+      <div class="team-card team-card-soon" title="Coming Soon — قريباً" style="--card-accent:#16a34a;--card-accent-rgb:22,163,74">
+        <div class="tc-avatar" style="background:#16a34a">CS</div>
+        <div class="tc-name" data-en="Cybersecurity Specialist" data-ar="متخصص أمن سيبراني">Cybersecurity Specialist</div>
+        <div class="tc-role" data-en="Network &amp; System Security" data-ar="أمن الشبكات والأنظمة">Network &amp; System Security</div>
+        <div class="tc-skills"><span class="tc-skill" style="--card-accent-rgb:22,163,74;--card-accent:#16a34a">Pen Testing</span><span class="tc-skill" style="--card-accent-rgb:22,163,74;--card-accent:#16a34a">Firewall</span><span class="tc-skill" style="--card-accent-rgb:22,163,74;--card-accent:#16a34a">SOC</span></div>
+        <div class="tc-status"><span class="status-dot soon"></span><span data-en="Coming Soon" data-ar="قريباً">Coming Soon</span></div>
+      </div>
+
+      <!-- 12 -->
+      <div class="team-card team-card-soon" title="Coming Soon — قريباً" style="--card-accent:#059669;--card-accent-rgb:5,150,105">
+        <div class="tc-avatar" style="background:#059669">FA</div>
+        <div class="tc-name" data-en="Accountant" data-ar="محاسب">Accountant</div>
+        <div class="tc-role" data-en="Financial Advisor" data-ar="مستشار مالي">Financial Advisor</div>
+        <div class="tc-skills"><span class="tc-skill" style="--card-accent-rgb:5,150,105;--card-accent:#059669">Bookkeeping</span><span class="tc-skill" style="--card-accent-rgb:5,150,105;--card-accent:#059669">Tax Filing</span><span class="tc-skill" style="--card-accent-rgb:5,150,105;--card-accent:#059669">Reports</span></div>
+        <div class="tc-status"><span class="status-dot soon"></span><span data-en="Coming Soon" data-ar="قريباً">Coming Soon</span></div>
+      </div>
+
+      <!-- 13 -->
+      <div class="team-card team-card-soon" title="Coming Soon — قريباً" style="--card-accent:#f59e0b;--card-accent-rgb:245,158,11">
+        <div class="tc-avatar" style="background:#f59e0b">CE</div>
+        <div class="tc-name" data-en="Civil Engineer" data-ar="مهندس مدني">Civil Engineer</div>
+        <div class="tc-role" data-en="Structural &amp; Site Engineering" data-ar="هندسة إنشائية وميدانية">Structural &amp; Site Engineering</div>
+        <div class="tc-skills"><span class="tc-skill" style="--card-accent-rgb:245,158,11;--card-accent:#f59e0b">AutoCAD</span><span class="tc-skill" style="--card-accent-rgb:245,158,11;--card-accent:#f59e0b">Structural Design</span><span class="tc-skill" style="--card-accent-rgb:245,158,11;--card-accent:#f59e0b">Supervision</span></div>
+        <div class="tc-status"><span class="status-dot soon"></span><span data-en="Coming Soon" data-ar="قريباً">Coming Soon</span></div>
+      </div>
+
+      <!-- 14 -->
+      <div class="team-card team-card-soon" title="Coming Soon — قريباً" style="--card-accent:#eab308;--card-accent-rgb:234,179,8">
+        <div class="tc-avatar" style="background:#eab308">BH</div>
+        <div class="tc-name" data-en="Bilal Hani" data-ar="بلال هاني">Bilal Hani</div>
+        <div class="tc-role" data-en="Solar Energy Engineer" data-ar="مهندس طاقة شمسية">Solar Energy Engineer</div>
+        <div class="tc-skills"><span class="tc-skill" style="--card-accent-rgb:234,179,8;--card-accent:#eab308">Solar Panels</span><span class="tc-skill" style="--card-accent-rgb:234,179,8;--card-accent:#eab308">Energy Audit</span><span class="tc-skill" style="--card-accent-rgb:234,179,8;--card-accent:#eab308">Installation</span></div>
+        <div class="tc-status"><span class="status-dot soon"></span><span data-en="Coming Soon" data-ar="قريباً">Coming Soon</span></div>
+      </div>
+
+      <!-- 15 -->
+      <div class="team-card team-card-soon" title="Coming Soon — قريباً" style="--card-accent:#8b5cf6;--card-accent-rgb:139,92,246">
+        <div class="tc-avatar" style="background:#8b5cf6">BB</div>
+        <div class="tc-name" data-en="Billboard Agency" data-ar="وكالة بيلبورد">Billboard Agency</div>
+        <div class="tc-role" data-en="Outdoor &amp; Digital Advertising" data-ar="إعلانات خارجية ورقمية">Outdoor &amp; Digital Advertising</div>
+        <div class="tc-skills"><span class="tc-skill" style="--card-accent-rgb:139,92,246;--card-accent:#8b5cf6">Billboards</span><span class="tc-skill" style="--card-accent-rgb:139,92,246;--card-accent:#8b5cf6">LED Screens</span><span class="tc-skill" style="--card-accent-rgb:139,92,246;--card-accent:#8b5cf6">Campaigns</span></div>
+        <div class="tc-status"><span class="status-dot soon"></span><span data-en="Coming Soon" data-ar="قريباً">Coming Soon</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY RAWAFID -->
+<section class="section" style="background:var(--bg-card2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="section-inner">
+    <h2 class="section-title" data-en="Why Rawafid?" data-ar="ليش روافد؟">Why Rawafid?</h2>
+    <p class="section-sub" data-en="What makes us different" data-ar="شنو اللي يفرقنا">What makes us different</p>
+    <div class="why-grid">
+      <div class="why-card"><span class="why-icon">⚡</span><div class="why-title" data-en="Fast Response" data-ar="رد سريع">Fast Response</div><p class="why-text" data-en="We respond fast. No waiting, no delays. Your project moves at your pace." data-ar="نرد بسرعة. ماكو انتظار. مشروعك يتحرك بسرعتك.">We respond fast. No waiting, no delays. Your project moves at your pace.</p></div>
+      <div class="why-card"><span class="why-icon">📋</span><div class="why-title" data-en="Full Documentation" data-ar="توثيق كامل">Full Documentation</div><p class="why-text" data-en="Every project delivered with complete docs — cable maps, device lists, passwords." data-ar="كل مشروع يُسلَّم مع توثيق كامل — خرائط كيبل، قوائم أجهزة، كلمات مرور.">Every project delivered with complete docs — cable maps, device lists, passwords.</p></div>
+      <div class="why-card"><span class="why-icon">🛡️</span><div class="why-title" data-en="Guaranteed Quality" data-ar="جودة مضمونة">Guaranteed Quality</div><p class="why-text" data-en="We don't leave until everything works perfectly. Post-handover support included." data-ar="ما نطلع لحين ما كل شي يشتغل بشكل مثالي. دعم ما بعد التسليم مشمول.">We don't leave until everything works perfectly. Post-handover support included.</p></div>
+      <div class="why-card"><span class="why-icon">🤝</span><div class="why-title" data-en="One Team Everything" data-ar="فريق واحد كل شي">One Team Everything</div><p class="why-text" data-en="IT, electrical, design, marketing — one team handles it all." data-ar="فريق واحد يغطي كل شي — ماكو تنسيق بين شركات متعددة.">IT, electrical, design, marketing — one team handles it all.</p></div>
+      <div class="why-card"><span class="why-icon">🇮🇶</span><div class="why-title" data-en="Iraq Specialists" data-ar="متخصصون بالعراق">Iraq Specialists</div><p class="why-text" data-en="We know the Iraqi market, local suppliers and Iraqi timelines inside out." data-ar="نعرف السوق العراقي كلش زين — بغداد وكل المحافظات.">We know the Iraqi market, local suppliers and Iraqi timelines inside out.</p></div>
+      <div class="why-card"><span class="why-icon">💎</span><div class="why-title" data-en="Premium but Accessible" data-ar="احترافي بأسعار مناسبة">Premium but Accessible</div><p class="why-text" data-en="Enterprise-grade work at prices that make sense for Iraqi businesses." data-ar="شغل بمستوى المؤسسات بأسعار تناسب العراق.">Enterprise-grade work at prices that make sense for Iraqi businesses.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK PROCESS -->
+<section class="section">
+  <div class="section-inner">
+    <h2 class="section-title" data-en="How We Work Together" data-ar="كيف نشتغل سوا">How We Work Together</h2>
+    <p class="section-sub" data-en="Clear, documented, transparent — from first contact to handover" data-ar="واضح، موثق، شفاف — من أول تواصل للتسليم">Clear, documented, transparent — from first contact to handover</p>
+    <div class="process-line">
+
+      <div class="process-phase phase-green" data-en="PHASE 1 — DISCOVERY" data-ar="المرحلة 1 — الاستكشاف">PHASE 1 — DISCOVERY</div>
+      <div class="process-step">
+        <div style="display:flex;flex-direction:column;align-items:center"><div class="step-dot">📞</div><div class="step-line"></div></div>
+        <div class="step-body"><div class="step-tag" data-en="Free" data-ar="مجاني">Free</div><div class="step-title" data-en="First Contact" data-ar="التواصل الأول">First Contact</div><p class="step-desc" data-en="Contact us via WhatsApp or the form. We reply within 24 hours." data-ar="تتواصل معنا عبر واتساب أو الفورم. نرد خلال 24 ساعة.">Contact us via WhatsApp or the form. We reply within 24 hours.</p></div>
+      </div>
+      <div class="process-step">
+        <div style="display:flex;flex-direction:column;align-items:center"><div class="step-dot">🤝</div><div class="step-line"></div></div>
+        <div class="step-body"><div class="step-tag" data-en="Free" data-ar="مجاني">Free</div><div class="step-title" data-en="Initial Meeting" data-ar="الاجتماع الأولي">Initial Meeting</div><p class="step-desc" data-en="We meet and discuss exactly what you need." data-ar="نلتقي ونحچي شنو تريد بالضبط.">We meet and discuss exactly what you need.</p></div>
+      </div>
+      <div class="process-step">
+        <div style="display:flex;flex-direction:column;align-items:center"><div class="step-dot">🏗️</div><div class="step-line"></div></div>
+        <div class="step-body"><div class="step-tag" data-en="Free" data-ar="مجاني">Free</div><div class="step-title" data-en="Site Survey" data-ar="مسح الموقع">Site Survey</div><p class="step-desc" data-en="We visit your site and document everything." data-ar="نيجي موقعك ونوثق كل شي.">We visit your site and document everything.</p></div>
+      </div>
+
+      <div class="process-phase phase-cyan" data-en="PHASE 2 — PLANNING" data-ar="المرحلة 2 — التخطيط">PHASE 2 — PLANNING</div>
+      <div class="process-step">
+        <div style="display:flex;flex-direction:column;align-items:center"><div class="step-dot">📋</div><div class="step-line"></div></div>
+        <div class="step-body"><div class="step-tag" data-en="Client Approval" data-ar="موافقة العميل">Client Approval</div><div class="step-title" data-en="Requirements" data-ar="المتطلبات">Requirements</div><p class="step-desc" data-en="Together we finalize exact specifications." data-ar="سوا نحدد المواصفات الدقيقة.">Together we finalize exact specifications.</p></div>
+      </div>
+      <div class="process-step">
+        <div style="display:flex;flex-direction:column;align-items:center"><div class="step-dot">💰</div><div class="step-line"></div></div>
+        <div class="step-body"><div class="step-tag" data-en="Transparent" data-ar="شفاف">Transparent</div><div class="step-title" data-en="Pricing" data-ar="التسعير">Pricing</div><p class="step-desc" data-en="Detailed price quote. Zero hidden costs — ever." data-ar="عرض سعر مفصل. ماكو تكاليف مخفية أبداً.">Detailed price quote. Zero hidden costs — ever.</p></div>
+      </div>
+      <div class="process-step">
+        <div style="display:flex;flex-direction:column;align-items:center"><div class="step-dot">📅</div><div class="step-line"></div></div>
+        <div class="step-body"><div class="step-tag" data-en="Documented" data-ar="موثق">Documented</div><div class="step-title" data-en="Timeline" data-ar="الجدول الزمني">Timeline</div><p class="step-desc" data-en="Full project timeline delivered to you as a document." data-ar="جدول زمني كامل يوصلك كوثيقة.">Full project timeline delivered to you as a document.</p></div>
+      </div>
+
+      <div class="process-phase phase-purple" data-en="PHASE 3 — DELIVERY" data-ar="المرحلة 3 — التسليم">PHASE 3 — DELIVERY</div>
+      <div class="process-step">
+        <div style="display:flex;flex-direction:column;align-items:center"><div class="step-dot">🔧</div><div class="step-line"></div></div>
+        <div class="step-body"><div class="step-tag" data-en="Professional" data-ar="احترافي">Professional</div><div class="step-title" data-en="Execution" data-ar="التنفيذ">Execution</div><p class="step-desc" data-en="Our team executes professionally with regular updates." data-ar="فريقنا ينفذ باحترافية مع تحديثات منتظمة.">Our team executes professionally with regular updates.</p></div>
+      </div>
+      <div class="process-step">
+        <div style="display:flex;flex-direction:column;align-items:center"><div class="step-dot">✅</div></div>
+        <div class="step-body"><div class="step-tag" data-en="Guaranteed" data-ar="مضمون">Guaranteed</div><div class="step-title" data-en="Handover" data-ar="التسليم">Handover</div><p class="step-desc" data-en="Full documentation delivered and support plan begins." data-ar="نسلم توثيق كامل ونبدأ خطة الدعم.">Full documentation delivered and support plan begins.</p></div>
+      </div>
+    </div>
+    <div class="process-cta">
+      <a href="https://wa.me/9647727080528" target="_blank" rel="noopener noreferrer" class="btn-primary" data-en="📞 Book Free Consultation →" data-ar="📞 احجز استشارة مجانية ←">📞 Book Free Consultation →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="background:var(--bg-card2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="section-inner">
+    <h2 class="section-title" data-en="Frequently Asked Questions" data-ar="أسئلة شائعة">Frequently Asked Questions</h2>
+    <p class="section-sub" data-en="Got questions? We have answers." data-ar="عندك أسئلة؟ عدنا الجوابات.">Got questions? We have answers.</p>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-en="What areas do you serve?" data-ar="شنو المناطق اللي تخدمون؟">شنو المناطق اللي تخدمون؟</span><span class="faq-icon">+</span></div><div class="faq-a" data-en="We're based in Baghdad and serve clients from all Iraqi provinces. Digital services are available remotely." data-ar="احنا من بغداد وعدنا عملاء من جميع محافظات العراق. الخدمات الرقمية متاحة عن بعد.">We're based in Baghdad and serve clients from all Iraqi provinces. Digital services are available remotely.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-en="How long does network installation take?" data-ar="چم يأخذ تركيب الشبكة؟">چم يأخذ تركيب الشبكة؟</span><span class="faq-icon">+</span></div><div class="faq-a" data-en="Small office: 1–3 days. Multi-floor building: 2–6 weeks." data-ar="مكتب صغير 1-3 أيام. مبنى متعدد الطوابق 2-6 أسابيع.">Small office: 1–3 days. Multi-floor building: 2–6 weeks.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-en="Is there a warranty on work?" data-ar="أكو ضمان على الشغل؟">أكو ضمان على الشغل؟</span><span class="faq-icon">+</span></div><div class="faq-a" data-en="Yes, all installations come with a support period. We fix any issue after handover." data-ar="أي، كل التركيبات تجي مع فترة دعم. نصلح أي مشكلة بعد التسليم.">Yes, all installations come with a support period. We fix any issue after handover.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-en="What brands do you work with?" data-ar="شنو الماركات اللي تشتغلون بيها؟">شنو الماركات اللي تشتغلون بيها؟</span><span class="faq-icon">+</span></div><div class="faq-a" data-en="Cisco, MikroTik, Ubiquiti, Hikvision, Dahua, TP-Link, and other professional brands." data-ar="سيسكو وميكروتك ويوبيكويتي وهيكفيجن وداهوا وتي بي لينك وغيرها من الماركات الاحترافية.">Cisco, MikroTik, Ubiquiti, Hikvision, Dahua, TP-Link, and other professional brands.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-en="Can you work outside Baghdad?" data-ar="تقدرون تشتغلون بره بغداد؟">تقدرون تشتغلون بره بغداد؟</span><span class="faq-icon">+</span></div><div class="faq-a" data-en="Yes, we travel for projects across all of Iraq." data-ar="أي، نسافر للمشاريع في كل أنحاء العراق.">Yes, we travel for projects across all of Iraq.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-en="How do I get a quote?" data-ar="شلون أحصل على عرض سعر؟">شلون أحصل على عرض سعر؟</span><span class="faq-icon">+</span></div><div class="faq-a" data-en="Fill the form or message us on WhatsApp. You'll receive a quote within 48 hours." data-ar="اكتب بالفورم أو راسلنا على واتساب. نعطيك عرض سعر خلال 48 ساعة.">Fill the form or message us on WhatsApp. You'll receive a quote within 48 hours.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-en="Are there maintenance contracts?" data-ar="أكو عقود صيانة؟">أكو عقود صيانة؟</span><span class="faq-icon">+</span></div><div class="faq-a" data-en="Yes, monthly and annual contracts are available for all services." data-ar="أي، عقود شهرية وسنوية متاحة لجميع الخدمات.">Yes, monthly and annual contracts are available for all services.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span data-en="Do you handle IT and electrical together?" data-ar="تتعاملون مع IT والكهربائي سوا؟">تتعاملون مع IT والكهربائي سوا؟</span><span class="faq-icon">+</span></div><div class="faq-a" data-en="Yes! One team covers everything — no need to coordinate with multiple companies." data-ar="أي! فريق واحد يغطي كل شي سوا — ماكو حاجة لتنسيق شركات متعددة.">Yes! One team covers everything — no need to coordinate with multiple companies.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="section-inner">
+    <h2 class="section-title" data-en="Let's Build Something Together" data-ar="نبني شي زين سوا">Let's Build Something Together</h2>
+    <p class="section-sub" data-en="Reach out and we'll get back within 24 hours" data-ar="تواصل معنا ونرد خلال 24 ساعة">Reach out and we'll get back within 24 hours</p>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-info-card"><span class="cic-icon">📍</span><div><div class="cic-label" data-en="Location" data-ar="الموقع">Location</div><div class="cic-value" data-en="Baghdad, Iraq" data-ar="بغداد، العراق">Baghdad, Iraq</div></div></div>
+        <div class="contact-info-card"><span class="cic-icon">📱</span><div><div class="cic-label" data-en="WhatsApp" data-ar="واتساب">WhatsApp</div><div class="cic-value">+964 772 708 0528 <button class="copy-btn" onclick="copyText('+9647727080528')" title="Copy">📋</button></div></div></div>
+        <div class="contact-info-card"><span class="cic-icon">📧</span><div><div class="cic-label" data-en="Email" data-ar="البريد الإلكتروني">Email</div><div class="cic-value" style="font-size:.82rem;word-break:break-all">yousifabdulkareem4business@gmail.com <button class="copy-btn" onclick="copyText('yousifabdulkareem4business@gmail.com')" title="Copy">📋</button></div></div></div>
+        <div class="contact-info-card"><span class="cic-icon">🕐</span><div><div class="cic-label" data-en="Availability" data-ar="أوقات العمل">Availability</div><div class="cic-value" style="font-size:.82rem" data-en="Available 24/7 — Always Ready" data-ar="متاح 24/7 — دائماً جاهز">Available 24/7 — Always Ready</div></div></div>
+        <div class="social-row">
+          <a href="https://wa.me/9647727080528" target="_blank" rel="noopener noreferrer" class="soc-btn wa">💬 WhatsApp</a>
+          <a href="https://www.linkedin.com/in/yousif-abdulkareem-al-sara-4220b1189" target="_blank" rel="noopener noreferrer" class="soc-btn">in LinkedIn</a>
+          <a href="#" class="soc-btn">📸 Instagram</a>
+        </div>
+      </div>
+      <div>
+        <div class="contact-form">
+          <form id="contactForm" onsubmit="submitForm(event)">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off"/>
+            <div class="form-row">
+              <div class="form-group"><label data-en="Name" data-ar="الاسم">Name</label><input type="text" name="name" placeholder="Your name" maxlength="100" required/></div>
+              <div class="form-group"><label data-en="Phone" data-ar="رقم الهاتف">Phone</label><input type="tel" name="phone" placeholder="+964..." maxlength="20"/></div>
+            </div>
+            <div class="form-group"><label data-en="Email" data-ar="البريد الإلكتروني">Email</label><input type="email" name="email" placeholder="your@email.com" maxlength="100"/></div>
+            <div class="form-group">
+              <label data-en="Service Needed" data-ar="الخدمة المطلوبة">Service Needed</label>
+              <select name="service">
+                <option value="">-- Select --</option>
+                <option>Network Infrastructure</option>
+                <option>Structured Cabling</option>
+                <option>CCTV &amp; Surveillance</option>
+                <option>Access Control</option>
+                <option>Building IT Fitout</option>
+                <option>Data &amp; AI</option>
+                <option>Graphic Design</option>
+                <option>Social Media</option>
+                <option>HR Services</option>
+                <option>Civil Engineering</option>
+                <option>Solar Systems</option>
+                <option>Billboard Marketing</option>
+                <option>Hotspot Services</option>
+                <option>UltraNet</option>
+                <option>Accounting</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group"><label data-en="Message" data-ar="الرسالة">Message</label><textarea name="message" placeholder="Tell us about your project..." maxlength="1000"></textarea></div>
+            <button type="submit" class="btn-primary" style="width:100%;justify-content:center" data-en="Send Message →" data-ar="إرسال الرسالة →">Send Message →</button>
+          </form>
+        </div>
+        <div class="map-wrap">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d221703.41!2d44.1872!3d33.3206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15577f67a0a74193%3A0x4c2fd1c75e3d0bde!2sBaghdad%2C+Iraq!5e0!3m2!1sen!2s!4v1" width="100%" height="220" style="border:0;filter:invert(90%) hue-rotate(180deg) brightness(.9) saturate(.8);border-radius:var(--radius)" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Baghdad Map"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Raw<span>afid</span> <span class="footer-brand-ar">| روافد</span></div>
+  <p class="footer-copy">© 2026 وكالة روافد — بغداد، العراق. جميع الحقوق محفوظة.</p>
+  <div class="footer-social">
+    <a href="https://wa.me/9647727080528" target="_blank" rel="noopener noreferrer" class="fsoc">💬 WhatsApp</a>
+    <a href="https://www.linkedin.com/in/yousif-abdulkareem-al-sara-4220b1189" target="_blank" rel="noopener noreferrer" class="fsoc">in LinkedIn</a>
+    <a href="#" class="fsoc">📸 Instagram</a>
+  </div>
+</footer>
+
+<!-- FLOATING -->
+<a href="https://wa.me/9647727080528" target="_blank" rel="noopener noreferrer" class="wa-float" title="WhatsApp">💬</a>
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top" style="display:none">↑</button>
+<a href="https://calendly.com/yousifabdulkareem4business" target="_blank" rel="noopener noreferrer" class="book-pill">📅 Book a Call</a>
+
+<!-- CHATBOT -->
+<div class="chatbot-wrap">
+  <div class="chat-toggle" onclick="toggleChat()" title="Chat">🤖</div>
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">
+      <span class="chat-header-title">مساعد روافد 🤖</span>
+      <button class="chat-close" onclick="toggleChat()">×</button>
+    </div>
+    <div class="chat-messages" id="chatMessages"></div>
+    <div class="chat-input-row">
+      <input class="chat-input" id="chatInput" type="text" placeholder="اكتب سؤالك..." onkeydown="if(event.key==='Enter')sendMessage()"/>
+      <button class="chat-send" onclick="sendMessage()">➤</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── LANG ──
+let currentLang = localStorage.getItem('rawafid-lang') || 'en';
+function toggleLang() {
+  currentLang = currentLang === 'en' ? 'ar' : 'en';
+  localStorage.setItem('rawafid-lang', currentLang);
+  applyLang();
+}
+function applyLang() {
+  const isAR = currentLang === 'ar';
+  document.documentElement.lang = isAR ? 'ar' : 'en';
+  document.documentElement.dir = isAR ? 'rtl' : 'ltr';
+  const btn = document.getElementById('langBtn');
+  if (btn) btn.textContent = isAR ? 'EN' : 'AR';
+  document.querySelectorAll('[data-en]').forEach(el => {
+    const txt = isAR ? (el.dataset.ar || el.dataset.en) : el.dataset.en;
+    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') { el.placeholder = txt; }
+    else { el.textContent = txt; }
+  });
+}
+applyLang();
+
+// ── GREETING ──
+(function() {
+  const h = new Date().getHours();
+  let msg;
+  if (h >= 5 && h < 12) msg = '🌅 صباح الخير! هلا بيك على موقع روافد';
+  else if (h >= 12 && h < 18) msg = '☀️ مساء الخير! هلا بيك على موقع روافد';
+  else msg = '🌙 مساء النور! هلا بيك على موقع روافد';
+  const el = document.getElementById('greetingText');
+  if (el) el.textContent = msg;
+})();
+
+// ── SCROLL PROGRESS + SCROLL-TOP ──
+window.addEventListener('scroll', function() {
+  const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+  const bar = document.getElementById('progressBar');
+  if (bar) bar.style.width = pct + '%';
+  const st = document.getElementById('scrollTop');
+  if (st) st.style.display = window.scrollY > 300 ? 'flex' : 'none';
+});
+
+// ── MOBILE MENU ──
+function toggleMenu() {
+  const m = document.getElementById('mobileMenu');
+  m.classList.toggle('open');
+}
+function closeMobile() {
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+
+// ── STATS COUNT-UP ──
+function countUp(el, target, suffix) {
+  let n = 0;
+  const step = target / 60;
+  const t = setInterval(function() {
+    n = Math.min(n + step, target);
+    el.textContent = Math.floor(n) + suffix;
+    if (n >= target) clearInterval(t);
+  }, 16);
+}
+const statsObs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('[data-count]').forEach(function(el) {
+        countUp(el, parseInt(el.dataset.count), el.dataset.suffix || '');
+      });
+      statsObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+const statsEl = document.getElementById('stats');
+if (statsEl) statsObs.observe(statsEl);
+
+// ── TEAM CARD STAGGER ──
+const cardObs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e, i) {
+    if (e.isIntersecting) {
+      const idx = Array.from(document.querySelectorAll('.team-card')).indexOf(e.target);
+      setTimeout(function() { e.target.classList.add('visible'); }, idx * 80);
+      cardObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.team-card').forEach(function(c) { cardObs.observe(c); });
+
+// ── PROCESS STEP SCROLL ANIMATION ──
+(function() {
+  var steps = document.querySelectorAll('.process-step');
+  steps.forEach(function(s, i) {
+    if (i % 2 !== 0) s.classList.add('from-right');
+  });
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('in-view');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  steps.forEach(function(s) { obs.observe(s); });
+})();
+
+// ── FAQ ──
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(i) { i.classList.remove('open'); });
+  if (!isOpen) item.classList.add('open');
+}
+
+// ── SANITIZE ──
+function sanitizeInput(str) {
+  return String(str).replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').trim();
+}
+
+// ── CONTACT FORM ──
+let lastFormSubmit = 0;
+async function submitForm(e) {
+  e.preventDefault();
+  const form = e.target;
+  if (form._honey && form._honey.value) return;
+  const now = Date.now();
+  if (now - lastFormSubmit < 30000) { showToast('انتظر 30 ثانية قبل الإرسال مجدداً'); return; }
+  lastFormSubmit = now;
+  const btn = form.querySelector('[type="submit"]');
+  const orig = btn.textContent;
+  btn.textContent = '⏳ Sending...';
+  btn.disabled = true;
+  const fd = new FormData(form);
+  const safe = new FormData();
+  for (const [k, v] of fd.entries()) { if (k !== '_honey') safe.append(k, sanitizeInput(v)); }
+  try {
+    await fetch('https://script.google.com/macros/s/AKfycbxe9weLT738oHP10plWn7whJZamnR2Yzdi8SvlPCt7SJyNgUmOdvq3Xqo5MnwVi97mhoQ/exec', {
+      method: 'POST', mode: 'no-cors', body: safe
+    });
+    showToast('تم الإرسال بنجاح! ✅');
+    form.reset();
+  } catch (err) {
+    showToast('حدث خطأ، حاول مرة أخرى');
+  }
+  btn.textContent = orig;
+  btn.disabled = false;
+}
+
+window.addEventListener('error', function(e) {
+  console.warn('[Rawafid Error]', e.message, e.filename, e.lineno);
+});
+
+// ── TOAST ──
+function showToast(msg) {
+  const t = document.createElement('div');
+  t.className = 'toast';
+  t.textContent = msg;
+  document.body.appendChild(t);
+  setTimeout(function() { t.style.opacity = '0'; setTimeout(function() { t.remove(); }, 300); }, 2500);
+}
+
+// ── COPY ──
+function copyText(txt) {
+  navigator.clipboard.writeText(txt).then(function() { showToast('Copied! ✅'); });
+}
+
+// ── CHATBOT ──
+const chatResponses = {
+  'سعر|تكلفة|كم|price|cost': 'الأسعار تعتمد على حجم المشروع. راسلنا على واتساب وأعطيك عرض سعر خلال 48 ساعة! 💬',
+  'فريق|أشخاص|عدد|team': 'الفريق عدنا 13 مختص — IT وبيانات وتصميم وتسويق وموارد بشرية وهندسة مدنية. كل واحد خبير في مجاله 💪',
+  'خدمات|شنو|services': 'نغطي: بنية تحتية IT، شبكات، كاميرات، تحكم دخول، تصميم، تسويق، موارد بشرية، وهندسة مدنية. فريق واحد كل شي! ✅',
+  'واتساب|تواصل|اتصال|whatsapp|contact': 'تقدر تتواصل معنا على واتساب: wa.me/9647727080528 — نرد خلال 24 ساعة 📱',
+  'موقع|بغداد|عراق|baghdad|iraq': 'احنا مقرنا بغداد ونخدم جميع محافظات العراق. الخدمات الرقمية متاحة أونلاين 🇮🇶',
+  'مشاريع|أعمال|projects': 'عدنا 8+ مشاريع منجزة، أكثر من 300 جهاز مثبت، و100% رضا العملاء 🚀'
+};
+let chatOpen = false;
+let chatStarted = false;
+function toggleChat() {
+  chatOpen = !chatOpen;
+  const w = document.getElementById('chatWindow');
+  w.classList.toggle('open', chatOpen);
+  if (chatOpen && !chatStarted) {
+    chatStarted = true;
+    addBotMsg('هلا! 👋 هلا وغلا بيك على روافد. شنو أقدر أساعدك؟');
+  }
+}
+function addBotMsg(txt) {
+  const msgs = document.getElementById('chatMessages');
+  const typing = document.createElement('div');
+  typing.className = 'chat-typing';
+  typing.innerHTML = '<span></span><span></span><span></span>';
+  msgs.appendChild(typing);
+  msgs.scrollTop = msgs.scrollHeight;
+  setTimeout(function() {
+    typing.remove();
+    const msg = document.createElement('div');
+    msg.className = 'chat-msg bot';
+    msg.textContent = txt;
+    msgs.appendChild(msg);
+    msgs.scrollTop = msgs.scrollHeight;
+  }, 800);
+}
+function addUserMsg(txt) {
+  const msgs = document.getElementById('chatMessages');
+  const msg = document.createElement('div');
+  msg.className = 'chat-msg user';
+  msg.textContent = txt;
+  msgs.appendChild(msg);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+function sendMessage() {
+  const input = document.getElementById('chatInput');
+  const txt = input.value.trim();
+  if (!txt) return;
+  addUserMsg(txt);
+  input.value = '';
+  const lower = txt.toLowerCase();
+  let reply = 'مو واضح سؤالك 😅 — تقدر تكتبله بشكل مختلف أو تتواصل معنا مباشرة على واتساب!';
+  for (const key in chatResponses) {
+    const words = key.split('|');
+    if (words.some(function(w) { return lower.includes(w); })) {
+      reply = chatResponses[key];
+      break;
+    }
+  }
+  addBotMsg(reply);
+}
+</script>
+</body>
+</html>
